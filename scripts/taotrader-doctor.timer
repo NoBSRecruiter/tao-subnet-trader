@@ -1,0 +1,14 @@
+# Runs taotrader-doctor.service (taotrader doctor --live) once a day. DESIGN.md section 12.2.
+#   systemctl enable --now taotrader-doctor.timer ; systemctl list-timers taotrader-doctor.timer
+
+[Unit]
+Description=daily taotrader doctor --live (idle Staking-proxy alert after 72 h unarmed)
+
+[Timer]
+OnCalendar=*-*-* 09:00:00
+RandomizedDelaySec=10min
+Persistent=true
+Unit=taotrader-doctor.service
+
+[Install]
+WantedBy=timers.target

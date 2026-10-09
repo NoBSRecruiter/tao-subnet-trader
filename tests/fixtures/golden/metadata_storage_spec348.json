@@ -1,0 +1,2194 @@
+{
+ "block": 7000020,
+ "block_hash": "0x8a362ac93297572fa4abfbf8f89dade28054ec9d835165f360111c44fd286805",
+ "spec_version": 348,
+ "transaction_version": 1,
+ "fixture": "metadata_storage_spec348",
+ "purpose": "storage layout (hashers, key/value types, defaults) decoded from the metadata with scalecodec",
+ "metadata_version": "V14",
+ "pallets": {
+  "System": {
+   "Account": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat"
+    ],
+    "key": "AccountId32",
+    "value": "AccountInfo<u32, AccountData<u64>>",
+    "default": "0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000080"
+   },
+   "ExtrinsicCount": {
+    "modifier": "Optional",
+    "kind": "Plain",
+    "value": "u32",
+    "default": "0x00"
+   },
+   "InherentsApplied": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "bool",
+    "default": "0x00"
+   },
+   "BlockWeight": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "PerDispatchClass<Weight>",
+    "default": "0x000000000000"
+   },
+   "AllExtrinsicsLen": {
+    "modifier": "Optional",
+    "kind": "Plain",
+    "value": "u32",
+    "default": "0x00"
+   },
+   "BlockHash": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat"
+    ],
+    "key": "u32",
+    "value": "H256",
+    "default": "0x0000000000000000000000000000000000000000000000000000000000000000"
+   },
+   "ExtrinsicData": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat"
+    ],
+    "key": "u32",
+    "value": "Vec<u8>",
+    "default": "0x00"
+   },
+   "Number": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u32",
+    "default": "0x00000000"
+   },
+   "ParentHash": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "H256",
+    "default": "0x0000000000000000000000000000000000000000000000000000000000000000"
+   },
+   "Digest": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "Digest",
+    "default": "0x00"
+   },
+   "Events": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "Vec<EventRecord<RuntimeEvent, H256>>",
+    "default": "0x00"
+   },
+   "EventCount": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u32",
+    "default": "0x00000000"
+   },
+   "EventTopics": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat"
+    ],
+    "key": "H256",
+    "value": "Vec<(u32, u32)>",
+    "default": "0x00"
+   },
+   "LastRuntimeUpgrade": {
+    "modifier": "Optional",
+    "kind": "Plain",
+    "value": "LastRuntimeUpgradeInfo",
+    "default": "0x00"
+   },
+   "UpgradedToU32RefCount": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "bool",
+    "default": "0x00"
+   },
+   "UpgradedToTripleRefCount": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "bool",
+    "default": "0x00"
+   },
+   "ExecutionPhase": {
+    "modifier": "Optional",
+    "kind": "Plain",
+    "value": "Phase",
+    "default": "0x00"
+   },
+   "AuthorizedUpgrade": {
+    "modifier": "Optional",
+    "kind": "Plain",
+    "value": "CodeUpgradeAuthorization",
+    "default": "0x00"
+   },
+   "ExtrinsicWeightReclaimed": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "Weight",
+    "default": "0x0000"
+   }
+  },
+  "Timestamp": {
+   "Now": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "DidUpdate": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "bool",
+    "default": "0x00"
+   }
+  },
+  "Balances": {
+   "TotalIssuance": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "InactiveIssuance": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "Account": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat"
+    ],
+    "key": "AccountId32",
+    "value": "AccountData<u64>",
+    "default": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000080"
+   },
+   "Locks": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat"
+    ],
+    "key": "AccountId32",
+    "value": "WeakBoundedVec<BalanceLock<u64>>",
+    "default": "0x00"
+   },
+   "Reserves": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat"
+    ],
+    "key": "AccountId32",
+    "value": "BoundedVec<ReserveData<[u8; 8], u64>>",
+    "default": "0x00"
+   },
+   "Holds": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat"
+    ],
+    "key": "AccountId32",
+    "value": "BoundedVec<IdAmount<RuntimeHoldReason, u64>>",
+    "default": "0x00"
+   },
+   "Freezes": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat"
+    ],
+    "key": "AccountId32",
+    "value": "BoundedVec<IdAmount<RuntimeFreezeReason, u64>>",
+    "default": "0x00"
+   }
+  },
+  "SubtensorModule": {
+   "MinActivityCutoff": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u16",
+    "default": "0x6801"
+   },
+   "AdminFreezeWindow": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u16",
+    "default": "0x0a00"
+   },
+   "OwnerHyperparamRateLimit": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u16",
+    "default": "0x0200"
+   },
+   "ColdkeySwapScheduleDuration": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u32",
+    "default": "0xa08c0000"
+   },
+   "ColdkeySwapRescheduleDuration": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u32",
+    "default": "0x201c0000"
+   },
+   "DissolveNetworkScheduleDuration": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u32",
+    "default": "0xa08c0000"
+   },
+   "LastHotkeySwapOnNetuid": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity",
+     "Blake2_128Concat"
+    ],
+    "key": "(u16, AccountId32)",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "NextStakeJobId": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "TaoWeight": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u64",
+    "default": "0xfc62e03efa3c7c0d"
+   },
+   "CKBurn": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "MaxDelegateTake": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u16",
+    "default": "0x142e"
+   },
+   "MinDelegateTake": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u16",
+    "default": "0x0000"
+   },
+   "MaxChildkeyTake": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u16",
+    "default": "0x142e"
+   },
+   "MinChildkeyTake": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u16",
+    "default": "0x0000"
+   },
+   "Owner": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat"
+    ],
+    "key": "AccountId32",
+    "value": "AccountId32",
+    "default": "0x0000000000000000000000000000000000000000000000000000000000000000"
+   },
+   "Delegates": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat"
+    ],
+    "key": "AccountId32",
+    "value": "u16",
+    "default": "0x142e"
+   },
+   "ChildkeyTake": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat",
+     "Identity"
+    ],
+    "key": "(AccountId32, u16)",
+    "value": "u16",
+    "default": "0x0000"
+   },
+   "PendingChildKeys": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity",
+     "Blake2_128Concat"
+    ],
+    "key": "(u16, AccountId32)",
+    "value": "(Vec<(u64, AccountId32)>, u64)",
+    "default": "0x000000000000000000"
+   },
+   "ChildKeys": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat",
+     "Identity"
+    ],
+    "key": "(AccountId32, u16)",
+    "value": "Vec<(u64, AccountId32)>",
+    "default": "0x00"
+   },
+   "ParentKeys": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat",
+     "Identity"
+    ],
+    "key": "(AccountId32, u16)",
+    "value": "Vec<(u64, AccountId32)>",
+    "default": "0x00"
+   },
+   "AlphaDividendsPerSubnet": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity",
+     "Blake2_128Concat"
+    ],
+    "key": "(u16, AccountId32)",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "BlockEmission": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u64",
+    "default": "0x00ca9a3b00000000"
+   },
+   "LastHotkeyEmissionOnNetuid": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat",
+     "Identity"
+    ],
+    "key": "(AccountId32, u16)",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "SubnetLimit": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u16",
+    "default": "0x8000"
+   },
+   "TotalIssuance": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "TotalStake": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "SubnetMovingAlpha": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "FixedI128<frac_bits=32>",
+    "default": "0x55320000000000000000000000000000"
+   },
+   "SubnetMovingPrice": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "FixedI128<frac_bits=32>",
+    "default": "0x00000000000000000000000000000000"
+   },
+   "SubnetVolume": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u128",
+    "default": "0x00000000000000000000000000000000"
+   },
+   "SubnetTAO": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "SubnetTaoProvided": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "SubnetAlphaInEmission": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "SubnetAlphaOutEmission": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "SubnetTaoInEmission": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "SubnetAlphaIn": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "SubnetAlphaInProvided": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "SubnetAlphaOut": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "StakingHotkeys": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat"
+    ],
+    "key": "AccountId32",
+    "value": "Vec<AccountId32>",
+    "default": "0x00"
+   },
+   "OwnedHotkeys": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat"
+    ],
+    "key": "AccountId32",
+    "value": "Vec<AccountId32>",
+    "default": "0x00"
+   },
+   "AutoStakeDestination": {
+    "modifier": "Optional",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat",
+     "Identity"
+    ],
+    "key": "(AccountId32, u16)",
+    "value": "AccountId32",
+    "default": "0x00"
+   },
+   "AutoStakeDestinationColdkeys": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat",
+     "Identity"
+    ],
+    "key": "(AccountId32, u16)",
+    "value": "Vec<AccountId32>",
+    "default": "0x00"
+   },
+   "ColdkeySwapScheduled": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat"
+    ],
+    "key": "AccountId32",
+    "value": "(u32, AccountId32)",
+    "default": "0x000000000000000000000000000000000000000000000000000000000000000000000000"
+   },
+   "TotalHotkeyAlpha": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat",
+     "Identity"
+    ],
+    "key": "(AccountId32, u16)",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "TotalHotkeyAlphaLastEpoch": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat",
+     "Identity"
+    ],
+    "key": "(AccountId32, u16)",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "TotalHotkeyShares": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat",
+     "Identity"
+    ],
+    "key": "(AccountId32, u16)",
+    "value": "FixedU128<frac_bits=64>",
+    "default": "0x00000000000000000000000000000000"
+   },
+   "Alpha": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat",
+     "Blake2_128Concat",
+     "Identity"
+    ],
+    "key": "(AccountId32, AccountId32, u16)",
+    "value": "FixedU128<frac_bits=64>",
+    "default": "0x00000000000000000000000000000000"
+   },
+   "AlphaMapLastKey": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "Option<Vec<u8>>",
+    "default": "0x00"
+   },
+   "TokenSymbol": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "Vec<u8>",
+    "default": "0x10f09d9c8f"
+   },
+   "SubnetTaoFlow": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "i64",
+    "default": "0x0000000000000000"
+   },
+   "SubnetEmaTaoFlow": {
+    "modifier": "Optional",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "(u64, FixedI128<frac_bits=64>)",
+    "default": "0x00"
+   },
+   "TaoFlowCutoff": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "FixedI128<frac_bits=64>",
+    "default": "0x00000000000000000000000000000000"
+   },
+   "FlowNormExponent": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "FixedU128<frac_bits=64>",
+    "default": "0x00000000000000000100000000000000"
+   },
+   "FlowEmaSmoothingFactor": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u64",
+    "default": "0x9dd5ab4beb1a0000"
+   },
+   "UsedWork": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "Vec<u8>",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "MaxRegistrationsPerBlock": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u16",
+    "default": "0x0100"
+   },
+   "TotalNetworks": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u16",
+    "default": "0x0000"
+   },
+   "NetworkImmunityPeriod": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u64",
+    "default": "0x80c6130000000000"
+   },
+   "NetworkMinLockCost": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u64",
+    "default": "0x0010a5d4e8000000"
+   },
+   "NetworkLastLockCost": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u64",
+    "default": "0x0010a5d4e8000000"
+   },
+   "NetworkLockReductionInterval": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u64",
+    "default": "0xc089010000000000"
+   },
+   "SubnetOwnerCut": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u16",
+    "default": "0x142e"
+   },
+   "NetworkRateLimit": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u64",
+    "default": "0x201c000000000000"
+   },
+   "NominatorMinRequiredStake": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "WeightsVersionKeyRateLimit": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u64",
+    "default": "0x0500000000000000"
+   },
+   "LastRateLimitedBlock": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "RateLimitKey<AccountId32>",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "TransferToggle": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "bool",
+    "default": "0x01"
+   },
+   "SubnetLocked": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "LargestLocked": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "Tempo": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u16",
+    "default": "0x6801"
+   },
+   "FirstEmissionBlockNumber": {
+    "modifier": "Optional",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x00"
+   },
+   "SubnetMechanism": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u16",
+    "default": "0x0000"
+   },
+   "SubnetworkN": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u16",
+    "default": "0x0000"
+   },
+   "NetworksAdded": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "bool",
+    "default": "0x00"
+   },
+   "IsNetworkMember": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat",
+     "Identity"
+    ],
+    "key": "(AccountId32, u16)",
+    "value": "bool",
+    "default": "0x00"
+   },
+   "NetworkRegistrationAllowed": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "bool",
+    "default": "0x01"
+   },
+   "NetworkPowRegistrationAllowed": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "bool",
+    "default": "0x01"
+   },
+   "NetworkRegisteredAt": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "PendingServerEmission": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "PendingValidatorEmission": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "PendingRootAlphaDivs": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "PendingOwnerCut": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "BlocksSinceLastStep": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "LastMechansimStepBlock": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "SubnetOwner": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "AccountId32",
+    "default": "0x0000000000000000000000000000000000000000000000000000000000000000"
+   },
+   "SubnetOwnerHotkey": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "AccountId32",
+    "default": "0x0000000000000000000000000000000000000000000000000000000000000000"
+   },
+   "RecycleOrBurn": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "RecycleOrBurnEnum",
+    "default": "0x00"
+   },
+   "ServingRateLimit": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x3200000000000000"
+   },
+   "Rho": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u16",
+    "default": "0x0a00"
+   },
+   "AlphaSigmoidSteepness": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "i16",
+    "default": "0xe803"
+   },
+   "Kappa": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u16",
+    "default": "0xff7f"
+   },
+   "RegistrationsThisInterval": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u16",
+    "default": "0x0000"
+   },
+   "POWRegistrationsThisInterval": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u16",
+    "default": "0x0000"
+   },
+   "BurnRegistrationsThisInterval": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u16",
+    "default": "0x0000"
+   },
+   "MinAllowedUids": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u16",
+    "default": "0x4000"
+   },
+   "MaxAllowedUids": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u16",
+    "default": "0x0010"
+   },
+   "ImmunityPeriod": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u16",
+    "default": "0x0010"
+   },
+   "ActivityCutoff": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u16",
+    "default": "0x8813"
+   },
+   "MaxWeightsLimit": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u16",
+    "default": "0xffff"
+   },
+   "WeightsVersionKey": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "MinAllowedWeights": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u16",
+    "default": "0x0004"
+   },
+   "MaxAllowedValidators": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u16",
+    "default": "0x8000"
+   },
+   "AdjustmentInterval": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u16",
+    "default": "0x6400"
+   },
+   "BondsMovingAverage": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0xa0bb0d0000000000"
+   },
+   "BondsPenalty": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u16",
+    "default": "0xffff"
+   },
+   "BondsResetOn": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "bool",
+    "default": "0x00"
+   },
+   "WeightsSetRateLimit": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x6400000000000000"
+   },
+   "ValidatorPruneLen": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0100000000000000"
+   },
+   "ScalingLawPower": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u16",
+    "default": "0x3200"
+   },
+   "TargetRegistrationsPerInterval": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u16",
+    "default": "0x0200"
+   },
+   "AdjustmentAlpha": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "CommitRevealWeightsEnabled": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "bool",
+    "default": "0x01"
+   },
+   "Burn": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x00e1f50500000000"
+   },
+   "Difficulty": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x8096980000000000"
+   },
+   "MinBurn": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x20a1070000000000"
+   },
+   "MaxBurn": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x00e8764817000000"
+   },
+   "MinDifficulty": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x8096980000000000"
+   },
+   "MaxDifficulty": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0xffffffffffffff3f"
+   },
+   "LastAdjustmentBlock": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "RegistrationsThisBlock": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u16",
+    "default": "0x0000"
+   },
+   "EMAPriceHalvingBlocks": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x8013030000000000"
+   },
+   "RAORecycledForRegistration": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "TxRateLimit": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u64",
+    "default": "0xe803000000000000"
+   },
+   "TxDelegateTakeRateLimit": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u64",
+    "default": "0xc04b030000000000"
+   },
+   "TxChildkeyTakeRateLimit": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u64",
+    "default": "0xc04b030000000000"
+   },
+   "LiquidAlphaOn": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat"
+    ],
+    "key": "u16",
+    "value": "bool",
+    "default": "0x00"
+   },
+   "Yuma3On": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat"
+    ],
+    "key": "u16",
+    "value": "bool",
+    "default": "0x00"
+   },
+   "AlphaValues": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "(u16, u16)",
+    "default": "0x33b366e6"
+   },
+   "SubtokenEnabled": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "bool",
+    "default": "0x00"
+   },
+   "ImmuneOwnerUidsLimit": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "u16",
+    "default": "0x0100"
+   },
+   "StakeWeight": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "Vec<u16>",
+    "default": "0x00"
+   },
+   "Uids": {
+    "modifier": "Optional",
+    "kind": "Map",
+    "hashers": [
+     "Identity",
+     "Blake2_128Concat"
+    ],
+    "key": "(u16, AccountId32)",
+    "value": "u16",
+    "default": "0x00"
+   },
+   "Keys": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity",
+     "Identity"
+    ],
+    "key": "(u16, u16)",
+    "value": "AccountId32",
+    "default": "0x0000000000000000000000000000000000000000000000000000000000000000"
+   },
+   "LoadedEmission": {
+    "modifier": "Optional",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "Vec<(AccountId32, u64, u64)>",
+    "default": "0x00"
+   },
+   "Active": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "Vec<bool>",
+    "default": "0x00"
+   },
+   "Rank": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "Vec<u16>",
+    "default": "0x00"
+   },
+   "Trust": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "Vec<u16>",
+    "default": "0x00"
+   },
+   "Consensus": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "Vec<u16>",
+    "default": "0x00"
+   },
+   "Incentive": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "Vec<u16>",
+    "default": "0x00"
+   },
+   "Dividends": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "Vec<u16>",
+    "default": "0x00"
+   },
+   "Emission": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "Vec<u64>",
+    "default": "0x00"
+   },
+   "LastUpdate": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "Vec<u64>",
+    "default": "0x00"
+   },
+   "ValidatorTrust": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "Vec<u16>",
+    "default": "0x00"
+   },
+   "PruningScores": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "Vec<u16>",
+    "default": "0x00"
+   },
+   "ValidatorPermit": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u16",
+    "value": "Vec<bool>",
+    "default": "0x00"
+   },
+   "Weights": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity",
+     "Identity"
+    ],
+    "key": "(u16, u16)",
+    "value": "Vec<(u16, u16)>",
+    "default": "0x00"
+   },
+   "Bonds": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity",
+     "Identity"
+    ],
+    "key": "(u16, u16)",
+    "value": "Vec<(u16, u16)>",
+    "default": "0x00"
+   },
+   "BlockAtRegistration": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity",
+     "Identity"
+    ],
+    "key": "(u16, u16)",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "Axons": {
+    "modifier": "Optional",
+    "kind": "Map",
+    "hashers": [
+     "Identity",
+     "Blake2_128Concat"
+    ],
+    "key": "(u16, AccountId32)",
+    "value": "AxonInfo",
+    "default": "0x00"
+   },
+   "NeuronCertificates": {
+    "modifier": "Optional",
+    "kind": "Map",
+    "hashers": [
+     "Identity",
+     "Blake2_128Concat"
+    ],
+    "key": "(u16, AccountId32)",
+    "value": "NeuronCertificate",
+    "default": "0x00"
+   },
+   "Prometheus": {
+    "modifier": "Optional",
+    "kind": "Map",
+    "hashers": [
+     "Identity",
+     "Blake2_128Concat"
+    ],
+    "key": "(u16, AccountId32)",
+    "value": "PrometheusInfo",
+    "default": "0x00"
+   },
+   "Identities": {
+    "modifier": "Optional",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat"
+    ],
+    "key": "AccountId32",
+    "value": "ChainIdentity",
+    "default": "0x00"
+   },
+   "IdentitiesV2": {
+    "modifier": "Optional",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat"
+    ],
+    "key": "AccountId32",
+    "value": "ChainIdentityV2",
+    "default": "0x00"
+   },
+   "SubnetIdentities": {
+    "modifier": "Optional",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat"
+    ],
+    "key": "u16",
+    "value": "SubnetIdentity",
+    "default": "0x00"
+   },
+   "SubnetIdentitiesV2": {
+    "modifier": "Optional",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat"
+    ],
+    "key": "u16",
+    "value": "SubnetIdentityV2",
+    "default": "0x00"
+   },
+   "SubnetIdentitiesV3": {
+    "modifier": "Optional",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat"
+    ],
+    "key": "u16",
+    "value": "SubnetIdentityV3",
+    "default": "0x00"
+   },
+   "TransactionKeyLastBlock": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat",
+     "Identity",
+     "Identity"
+    ],
+    "key": "(AccountId32, u16, u16)",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "LastTxBlock": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "AccountId32",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "LastTxBlockChildKeyTake": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "AccountId32",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "LastTxBlockDelegateTake": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "AccountId32",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "StakeThreshold": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "WeightCommits": {
+    "modifier": "Optional",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat",
+     "Twox64Concat"
+    ],
+    "key": "(u16, AccountId32)",
+    "value": "Vec<(H256, u64, u64, u64)>",
+    "default": "0x00"
+   },
+   "TimelockedWeightCommits": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat",
+     "Twox64Concat"
+    ],
+    "key": "(u16, u64)",
+    "value": "Vec<(AccountId32, u64, BoundedVec<u8>, u64)>",
+    "default": "0x00"
+   },
+   "CRV3WeightCommits": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat",
+     "Twox64Concat"
+    ],
+    "key": "(u16, u64)",
+    "value": "Vec<(AccountId32, BoundedVec<u8>, u64)>",
+    "default": "0x00"
+   },
+   "CRV3WeightCommitsV2": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat",
+     "Twox64Concat"
+    ],
+    "key": "(u16, u64)",
+    "value": "Vec<(AccountId32, u64, BoundedVec<u8>, u64)>",
+    "default": "0x00"
+   },
+   "RevealPeriodEpochs": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0100000000000000"
+   },
+   "LastColdkeyHotkeyStakeBlock": {
+    "modifier": "Optional",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat",
+     "Twox64Concat"
+    ],
+    "key": "(AccountId32, AccountId32)",
+    "value": "u64",
+    "default": "0x00"
+   },
+   "StakingOperationRateLimiter": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat",
+     "Blake2_128Concat",
+     "Identity"
+    ],
+    "key": "(AccountId32, AccountId32, u16)",
+    "value": "bool",
+    "default": "0x00"
+   },
+   "RootClaimableThreshold": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat"
+    ],
+    "key": "u16",
+    "value": "FixedI128<frac_bits=32>",
+    "default": "0x0000000020a107000000000000000000"
+   },
+   "RootClaimable": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat"
+    ],
+    "key": "AccountId32",
+    "value": "BTreeMap<u16, FixedI128<frac_bits=32>>",
+    "default": "0x00"
+   },
+   "RootClaimed": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity",
+     "Blake2_128Concat",
+     "Blake2_128Concat"
+    ],
+    "key": "(u16, AccountId32, AccountId32)",
+    "value": "u128",
+    "default": "0x00000000000000000000000000000000"
+   },
+   "RootClaimType": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Blake2_128Concat"
+    ],
+    "key": "AccountId32",
+    "value": "RootClaimTypeEnum",
+    "default": "0x00"
+   },
+   "StakingColdkeysByIndex": {
+    "modifier": "Optional",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "u64",
+    "value": "AccountId32",
+    "default": "0x00"
+   },
+   "StakingColdkeys": {
+    "modifier": "Optional",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "AccountId32",
+    "value": "u64",
+    "default": "0x00"
+   },
+   "NumStakingColdkeys": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "NumRootClaim": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u64",
+    "default": "0x0500000000000000"
+   },
+   "AssociatedEvmAddress": {
+    "modifier": "Optional",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat",
+     "Twox64Concat"
+    ],
+    "key": "(u16, u16)",
+    "value": "(H160, u64)",
+    "default": "0x00"
+   },
+   "SubnetLeases": {
+    "modifier": "Optional",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat"
+    ],
+    "key": "u32",
+    "value": "SubnetLease<AccountId32, u32, u64>",
+    "default": "0x00"
+   },
+   "SubnetLeaseShares": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat",
+     "Identity"
+    ],
+    "key": "(u32, AccountId32)",
+    "value": "FixedU128<frac_bits=64>",
+    "default": "0x00000000000000000000000000000000"
+   },
+   "SubnetUidToLeaseId": {
+    "modifier": "Optional",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat"
+    ],
+    "key": "u16",
+    "value": "u32",
+    "default": "0x00"
+   },
+   "NextSubnetLeaseId": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u32",
+    "default": "0x00000000"
+   },
+   "AccumulatedLeaseDividends": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat"
+    ],
+    "key": "u32",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "CommitRevealWeightsVersion": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u16",
+    "default": "0x0400"
+   },
+   "NetworkRegistrationStartBlock": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "MechanismCountCurrent": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat"
+    ],
+    "key": "u16",
+    "value": "u8",
+    "default": "0x01"
+   },
+   "MechanismEmissionSplit": {
+    "modifier": "Optional",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat"
+    ],
+    "key": "u16",
+    "value": "Vec<u16>",
+    "default": "0x00"
+   },
+   "HasMigrationRun": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Identity"
+    ],
+    "key": "Vec<u8>",
+    "value": "bool",
+    "default": "0x00"
+   },
+   "PendingChildKeyCooldown": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   }
+  },
+  "Proxy": {
+   "Proxies": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat"
+    ],
+    "key": "AccountId32",
+    "value": "(BoundedVec<ProxyDefinition<AccountId32, ProxyType, u32>>, u64)",
+    "default": "0x000000000000000000"
+   },
+   "Announcements": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat"
+    ],
+    "key": "AccountId32",
+    "value": "(BoundedVec<Announcement<AccountId32, H256, u32>>, u64)",
+    "default": "0x000000000000000000"
+   }
+  },
+  "SafeMode": {
+   "EnteredUntil": {
+    "modifier": "Optional",
+    "kind": "Plain",
+    "value": "u32",
+    "default": "0x00"
+   },
+   "Deposits": {
+    "modifier": "Optional",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat",
+     "Twox64Concat"
+    ],
+    "key": "(AccountId32, u32)",
+    "value": "u64",
+    "default": "0x00"
+   }
+  },
+  "Swap": {
+   "FeeRate": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat"
+    ],
+    "key": "u16",
+    "value": "u16",
+    "default": "0x2100"
+   },
+   "FeeGlobalTao": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat"
+    ],
+    "key": "u16",
+    "value": "FixedU128<frac_bits=64>",
+    "default": "0x00000000000000000000000000000000"
+   },
+   "FeeGlobalAlpha": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat"
+    ],
+    "key": "u16",
+    "value": "FixedU128<frac_bits=64>",
+    "default": "0x00000000000000000000000000000000"
+   },
+   "Ticks": {
+    "modifier": "Optional",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat",
+     "Twox64Concat"
+    ],
+    "key": "(u16, TickIndex)",
+    "value": "Tick",
+    "default": "0x00"
+   },
+   "SwapV3Initialized": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat"
+    ],
+    "key": "u16",
+    "value": "bool",
+    "default": "0x00"
+   },
+   "AlphaSqrtPrice": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat"
+    ],
+    "key": "u16",
+    "value": "FixedU128<frac_bits=64>",
+    "default": "0x00000000000000000000000000000000"
+   },
+   "CurrentTick": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat"
+    ],
+    "key": "u16",
+    "value": "TickIndex",
+    "default": "0x00000000"
+   },
+   "CurrentLiquidity": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "EnabledUserLiquidity": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat"
+    ],
+    "key": "u16",
+    "value": "bool",
+    "default": "0x00"
+   },
+   "Positions": {
+    "modifier": "Optional",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat",
+     "Twox64Concat",
+     "Twox64Concat"
+    ],
+    "key": "(u16, AccountId32, PositionId)",
+    "value": "Position",
+    "default": "0x00"
+   },
+   "LastPositionId": {
+    "modifier": "Default",
+    "kind": "Plain",
+    "value": "u128",
+    "default": "0x00000000000000000000000000000000"
+   },
+   "TickIndexBitmapWords": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat",
+     "Twox64Concat",
+     "Twox64Concat"
+    ],
+    "key": "(u16, LayerLevel, u32)",
+    "value": "u128",
+    "default": "0x00000000000000000000000000000000"
+   },
+   "ScrapReservoirTao": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   },
+   "ScrapReservoirAlpha": {
+    "modifier": "Default",
+    "kind": "Map",
+    "hashers": [
+     "Twox64Concat"
+    ],
+    "key": "u16",
+    "value": "u64",
+    "default": "0x0000000000000000"
+   }
+  }
+ },
+ "types": {
+  "pallet_subtensor::RateLimitKey": [
+   {
+    "index": 0,
+    "name": "SetSNOwnerHotkey",
+    "fields": [
+     "NetUid"
+    ]
+   },
+   {
+    "index": 1,
+    "name": "OwnerHyperparamUpdate",
+    "fields": [
+     "NetUid",
+     "Hyperparameter"
+    ]
+   },
+   {
+    "index": 2,
+    "name": "NetworkLastRegistered",
+    "fields": []
+   },
+   {
+    "index": 3,
+    "name": "LastTxBlock",
+    "fields": [
+     "AccountId"
+    ]
+   },
+   {
+    "index": 4,
+    "name": "LastTxBlockChildKeyTake",
+    "fields": [
+     "AccountId"
+    ]
+   },
+   {
+    "index": 5,
+    "name": "LastTxBlockDelegateTake",
+    "fields": [
+     "AccountId"
+    ]
+   }
+  ]
+ }
+}

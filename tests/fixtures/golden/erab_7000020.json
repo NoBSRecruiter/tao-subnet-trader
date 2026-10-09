@@ -1,0 +1,1759 @@
+{
+ "fixture": "erab_7000020",
+ "purpose": "Era-B (swap v3) pools of SN1/SN19/SN64 at 7,000,020: SubnetTAO/AlphaIn plus Swap.AlphaSqrtPrice and Swap.CurrentLiquidity (virtual reserves L*sqrtP, L/sqrtP) with sim_swap buys of 1/10/100 TAO and sells of about 1/10/100 TAO of alpha (32-byte SimSwapResult at this spec)",
+ "endpoint": "https://bittensor-finney.api.onfinality.io/public",
+ "captured_utc": "2026-10-09T03:28:05Z",
+ "snapshots": [
+  {
+   "block": 7000020,
+   "block_hash": "0x8a362ac93297572fa4abfbf8f89dade28054ec9d835165f360111c44fd286805",
+   "spec_version": 348,
+   "transaction_version": 1,
+   "storage": [
+    {
+     "item": "SubtensorModule.SubnetMovingAlpha",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf055565ef4b6311933743a027c3602fbabe20",
+     "value": "0x2aa91300000000000000000000000000"
+    },
+    {
+     "item": "SubtensorModule.EmissionGateBar",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf05557c9b0d2964cc73e7519676c3cc4d5df9",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.EmissionBarRank",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555d33bd686290d014475513443305882be",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.EmissionGateExponent",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf055588c70e8dd0cf4af3aeb977ba2eee1df4",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.EmissionBarQuantile",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555a772007dde2ed63e0f21b5f9d7f16650",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TaoWeight",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf05556b2684762c3b1e22ffb4a92939298741",
+     "value": "0x7a14ae47e17a142e"
+    },
+    {
+     "item": "SubtensorModule.SubnetOwnerCut",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555e799290d4a088ada42cf32b591c69203",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubnetLimit",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555a336e39c4086c4d5f43b7e6dff8a04f6",
+     "value": "0x8000"
+    },
+    {
+     "item": "SubtensorModule.NetworkImmunityPeriod",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555be4bea261cfe8a2b911e689c943bbd43",
+     "value": "0x002f0d0000000000"
+    },
+    {
+     "item": "SubtensorModule.NetworkRateLimit",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf05559432d347db1cb70ce515b7a097bb84d9",
+     "value": "0x8070000000000000"
+    },
+    {
+     "item": "SubtensorModule.NetworkLastLockCost",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555de7b71faea4b83188e1aa22b1f79237c",
+     "value": "0xeedfe16238000000"
+    },
+    {
+     "item": "SubtensorModule.NetworkMinLockCost",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555af4319a20ed58ed2c549e6b6ea25fe88",
+     "value": "0x00ca9a3b00000000"
+    },
+    {
+     "item": "SubtensorModule.NetworkLockReductionInterval",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf055567d5740b25f3ae7aea68123bdcdc6bd4",
+     "value": "0x00e1000000000000"
+    },
+    {
+     "item": "SubtensorModule.TaoInRefundDeploymentBlock",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555dc425fa12c0816e636af7a23ec31d977",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.NominatorMinRequiredStake",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555600828b736cfd977b24a0d2528a8a2e8",
+     "value": "0x8096980000000000"
+    },
+    {
+     "item": "SubtensorModule.TotalIssuance",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf055557c875e4cff74148e4628f264b974c80",
+     "value": "0x411c9882fbfc2400"
+    },
+    {
+     "item": "SubtensorModule.DissolveCleanupQueue",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf05551b3f4fb9309f90f6e26d5767a2118eca",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.ShortsEnabled",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf055528fe890359cba5d2a2727a72693689a3",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.NetworkLastRegistered",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555523c2ca14b63d5abaac7b4e6c1f0b65f",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.BlockEmission",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf055534ebdb22bbd04c61ef98f1974907c68d",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubnetTAO",
+     "args": [
+      0
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05557a57dce016211512d1700561066b85a30000",
+     "value": "0xe892366628271400"
+    },
+    {
+     "item": "SubtensorModule.LastRateLimitedBlock",
+     "args": [
+      "NetworkLastRegistered"
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05557e1acdaa2002f0505824e25a590c1b7102",
+     "value": "0x313e6a0000000000"
+    },
+    {
+     "item": "Balances.TotalIssuance",
+     "args": [],
+     "hashers": [],
+     "key": "0xc2261276cc9d1f8598ea4b6a74b15c2f57c875e4cff74148e4628f264b974c80",
+     "value": "0x528be222b3fb0a00"
+    },
+    {
+     "item": "SafeMode.EnteredUntil",
+     "args": [],
+     "hashers": [],
+     "key": "0xf35b44951b86069d9273a961f1e3fbeb1fd1ae5c7c15443bedf0311e151a2a4a",
+     "value": null
+    },
+    {
+     "item": "Timestamp.Now",
+     "args": [],
+     "hashers": [],
+     "key": "0xf0c365c3cf59d671eb72da0e7a4113c49f1f0515f462cdcf84e0f1d6045dfcbb",
+     "value": "0x2007bfd79a010000"
+    },
+    {
+     "item": "System.Number",
+     "args": [],
+     "hashers": [],
+     "key": "0x26aa394eea5630e07c48ae0c9558cef702a5c1b19ab7a04f536c519aca4983ac",
+     "value": "0xd4cf6a00"
+    },
+    {
+     "item": "SubtensorModule.NetworksAdded",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05550e30450fc4d507a846032a7fa65d9a430100",
+     "value": "0x01"
+    },
+    {
+     "item": "SubtensorModule.NetworkRegisteredAt",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555271d29b9b717ce3d8c571f1cbc180fa20100",
+     "value": "0xe0da160000000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetTAO",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05557a57dce016211512d1700561066b85a30100",
+     "value": "0xc4dd630114150000"
+    },
+    {
+     "item": "SubtensorModule.SubnetAlphaIn",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05552ce12f7007574647d692ac7edf8b7a530100",
+     "value": "0x289bf41d34d50800"
+    },
+    {
+     "item": "SubtensorModule.SubnetAlphaOut",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05557837978cc6746112a2c9e680a18cfcb90100",
+     "value": "0x1de2e7f876b50300"
+    },
+    {
+     "item": "SubtensorModule.SubnetProtocolAlpha",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ff7ebe49c2927c367a84c8fd80bbce7d0100",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubnetMovingPrice",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05551abf1b0f4fd14f7b72ee50f9d91d59150100",
+     "value": "0x9ca96302000000000000000000000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetFastMovingPrice",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555035ba74afd4748c0f821ed38ecf524360100",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.RootProp",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555010cf3b550f933211beccf08e00433e40100",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.MinerBurned",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05551eac6222ebba7feba4ca36a94736815e0100",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubnetEmissionEnabled",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555c97bb5c5631e5f593b5bd2da84a5fa160100",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubtokenEnabled",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e9348e9224ea06c9c2da12ce69e619c50100",
+     "value": "0x01"
+    },
+    {
+     "item": "SubtensorModule.NetworkRegistrationAllowed",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d5fe74da02c7b4bbb340fb368eee3e770100",
+     "value": "0x01"
+    },
+    {
+     "item": "SubtensorModule.FirstEmissionBlockNumber",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e4cfee4e36f2419d8863a3fda65c428f0100",
+     "value": "0x8bc84f0000000000"
+    },
+    {
+     "item": "SubtensorModule.Tempo",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05557641384bb339f3758acddfd7053d33170100",
+     "value": "0x6300"
+    },
+    {
+     "item": "SubtensorModule.LastEpochBlock",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055590010c37124c14146041452f9ffba0df0100",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.EMAPriceHalvingBlocks",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05550c8a87705ba85a17daa1bb11f7899de10100",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubnetTaoInEmission",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555dd62ae7237581e8f6a684f1ecae062150100",
+     "value": "0x7077800000000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetExcessTao",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555857b0a5b920bc5e41cb0695a4b7d38e70100",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubnetAlphaOutEmission",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055525257fbc5458419b7bc7e8c44c5215210100",
+     "value": "0x00ca9a3b00000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetAlphaInEmission",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05551905df3b2516a166b6f9fba54fef1cd80100",
+     "value": "0xb9f6d43500000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetTaoFlow",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055522c7158f6b2746f4085b8920570362580100",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubnetVolume",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553c3226e141696000b4b239c65bc2b2b40100",
+     "value": "0x55fc67fe2e3202000000000000000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetOwner",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055536e3e82152c8758267395fe524fbbd160100",
+     "value": "0xe2ee75ea11e4c5b7f5dac2e735278cfa0b1590c9856690f66653bdd85b709104"
+    },
+    {
+     "item": "SubtensorModule.SubnetOwnerHotkey",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055568b7553499633fe05caf4d8a51aefe5c0100",
+     "value": "0xe2ee75ea11e4c5b7f5dac2e735278cfa0b1590c9856690f66653bdd85b709104"
+    },
+    {
+     "item": "SubtensorModule.OwnerCutEnabled",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055584287ee5b733a503a6d7f008ece51ba70100",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.OwnerCutAutoLockEnabled",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05558856bedc66ab9c3ae426e5b6b52c8a1b0100",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalAlphaStaked",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05554f7d0814270246a648a7714c1e45cfa80100",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.MaxAllowedValidators",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555741b883d2519eed91857993bfd4df0ba0100",
+     "value": "0x8000"
+    },
+    {
+     "item": "SubtensorModule.SubnetEpochConsensus",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055512a2afa59d7389e40b256460d9b1fdcd0100",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.LiquidAlphaConsensusMode",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055535c32912d86f933ce83ce4a034b264f20100",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.PendingOwnerCut",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555619fc1d902020b6627d90e16de3dd5520100",
+     "value": "0xb2c7c1f600000000"
+    },
+    {
+     "item": "Swap.SwapBalancer",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836e8129c00c7f7dc3242d3df9ca2338dc9af1577fbf1d628fdd0100",
+     "value": null
+    },
+    {
+     "item": "Swap.FeeRate",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836e9e110c291062e3d22e10ec17c4e83ebdf1577fbf1d628fdd0100",
+     "value": null
+    },
+    {
+     "item": "Swap.BalancerTaoReservoir",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836e84af79154d855fac632e03f22d3f0aa4f1577fbf1d628fdd0100",
+     "value": null
+    },
+    {
+     "item": "Swap.BalancerAlphaReservoir",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836ea21fa33118f2741105fd571c0e9586e9f1577fbf1d628fdd0100",
+     "value": null
+    },
+    {
+     "item": "Swap.AlphaSqrtPrice",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836e0366558e06667059cde5be67d7c3e2d1f1577fbf1d628fdd0100",
+     "value": "0xf3dbcb6a568bb7180000000000000000"
+    },
+    {
+     "item": "Swap.CurrentLiquidity",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836ec87ed115f906e6420cdcafb441786bf4f1577fbf1d628fdd0100",
+     "value": "0x9c115d8d46da0000"
+    },
+    {
+     "item": "Swap.CurrentTick",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836e591f20834574415c86ad0ca587ea5f4cf1577fbf1d628fdd0100",
+     "value": "0x5b49ffff"
+    },
+    {
+     "item": "SubtensorModule.NetworksAdded",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05550e30450fc4d507a846032a7fa65d9a431300",
+     "value": "0x01"
+    },
+    {
+     "item": "SubtensorModule.NetworkRegisteredAt",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555271d29b9b717ce3d8c571f1cbc180fa21300",
+     "value": "0xe8d81d0000000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetTAO",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05557a57dce016211512d1700561066b85a31300",
+     "value": "0xc2c517a07a180000"
+    },
+    {
+     "item": "SubtensorModule.SubnetAlphaIn",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05552ce12f7007574647d692ac7edf8b7a531300",
+     "value": "0x530dce6b73370900"
+    },
+    {
+     "item": "SubtensorModule.SubnetAlphaOut",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05557837978cc6746112a2c9e680a18cfcb91300",
+     "value": "0xd2c6d54ed8a70300"
+    },
+    {
+     "item": "SubtensorModule.SubnetProtocolAlpha",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ff7ebe49c2927c367a84c8fd80bbce7d1300",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubnetMovingPrice",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05551abf1b0f4fd14f7b72ee50f9d91d59151300",
+     "value": "0xee94a502000000000000000000000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetFastMovingPrice",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555035ba74afd4748c0f821ed38ecf524361300",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.RootProp",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555010cf3b550f933211beccf08e00433e41300",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.MinerBurned",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05551eac6222ebba7feba4ca36a94736815e1300",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubnetEmissionEnabled",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555c97bb5c5631e5f593b5bd2da84a5fa161300",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubtokenEnabled",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e9348e9224ea06c9c2da12ce69e619c51300",
+     "value": "0x01"
+    },
+    {
+     "item": "SubtensorModule.NetworkRegistrationAllowed",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d5fe74da02c7b4bbb340fb368eee3e771300",
+     "value": "0x01"
+    },
+    {
+     "item": "SubtensorModule.FirstEmissionBlockNumber",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e4cfee4e36f2419d8863a3fda65c428f1300",
+     "value": "0x8bc84f0000000000"
+    },
+    {
+     "item": "SubtensorModule.Tempo",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05557641384bb339f3758acddfd7053d33171300",
+     "value": "0x6801"
+    },
+    {
+     "item": "SubtensorModule.LastEpochBlock",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055590010c37124c14146041452f9ffba0df1300",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.EMAPriceHalvingBlocks",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05550c8a87705ba85a17daa1bb11f7899de11300",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubnetTaoInEmission",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555dd62ae7237581e8f6a684f1ecae062151300",
+     "value": "0x71519e0000000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetExcessTao",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555857b0a5b920bc5e41cb0695a4b7d38e71300",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubnetAlphaOutEmission",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055525257fbc5458419b7bc7e8c44c5215211300",
+     "value": "0x00ca9a3b00000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetAlphaInEmission",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05551905df3b2516a166b6f9fba54fef1cd81300",
+     "value": "0x00ca9a3b00000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetTaoFlow",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055522c7158f6b2746f4085b8920570362581300",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubnetVolume",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553c3226e141696000b4b239c65bc2b2b41300",
+     "value": "0x9952acdf9ca004000000000000000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetOwner",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055536e3e82152c8758267395fe524fbbd161300",
+     "value": "0x0814a83caceb64172fe9d389d55a1a2ec385f1e9f28625c2482547cf7c264c16"
+    },
+    {
+     "item": "SubtensorModule.SubnetOwnerHotkey",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055568b7553499633fe05caf4d8a51aefe5c1300",
+     "value": "0x0af1bff38638abb04344d0ba5c236df20b7f75605045812360b61c73fefbcd66"
+    },
+    {
+     "item": "SubtensorModule.OwnerCutEnabled",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055584287ee5b733a503a6d7f008ece51ba71300",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.OwnerCutAutoLockEnabled",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05558856bedc66ab9c3ae426e5b6b52c8a1b1300",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalAlphaStaked",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05554f7d0814270246a648a7714c1e45cfa81300",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.MaxAllowedValidators",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555741b883d2519eed91857993bfd4df0ba1300",
+     "value": "0x4000"
+    },
+    {
+     "item": "SubtensorModule.SubnetEpochConsensus",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055512a2afa59d7389e40b256460d9b1fdcd1300",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.LiquidAlphaConsensusMode",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055535c32912d86f933ce83ce4a034b264f21300",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.PendingOwnerCut",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555619fc1d902020b6627d90e16de3dd5521300",
+     "value": "0x6a8ede840a000000"
+    },
+    {
+     "item": "Swap.SwapBalancer",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836e8129c00c7f7dc3242d3df9ca2338dc9aeee80a5cc58ebced1300",
+     "value": null
+    },
+    {
+     "item": "Swap.FeeRate",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836e9e110c291062e3d22e10ec17c4e83ebdeee80a5cc58ebced1300",
+     "value": null
+    },
+    {
+     "item": "Swap.BalancerTaoReservoir",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836e84af79154d855fac632e03f22d3f0aa4eee80a5cc58ebced1300",
+     "value": null
+    },
+    {
+     "item": "Swap.BalancerAlphaReservoir",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836ea21fa33118f2741105fd571c0e9586e9eee80a5cc58ebced1300",
+     "value": null
+    },
+    {
+     "item": "Swap.AlphaSqrtPrice",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836e0366558e06667059cde5be67d7c3e2d1eee80a5cc58ebced1300",
+     "value": "0x115ba4eaba85131a0000000000000000"
+    },
+    {
+     "item": "Swap.CurrentLiquidity",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836ec87ed115f906e6420cdcafb441786bf4eee80a5cc58ebced1300",
+     "value": "0x4cc5ecb64af00000"
+    },
+    {
+     "item": "Swap.CurrentTick",
+     "args": [
+      19
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836e591f20834574415c86ad0ca587ea5f4ceee80a5cc58ebced1300",
+     "value": "0x8a4dffff"
+    },
+    {
+     "item": "SubtensorModule.NetworksAdded",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05550e30450fc4d507a846032a7fa65d9a434000",
+     "value": "0x01"
+    },
+    {
+     "item": "SubtensorModule.NetworkRegisteredAt",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555271d29b9b717ce3d8c571f1cbc180fa24000",
+     "value": "0x5f24450000000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetTAO",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05557a57dce016211512d1700561066b85a34000",
+     "value": "0xa8dd454d6ca80000"
+    },
+    {
+     "item": "SubtensorModule.SubnetAlphaIn",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05552ce12f7007574647d692ac7edf8b7a534000",
+     "value": "0x78c2ff357d7f0700"
+    },
+    {
+     "item": "SubtensorModule.SubnetAlphaOut",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05557837978cc6746112a2c9e680a18cfcb94000",
+     "value": "0xe604dc7797a80500"
+    },
+    {
+     "item": "SubtensorModule.SubnetProtocolAlpha",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ff7ebe49c2927c367a84c8fd80bbce7d4000",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubnetMovingPrice",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05551abf1b0f4fd14f7b72ee50f9d91d59154000",
+     "value": "0x7a783f16000000000000000000000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetFastMovingPrice",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555035ba74afd4748c0f821ed38ecf524364000",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.RootProp",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555010cf3b550f933211beccf08e00433e44000",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.MinerBurned",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05551eac6222ebba7feba4ca36a94736815e4000",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubnetEmissionEnabled",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555c97bb5c5631e5f593b5bd2da84a5fa164000",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubtokenEnabled",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e9348e9224ea06c9c2da12ce69e619c54000",
+     "value": "0x01"
+    },
+    {
+     "item": "SubtensorModule.NetworkRegistrationAllowed",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d5fe74da02c7b4bbb340fb368eee3e774000",
+     "value": "0x01"
+    },
+    {
+     "item": "SubtensorModule.FirstEmissionBlockNumber",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e4cfee4e36f2419d8863a3fda65c428f4000",
+     "value": "0x8bc84f0000000000"
+    },
+    {
+     "item": "SubtensorModule.Tempo",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05557641384bb339f3758acddfd7053d33174000",
+     "value": "0x6801"
+    },
+    {
+     "item": "SubtensorModule.LastEpochBlock",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055590010c37124c14146041452f9ffba0df4000",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.EMAPriceHalvingBlocks",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05550c8a87705ba85a17daa1bb11f7899de14000",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubnetTaoInEmission",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555dd62ae7237581e8f6a684f1ecae062154000",
+     "value": "0x3b383b0500000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetExcessTao",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555857b0a5b920bc5e41cb0695a4b7d38e74000",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubnetAlphaOutEmission",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055525257fbc5458419b7bc7e8c44c5215214000",
+     "value": "0x00ca9a3b00000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetAlphaInEmission",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05551905df3b2516a166b6f9fba54fef1cd84000",
+     "value": "0x00ca9a3b00000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetTaoFlow",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055522c7158f6b2746f4085b8920570362584000",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubnetVolume",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553c3226e141696000b4b239c65bc2b2b44000",
+     "value": "0x1c57481949790c000000000000000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetOwner",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055536e3e82152c8758267395fe524fbbd164000",
+     "value": "0x9498c2810274290765e5f04a1fbbae1fec9f152c5b1d5bf702606deddafa3626"
+    },
+    {
+     "item": "SubtensorModule.SubnetOwnerHotkey",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055568b7553499633fe05caf4d8a51aefe5c4000",
+     "value": "0x8478bde728923a15b6a88f6b7ccdab839a476564ffa348b476e9cb9571e35720"
+    },
+    {
+     "item": "SubtensorModule.OwnerCutEnabled",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055584287ee5b733a503a6d7f008ece51ba74000",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.OwnerCutAutoLockEnabled",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05558856bedc66ab9c3ae426e5b6b52c8a1b4000",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalAlphaStaked",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05554f7d0814270246a648a7714c1e45cfa84000",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.MaxAllowedValidators",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555741b883d2519eed91857993bfd4df0ba4000",
+     "value": "0x4000"
+    },
+    {
+     "item": "SubtensorModule.SubnetEpochConsensus",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055512a2afa59d7389e40b256460d9b1fdcd4000",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.LiquidAlphaConsensusMode",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055535c32912d86f933ce83ce4a034b264f24000",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.PendingOwnerCut",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555619fc1d902020b6627d90e16de3dd5524000",
+     "value": "0xb09aa7670c000000"
+    },
+    {
+     "item": "Swap.SwapBalancer",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836e8129c00c7f7dc3242d3df9ca2338dc9a62cf9476b03dd8654000",
+     "value": null
+    },
+    {
+     "item": "Swap.FeeRate",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836e9e110c291062e3d22e10ec17c4e83ebd62cf9476b03dd8654000",
+     "value": null
+    },
+    {
+     "item": "Swap.BalancerTaoReservoir",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836e84af79154d855fac632e03f22d3f0aa462cf9476b03dd8654000",
+     "value": null
+    },
+    {
+     "item": "Swap.BalancerAlphaReservoir",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836ea21fa33118f2741105fd571c0e9586e962cf9476b03dd8654000",
+     "value": null
+    },
+    {
+     "item": "Swap.AlphaSqrtPrice",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836e0366558e06667059cde5be67d7c3e2d162cf9476b03dd8654000",
+     "value": "0xc9d73f519860d74b0000000000000000"
+    },
+    {
+     "item": "Swap.CurrentLiquidity",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836ec87ed115f906e6420cdcafb441786bf462cf9476b03dd8654000",
+     "value": "0x97a32cc41b390200"
+    },
+    {
+     "item": "Swap.CurrentTick",
+     "args": [
+      64
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836e591f20834574415c86ad0ca587ea5f4c62cf9476b03dd8654000",
+     "value": "0xf4a0ffff"
+    }
+   ],
+   "runtime_api": [
+    {
+     "method": "SwapRuntimeApi_current_alpha_price",
+     "args": {
+      "netuid": 1
+     },
+     "args_hex": "0x0100",
+     "result": "0x2e3e8e0000000000"
+    },
+    {
+     "method": "SwapRuntimeApi_sim_swap_tao_for_alpha",
+     "args": {
+      "netuid": 1,
+      "tao_rao": 1000000000
+     },
+     "args_hex": "0x010000ca9a3b00000000",
+     "result": "0x051b933b0000000061b175f618000000fbae0700000000000000000000000000"
+    },
+    {
+     "method": "SwapRuntimeApi_sim_swap_tao_for_alpha",
+     "args": {
+      "netuid": 1,
+      "tao_rao": 10000000000
+     },
+     "args_hex": "0x010000e40b5402000000",
+     "result": "0x2b0ebf53020000005ec0cc87f9000000d5d54c00000000000000000000000000"
+    },
+    {
+     "method": "SwapRuntimeApi_sim_swap_tao_for_alpha",
+     "args": {
+      "netuid": 1,
+      "tao_rao": 100000000000
+     },
+     "args_hex": "0x010000e8764817000000",
+     "result": "0xac8d764517000000111ccaa8b5090000545a0003000000000000000000000000"
+    },
+    {
+     "method": "SwapRuntimeApi_sim_swap_alpha_for_tao",
+     "args": {
+      "netuid": 1,
+      "alpha_rao": 107272764827
+     },
+     "args_hex": "0x01009b7df4f918000000",
+     "result": "0x9d72923b00000000df41bcf6180000000000000000000000bc3b380300000000"
+    },
+    {
+     "method": "SwapRuntimeApi_sim_swap_alpha_for_tao",
+     "args": {
+      "netuid": 1,
+      "alpha_rao": 1072727648276
+     },
+     "args_hex": "0x010014e88cc3f9000000",
+     "result": "0xa54c7d5302000000b8925aa3f900000000000000000000005c55322000000000"
+    },
+    {
+     "method": "SwapRuntimeApi_sim_swap_alpha_for_tao",
+     "args": {
+      "netuid": 1,
+      "alpha_rao": 10727276482766
+     },
+     "args_hex": "0x0100ce1081a3c1090000",
+     "result": "0x4c60e02b1700000034bb8961c009000000000000000000009a55f74101000000"
+    },
+    {
+     "method": "SwapRuntimeApi_current_alpha_price",
+     "args": {
+      "netuid": 19
+     },
+     "args_hex": "0x1300",
+     "result": "0x72519e0000000000"
+    },
+    {
+     "method": "SwapRuntimeApi_sim_swap_tao_for_alpha",
+     "args": {
+      "netuid": 19,
+      "tao_rao": 1000000000
+     },
+     "args_hex": "0x130000ca9a3b00000000",
+     "result": "0x051b933b00000000c52c9f6d16000000fbae0700000000000000000000000000"
+    },
+    {
+     "method": "SwapRuntimeApi_sim_swap_tao_for_alpha",
+     "args": {
+      "netuid": 19,
+      "tao_rao": 10000000000
+     },
+     "args_hex": "0x130000e40b5402000000",
+     "result": "0x2b0ebf5302000000bb7a0835e0000000d5d54c00000000000000000000000000"
+    },
+    {
+     "method": "SwapRuntimeApi_sim_swap_tao_for_alpha",
+     "args": {
+      "netuid": 19,
+      "tao_rao": 100000000000
+     },
+     "args_hex": "0x130000e8764817000000",
+     "result": "0xac8d7645170000000bfbe59aba080000545a0003000000000000000000000000"
+    },
+    {
+     "method": "SwapRuntimeApi_sim_swap_alpha_for_tao",
+     "args": {
+      "netuid": 19,
+      "alpha_rao": 96380538469
+     },
+     "args_hex": "0x1300654eba7016000000",
+     "result": "0x048a923b000000007dc3d56d160000000000000000000000e88ae40200000000"
+    },
+    {
+     "method": "SwapRuntimeApi_sim_swap_alpha_for_tao",
+     "args": {
+      "netuid": 19,
+      "alpha_rao": 963805384699
+     },
+     "args_hex": "0x1300fb0f4767e0000000",
+     "result": "0x346f865302000000e5a2594ae00000000000000000000000166ded1c00000000"
+    },
+    {
+     "method": "SwapRuntimeApi_sim_swap_alpha_for_tao",
+     "args": {
+      "netuid": 19,
+      "alpha_rao": 9638053846995
+     },
+     "args_hex": "0x1300d39fc608c4080000",
+     "result": "0x91506b2f17000000f35c80e7c20800000000000000000000e042462101000000"
+    },
+    {
+     "method": "SwapRuntimeApi_current_alpha_price",
+     "args": {
+      "netuid": 64
+     },
+     "args_hex": "0x4000",
+     "result": "0x48383b0500000000"
+    },
+    {
+     "method": "SwapRuntimeApi_sim_swap_tao_for_alpha",
+     "args": {
+      "netuid": 64,
+      "tao_rao": 1000000000
+     },
+     "args_hex": "0x400000ca9a3b00000000",
+     "result": "0x051b933b00000000f4f2c6a602000000fbae0700000000000000000000000000"
+    },
+    {
+     "method": "SwapRuntimeApi_sim_swap_tao_for_alpha",
+     "args": {
+      "netuid": 64,
+      "tao_rao": 10000000000
+     },
+     "args_hex": "0x400000e40b5402000000",
+     "result": "0x2b0ebf5302000000852c71831a000000d5d54c00000000000000000000000000"
+    },
+    {
+     "method": "SwapRuntimeApi_sim_swap_tao_for_alpha",
+     "args": {
+      "netuid": 64,
+      "tao_rao": 100000000000
+     },
+     "args_hex": "0x400000e8764817000000",
+     "result": "0xac8d7645170000002bb3800109010000545a0003000000000000000000000000"
+    },
+    {
+     "method": "SwapRuntimeApi_sim_swap_alpha_for_tao",
+     "args": {
+      "netuid": 64,
+      "alpha_rao": 11393789481
+     },
+     "args_hex": "0x4000296e1fa702000000",
+     "result": "0xf705933b00000000c5e2c7a6020000000000000000000000648b570000000000"
+    },
+    {
+     "method": "SwapRuntimeApi_sim_swap_alpha_for_tao",
+     "args": {
+      "netuid": 64,
+      "alpha_rao": 113937894813
+     },
+     "args_hex": "0x40009d4d3a871a000000",
+     "result": "0x3bd5b65302000000aedbce831a0000000000000000000000ef716b0300000000"
+    },
+    {
+     "method": "SwapRuntimeApi_sim_swap_alpha_for_tao",
+     "args": {
+      "netuid": 64,
+      "alpha_rao": 1139378948138
+     },
+     "args_hex": "0x40002a08474809010000",
+     "result": "0x6ab6404217000000d09414260901000000000000000000005a73322200000000"
+    }
+   ]
+  }
+ ],
+ "expected": {
+  "virtual_reserve_parity_rel": 3e-07
+ },
+ "checks": {
+  "SN1": {
+   "current_alpha_price_rao": 9322030,
+   "alpha_sqrt_price_raw": 1781045380923513843,
+   "sells": {
+    "1": {
+     "tao_amount": 999453341,
+     "alpha_amount": 107218747871,
+     "tao_fee": 0,
+     "alpha_fee": 54016956
+    },
+    "10": {
+     "tao_amount": 9990655141,
+     "alpha_amount": 1072187478712,
+     "tao_fee": 0,
+     "alpha_fee": 540169564
+    },
+    "100": {
+     "tao_amount": 99520372812,
+     "alpha_amount": 10721874787124,
+     "tao_fee": 0,
+     "alpha_fee": 5401695642
+    }
+   }
+  },
+  "SN19": {
+   "current_alpha_price_rao": 10375538,
+   "alpha_sqrt_price_raw": 1878992507390679825,
+   "sells": {
+    "1": {
+     "tao_amount": 999459332,
+     "alpha_amount": 96332006269,
+     "tao_fee": 0,
+     "alpha_fee": 48532200
+    },
+    "10": {
+     "tao_amount": 9991253812,
+     "alpha_amount": 963320062693,
+     "tao_fee": 0,
+     "alpha_fee": 485322006
+    },
+    "100": {
+     "tao_amount": 99579809937,
+     "alpha_amount": 9633200626931,
+     "tao_fee": 0,
+     "alpha_fee": 4853220064
+    }
+   }
+  },
+  "SN64": {
+   "current_alpha_price_rao": 87767112,
+   "alpha_sqrt_price_raw": 5464942880151820233,
+   "sells": {
+    "1": {
+     "tao_amount": 999491063,
+     "alpha_amount": 11388052165,
+     "tao_fee": 0,
+     "alpha_fee": 5737316
+    },
+    "10": {
+     "tao_amount": 9994425659,
+     "alpha_amount": 113880521646,
+     "tao_fee": 0,
+     "alpha_fee": 57373167
+    },
+    "100": {
+     "tao_amount": 99895785066,
+     "alpha_amount": 1138805216464,
+     "tao_fee": 0,
+     "alpha_fee": 573731674
+    }
+   }
+  }
+ },
+ "notes": []
+}

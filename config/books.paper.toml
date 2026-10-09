@@ -1,0 +1,73 @@
+# taotrader paper books (WP12). DESIGN.md sections 3.10, 9.1 and 12.1.
+#
+# Loaded through ops.config_load on top of config/default.toml (taotrader paper / replay / report --run):
+# default.toml < this file < TAOTRADER_CFG_* environment < CLI --set path=value overrides. The [paper] table is
+# the CLI's own (validated key by key); every other key is a plain RunCfg key and is validated strictly.
+#
+# Paper = the same Runner as the backtest, on the live finalized feed (LiveChainFeed: HEAD plan per block, FULL every
+# 60), PaperVenue (exact N+2 fills on recorded blocks, sim_swap drift probe) and a durable journal (WAL,
+# synchronous=FULL) under data/runs/<run_id>/. Only PAPER-stage sleeves get capital; SHADOW sleeves run in the same
+# process with zero budget and journal their signals (section 3.10). Both impact bounds run as separate books.
+#
+# Capital is a research figure (section 13 Q17 is the user's decision); nothing here touches real funds. Paper fill
+# rates are optimistic: paper cannot know whether a shielded carrier would have been included (section 9.1).
+#
+# Warm-up: strategies run only once the FeatureEngine is warm (feature_warm_blocks of journaled paper history; the
+# design default is 30 days). A shorter warm-up (e.g. 21_600 = 3 days) starts deciding sooner on colder features;
+# recovery replays use the same value, so change it only together with `--accept-drift` on an existing run.
+
+run_id = "paper-main"
+mode = "paper"
+cadence_blocks = 60      # FULL-plan cadence on the live feed (every finalized block is a tick)
+seed = 0
+
+[paper]
+lake = "data/paper/lake"             # recorder output (hourly Parquet compaction); manifest in data/paper/state.sqlite
+hot = "data/paper/hot"               # hot staging: one fsynced record per finalized block, before the journal commit
+feature_warm_blocks = 216_000        # FeatureParams.warm_blocks (30 d, as in the backtest)
+checkpoint_every_blocks = 7_200      # engine-state checkpoints in data/runs/<run_id>/state.sqlite (fast restarts)
+status_interval_s = 5.0              # data/runs/<run_id>/status.json heartbeat, at most this often
+membership_every_blocks = 7_200      # tracked-hotkey panel: dividend listing refresh (protocol.derive.track_hotkeys)
+top_n_tracked = 5                    # preregistration [router].top_n_tracked
+dead_man_interval_s = 60.0           # healthcheck ping cadence (ops.secrets "healthcheck_url"; off when unset)
+
+# ------------------------------------------------------------------ carry (CORE): both impact bounds
+[[books]]
+book = "paper-carry"
+capital_rao = 10_000_000_000         # 10 TAO of paper capital
+fee_float_rao = 2_000_000_000        # 2 TAO paper fee float (~2,000 orders; never topped up automatically)
+[[books.sleeves]]
+strategy = "carry"
+stage = "PAPER"
+budget_ppm = 1_000_000
+
+[[books]]
+book = "paper-carry-persist"         # the optimistic PERSISTENT impact bound (section 8.3)
+capital_rao = 10_000_000_000
+fee_float_rao = 2_000_000_000
+[books.exec]
+impact_half_life_blocks = "none"
+[[books.sleeves]]
+strategy = "carry"
+stage = "PAPER"
+budget_ppm = 1_000_000
+
+# ------------------------------------------------------------------ momentum (EXPERIMENTAL): shadow only, zero budget
+[[books]]
+book = "paper-momentum-shadow"
+capital_rao = 10_000_000_000
+fee_float_rao = 2_000_000_000
+[[books.sleeves]]
+strategy = "momentum"
+stage = "SHADOW"
+budget_ppm = 1_000_000
+
+# ------------------------------------------------------------------ the benchmark every sleeve must beat (section 2.5)
+[[books]]
+book = "paper-ew-total"
+capital_rao = 10_000_000_000
+fee_float_rao = 2_000_000_000
+[[books.sleeves]]
+strategy = "baseline.ew_total"
+stage = "PAPER"
+budget_ppm = 1_000_000

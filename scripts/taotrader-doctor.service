@@ -1,0 +1,29 @@
+# taotrader doctor --live (one-shot), started daily by taotrader-doctor.timer. DESIGN.md section 12.2.
+#
+# On the live host it checks the environment, the heartbeat of every run, and the LAST ARM TIME: if live has not
+# been armed for more than 72 h it raises the idle-proxy alert "remove Staking proxies (`btcli proxy remove`)" with
+# the configured delegates (a zero-delay Staking proxy stays active on chain after the arm token expires). Alerts go
+# to the log and, when TAOTRADER_ALERT_WEBHOOK (or the keyring "alert_webhook") is set, to the webhook.
+# Install next to taotrader-live.service (same user, paths and EnvironmentFile), then:
+#   cp scripts/taotrader-doctor.service scripts/taotrader-doctor.timer /etc/systemd/system/
+#   systemctl daemon-reload && systemctl enable --now taotrader-doctor.timer
+
+[Unit]
+Description=taotrader doctor --live (idle Staking-proxy and health check)
+Documentation=file:/opt/taotrader/docs/runbooks/key-compromise.md
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=taotrader
+Group=taotrader
+WorkingDirectory=/opt/taotrader
+EnvironmentFile=-/etc/taotrader/live.env
+ExecStart=/opt/taotrader/.venv-live/bin/python -m taotrader doctor --live --config /opt/taotrader/config/live.toml --log-dir /opt/taotrader/logs
+# doctor exits 1 when a check fails (e.g. the idle-proxy alert); the unit then shows as failed in `systemctl status`.
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/opt/taotrader/data /opt/taotrader/logs
+PrivateTmp=true
+NoNewPrivileges=true
+UMask=0077

@@ -1,0 +1,68 @@
+# taotrader live adapter - systemd unit for the USER's live host (Linux VPS or WSL2). DESIGN.md sections 9.2, 12.2.
+#
+# Nothing in this repository installs, enables or starts this unit; the user does, by hand, after reading
+# docs/runbooks/live-arming.md. As shipped it starts PLAN-ONLY (live-dry: real intents, client.plan(), journaled,
+# never submitted). Submitting needs all four locks:
+#   1. config/live.toml:  [live] enabled = true
+#   2. config/live.toml:  [live] mode = "submit", network set explicitly, spec in accepted_specs, LIVE_ELIGIBLE sleeves
+#   3. the CLI flags --live --submit   (add --submit to ExecStart below yourself, after >= 7 days of live-dry)
+#   4. TAOTRADER_LIVE_ARMED from `taotrader live arm` (<= 24 h) in /etc/taotrader/live.env, plus
+#      TAOTRADER_LIVE_NETWORK_CONFIRM=finney on mainnet; re-arming = new token + `systemctl restart taotrader-live`.
+#
+# Install (as root, once):
+#   useradd --system --home /opt/taotrader --shell /usr/sbin/nologin taotrader
+#   # repository at /opt/taotrader; a SEPARATE venv for live (never the research venv):
+#   #   python3.11 -m venv /opt/taotrader/.venv-live
+#   #   uv export --frozen --no-dev --all-extras --format requirements-txt > /tmp/req-core.txt   (hashed, from uv.lock)
+#   #   /opt/taotrader/.venv-live/bin/pip install --require-hashes -r /tmp/req-core.txt
+#   #   /opt/taotrader/.venv-live/bin/pip install --require-hashes -r requirements-live.lock.txt  (hashed bittensor 11.3.0 closure, see requirements-live.txt)
+#   #   /opt/taotrader/.venv-live/bin/pip install --no-deps -e /opt/taotrader
+#   install -d -m 700 -o taotrader /etc/taotrader /opt/taotrader/data /opt/taotrader/logs
+#   install -m 600 -o taotrader /dev/null /etc/taotrader/live.env      # TAOTRADER_LIVE_ARMED=..., BT_WALLET_PASSWORD_FILE=...
+#   cp scripts/taotrader-live.service /etc/systemd/system/ && systemctl daemon-reload
+#   systemctl enable --now taotrader-live
+#
+# Keys: only the Staking-proxy DELEGATE key files live on this host (chmod 600, each holding <= max_ops_balance_tao).
+# The coldkey stays on a Ledger / Polkadot Vault. The arm-token HMAC secret lives in the OS keyring of this host
+# (`taotrader live arm --init-secret`); the service user must be able to read that keyring backend.
+# Journal and state are on local ext4 (never /mnt/c).
+
+[Unit]
+Description=taotrader live adapter (plan-only unless all four locks pass)
+Documentation=file:/opt/taotrader/docs/runbooks/live-arming.md
+After=network-online.target time-sync.target
+Wants=network-online.target
+StartLimitIntervalSec=600
+StartLimitBurst=10
+
+[Service]
+Type=simple
+User=taotrader
+Group=taotrader
+WorkingDirectory=/opt/taotrader
+EnvironmentFile=/etc/taotrader/live.env
+Environment=PYTHONUNBUFFERED=1
+# Plan-only. For submission (all four locks) append: --submit
+ExecStart=/opt/taotrader/.venv-live/bin/python -m taotrader live --live --config /opt/taotrader/config/live.toml --log-dir /opt/taotrader/logs
+# A clean SIGTERM stop: the feed stops, the in-flight tick commits, the journal closes.
+KillSignal=SIGTERM
+TimeoutStopSec=60
+Restart=on-failure
+RestartSec=5
+# Never restart into a refusal: 2 usage/config/secret, 3 live gate refused, 4 another instance, 5 replay divergence.
+RestartPreventExitStatus=2 3 4 5
+# Hardening: read-only system, writes only to data and logs.
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/opt/taotrader/data /opt/taotrader/logs
+PrivateTmp=true
+NoNewPrivileges=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,38 @@
+# taotrader ruff configuration (WP0). DESIGN.md section 10.6 static gates.
+# Line length 135 because the section-5 core code (committed verbatim) has lines up to 133 characters.
+target-version = "py311"
+line-length = 135
+src = ["src", "tests", "tools"]
+extend-exclude = ["docs"]
+
+[lint]
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes
+    "I",    # isort
+    "B",    # bugbear
+    "UP",   # pyupgrade (3.11)
+    "C4",   # comprehensions
+    "SIM",  # simplify
+    "PIE",
+    "PGH",  # no blanket type: ignore / noqa
+    "T10",  # no debugger
+    "N",    # naming
+    "RUF",
+]
+ignore = [
+    "RUF009",  # NewType calls (Ppm(500_000)) and frozen-dataclass defaults (RiskCfg()) are the section-5 idiom
+    "RUF005",  # tuple concatenation is used by the verbatim section-5 code
+    "N818",    # IllegalTransition / ReplayDivergence names are fixed by section 5
+    "SIM108",  # ternaries are not always clearer
+]
+
+[lint.per-file-ignores]
+"tests/**" = ["N802", "N806", "B011"]
+"tools/**" = ["T10"]
+# Section-5 code is committed verbatim; its wrapped `from .units import (...)` style is not isort-canonical.
+"src/taotrader/core/{state,events,protocols}.py" = ["I001"]
+
+[lint.isort]
+known-first-party = ["taotrader"]

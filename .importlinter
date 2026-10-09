@@ -1,0 +1,360 @@
+# taotrader import contracts (WP0). DESIGN.md section 4.2 "Import contracts" and section 10.6.
+# Run: .venv/Scripts/lint-imports   (tests/core/test_static_gates.py runs it as well)
+#
+# Pure packages may not import time/datetime/random/os/uuid/asyncio/httpx/websockets (section 4.2). The packages
+# core, protocol, features, risk, portfolio and strategies are pure as a whole and are covered here; inside engine
+# only engine.engine and engine.reducer are pure, which the AST lint in tests/core/test_static_gates.py checks
+# (import-linter refuses source modules that do not exist yet).
+
+[importlinter]
+root_package = taotrader
+include_external_packages = True
+
+[importlinter:contract:core-stdlib-only]
+name = core imports only the stdlib (and is pure)
+type = forbidden
+source_modules =
+    taotrader.core
+forbidden_modules =
+    taotrader.protocol
+    taotrader.chain
+    taotrader.data
+    taotrader.features
+    taotrader.venues
+    taotrader.engine
+    taotrader.risk
+    taotrader.portfolio
+    taotrader.strategies
+    taotrader.backtest
+    taotrader.reports
+    taotrader.live
+    taotrader.ops
+    taotrader.cli
+    httpx
+    websockets
+    xxhash
+    duckdb
+    numpy
+    zstandard
+    keyring
+    scalecodec
+    bittensor
+    time
+    datetime
+    random
+    os
+    uuid
+    asyncio
+
+[importlinter:contract:protocol-core-only]
+name = protocol imports only core (and is pure)
+type = forbidden
+source_modules =
+    taotrader.protocol
+forbidden_modules =
+    taotrader.chain
+    taotrader.data
+    taotrader.features
+    taotrader.venues
+    taotrader.engine
+    taotrader.risk
+    taotrader.portfolio
+    taotrader.strategies
+    taotrader.backtest
+    taotrader.reports
+    taotrader.live
+    taotrader.ops
+    taotrader.cli
+    httpx
+    websockets
+    xxhash
+    duckdb
+    numpy
+    zstandard
+    keyring
+    scalecodec
+    bittensor
+    time
+    datetime
+    random
+    os
+    uuid
+    asyncio
+
+[importlinter:contract:features-pure]
+name = features imports only core and protocol (WP5 depends on WP0, WP2)
+type = forbidden
+source_modules =
+    taotrader.features
+forbidden_modules =
+    taotrader.risk
+    taotrader.portfolio
+    taotrader.strategies
+    taotrader.engine
+    taotrader.chain
+    taotrader.data
+    taotrader.venues
+    taotrader.backtest
+    taotrader.reports
+    taotrader.live
+    taotrader.ops
+    taotrader.cli
+    httpx
+    websockets
+    duckdb
+    zstandard
+    keyring
+    scalecodec
+    bittensor
+    time
+    datetime
+    random
+    os
+    uuid
+    asyncio
+
+[importlinter:contract:risk-portfolio-pure]
+name = risk and portfolio import only core, protocol, features and each other (WP8 depends on WP0, WP2, WP5)
+type = forbidden
+source_modules =
+    taotrader.risk
+    taotrader.portfolio
+forbidden_modules =
+    taotrader.strategies
+    taotrader.engine
+    taotrader.chain
+    taotrader.data
+    taotrader.venues
+    taotrader.backtest
+    taotrader.reports
+    taotrader.live
+    taotrader.ops
+    taotrader.cli
+    httpx
+    websockets
+    duckdb
+    zstandard
+    keyring
+    scalecodec
+    bittensor
+    time
+    datetime
+    random
+    os
+    uuid
+    asyncio
+
+[importlinter:contract:strategies-pure]
+name = strategies import only core, protocol and features (WP9 depends on WP0, WP2, WP5)
+type = forbidden
+source_modules =
+    taotrader.strategies
+forbidden_modules =
+    taotrader.risk
+    taotrader.portfolio
+    taotrader.engine
+    taotrader.chain
+    taotrader.data
+    taotrader.venues
+    taotrader.backtest
+    taotrader.reports
+    taotrader.live
+    taotrader.ops
+    taotrader.cli
+    httpx
+    websockets
+    duckdb
+    zstandard
+    keyring
+    scalecodec
+    bittensor
+    time
+    datetime
+    random
+    os
+    uuid
+    asyncio
+
+[importlinter:contract:engine-inward-only]
+name = engine imports only core and protocol; adapters are injected through core.protocols (section 4.2)
+type = forbidden
+source_modules =
+    taotrader.engine
+forbidden_modules =
+    taotrader.features
+    taotrader.risk
+    taotrader.portfolio
+    taotrader.strategies
+    taotrader.chain
+    taotrader.data
+    taotrader.venues
+    taotrader.backtest
+    taotrader.reports
+    taotrader.live
+    taotrader.ops
+    taotrader.cli
+    httpx
+    websockets
+    duckdb
+    keyring
+    scalecodec
+    bittensor
+
+[importlinter:contract:chain-shell]
+name = chain imports only inward (core, protocol) and the leaf ops modules; the live feed gets its store by injection
+type = forbidden
+source_modules =
+    taotrader.chain
+forbidden_modules =
+    taotrader.data
+    taotrader.venues
+    taotrader.features
+    taotrader.risk
+    taotrader.portfolio
+    taotrader.strategies
+    taotrader.engine
+    taotrader.backtest
+    taotrader.reports
+    taotrader.live
+    taotrader.cli
+
+[importlinter:contract:data-shell]
+name = data imports only inward (core, protocol, chain) and the leaf ops modules
+type = forbidden
+source_modules =
+    taotrader.data
+forbidden_modules =
+    taotrader.venues
+    taotrader.features
+    taotrader.risk
+    taotrader.portfolio
+    taotrader.strategies
+    taotrader.engine
+    taotrader.backtest
+    taotrader.reports
+    taotrader.live
+    taotrader.cli
+
+[importlinter:contract:venues-shell]
+name = venues import only inward (core, protocol, chain) and the leaf ops modules (WP6 depends on WP0, WP2)
+type = forbidden
+source_modules =
+    taotrader.venues
+forbidden_modules =
+    taotrader.data
+    taotrader.features
+    taotrader.risk
+    taotrader.portfolio
+    taotrader.strategies
+    taotrader.engine
+    taotrader.backtest
+    taotrader.reports
+    taotrader.live
+    taotrader.cli
+
+[importlinter:contract:backtest-reports-shell]
+name = backtest and reports never import live or cli
+type = forbidden
+source_modules =
+    taotrader.backtest
+    taotrader.reports
+forbidden_modules =
+    taotrader.live
+    taotrader.cli
+
+[importlinter:contract:ops-leaf]
+name = ops.config_load and ops.secrets are leaf modules (core, stdlib, keyring only)
+type = forbidden
+source_modules =
+    taotrader.ops.config_load
+    taotrader.ops.secrets
+forbidden_modules =
+    taotrader.protocol
+    taotrader.chain
+    taotrader.data
+    taotrader.features
+    taotrader.venues
+    taotrader.engine
+    taotrader.risk
+    taotrader.portfolio
+    taotrader.strategies
+    taotrader.backtest
+    taotrader.reports
+    taotrader.live
+    taotrader.cli
+    taotrader.ops.logging
+    taotrader.ops.alerts
+    taotrader.ops.health
+    taotrader.ops.lock
+    httpx
+    websockets
+    xxhash
+    duckdb
+    numpy
+    zstandard
+    scalecodec
+    bittensor
+
+[importlinter:contract:ops-private]
+name = ops.logging/alerts/health/lock are imported only by ops and cli
+type = forbidden
+source_modules =
+    taotrader.core
+    taotrader.protocol
+    taotrader.chain
+    taotrader.data
+    taotrader.features
+    taotrader.venues
+    taotrader.engine
+    taotrader.risk
+    taotrader.portfolio
+    taotrader.strategies
+    taotrader.backtest
+    taotrader.reports
+    taotrader.live
+forbidden_modules =
+    taotrader.ops.logging
+    taotrader.ops.alerts
+    taotrader.ops.health
+    taotrader.ops.lock
+
+[importlinter:contract:live-only-from-cli]
+name = live is imported only by cli (behind the gate)
+type = forbidden
+source_modules =
+    taotrader.core
+    taotrader.protocol
+    taotrader.chain
+    taotrader.data
+    taotrader.features
+    taotrader.venues
+    taotrader.engine
+    taotrader.risk
+    taotrader.portfolio
+    taotrader.strategies
+    taotrader.backtest
+    taotrader.reports
+    taotrader.ops
+forbidden_modules =
+    taotrader.live
+
+[importlinter:contract:bittensor-only-in-live]
+name = no package outside live imports bittensor
+type = forbidden
+source_modules =
+    taotrader.core
+    taotrader.protocol
+    taotrader.chain
+    taotrader.data
+    taotrader.features
+    taotrader.venues
+    taotrader.engine
+    taotrader.risk
+    taotrader.portfolio
+    taotrader.strategies
+    taotrader.backtest
+    taotrader.reports
+    taotrader.ops
+    taotrader.cli
+forbidden_modules =
+    bittensor

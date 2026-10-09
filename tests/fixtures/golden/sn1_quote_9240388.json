@@ -1,0 +1,678 @@
+{
+ "fixture": "sn1_quote_9240388",
+ "purpose": "SN1 pool and the 1-TAO sim_swap quote vector (brief 2.8)",
+ "endpoint": "https://bittensor-finney.api.onfinality.io/public",
+ "captured_utc": "2026-10-09T03:45:23Z",
+ "snapshots": [
+  {
+   "block": 9240388,
+   "block_hash": "0xa57ba6d8ca74f815cb2f4b50be731fbc7e612128b4d8a5d98de30e11e9408524",
+   "spec_version": 475,
+   "transaction_version": 1,
+   "storage": [
+    {
+     "item": "SubtensorModule.NetworksAdded",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05550e30450fc4d507a846032a7fa65d9a430100",
+     "value": "0x01"
+    },
+    {
+     "item": "SubtensorModule.NetworkRegisteredAt",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555271d29b9b717ce3d8c571f1cbc180fa20100",
+     "value": "0xe0da160000000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetTAO",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05557a57dce016211512d1700561066b85a30100",
+     "value": "0xf8783c75f1140000"
+    },
+    {
+     "item": "SubtensorModule.SubnetAlphaIn",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05552ce12f7007574647d692ac7edf8b7a530100",
+     "value": "0x02a48fba32770c00"
+    },
+    {
+     "item": "SubtensorModule.SubnetAlphaOut",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05557837978cc6746112a2c9e680a18cfcb90100",
+     "value": "0xb28e5bd0c9220900"
+    },
+    {
+     "item": "SubtensorModule.SubnetProtocolAlpha",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ff7ebe49c2927c367a84c8fd80bbce7d0100",
+     "value": "0x72676513a10f0000"
+    },
+    {
+     "item": "SubtensorModule.SubnetMovingPrice",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05551abf1b0f4fd14f7b72ee50f9d91d59150100",
+     "value": "0xd6aeae01000000000000000000000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetFastMovingPrice",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555035ba74afd4748c0f821ed38ecf524360100",
+     "value": "0xc92617869d4eae010000000000000000"
+    },
+    {
+     "item": "SubtensorModule.RootProp",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555010cf3b550f933211beccf08e00433e40100",
+     "value": "0x6cc69623000000000000000000000000"
+    },
+    {
+     "item": "SubtensorModule.MinerBurned",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05551eac6222ebba7feba4ca36a94736815e0100",
+     "value": "0xc473f8b3000000000000000000000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetEmissionEnabled",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555c97bb5c5631e5f593b5bd2da84a5fa160100",
+     "value": "0x01"
+    },
+    {
+     "item": "SubtensorModule.SubtokenEnabled",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e9348e9224ea06c9c2da12ce69e619c50100",
+     "value": "0x01"
+    },
+    {
+     "item": "SubtensorModule.NetworkRegistrationAllowed",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d5fe74da02c7b4bbb340fb368eee3e770100",
+     "value": "0x01"
+    },
+    {
+     "item": "SubtensorModule.FirstEmissionBlockNumber",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e4cfee4e36f2419d8863a3fda65c428f0100",
+     "value": "0x8bc84f0000000000"
+    },
+    {
+     "item": "SubtensorModule.Tempo",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05557641384bb339f3758acddfd7053d33170100",
+     "value": "0x6300"
+    },
+    {
+     "item": "SubtensorModule.LastEpochBlock",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055590010c37124c14146041452f9ffba0df0100",
+     "value": "0x3fff8c0000000000"
+    },
+    {
+     "item": "SubtensorModule.EMAPriceHalvingBlocks",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05550c8a87705ba85a17daa1bb11f7899de10100",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubnetTaoInEmission",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555dd62ae7237581e8f6a684f1ecae062150100",
+     "value": "0xa549000000000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetExcessTao",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555857b0a5b920bc5e41cb0695a4b7d38e70100",
+     "value": "0x0000000000000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetAlphaOutEmission",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055525257fbc5458419b7bc7e8c44c5215210100",
+     "value": "0x00ca9a3b00000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetAlphaInEmission",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05551905df3b2516a166b6f9fba54fef1cd80100",
+     "value": "0xb4d52b0000000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetTaoFlow",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055522c7158f6b2746f4085b8920570362580100",
+     "value": "0x657322a3eafbffff"
+    },
+    {
+     "item": "SubtensorModule.SubnetVolume",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553c3226e141696000b4b239c65bc2b2b40100",
+     "value": "0xe57358d125fd02000000000000000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetOwner",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055536e3e82152c8758267395fe524fbbd160100",
+     "value": "0xe2ee75ea11e4c5b7f5dac2e735278cfa0b1590c9856690f66653bdd85b709104"
+    },
+    {
+     "item": "SubtensorModule.SubnetOwnerHotkey",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055568b7553499633fe05caf4d8a51aefe5c0100",
+     "value": "0xe2ee75ea11e4c5b7f5dac2e735278cfa0b1590c9856690f66653bdd85b709104"
+    },
+    {
+     "item": "SubtensorModule.OwnerCutEnabled",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055584287ee5b733a503a6d7f008ece51ba70100",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.OwnerCutAutoLockEnabled",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05558856bedc66ab9c3ae426e5b6b52c8a1b0100",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalAlphaStaked",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05554f7d0814270246a648a7714c1e45cfa80100",
+     "value": "0x2efd7eb8b6cb0500"
+    },
+    {
+     "item": "SubtensorModule.MaxAllowedValidators",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555741b883d2519eed91857993bfd4df0ba0100",
+     "value": "0x8000"
+    },
+    {
+     "item": "SubtensorModule.SubnetEpochConsensus",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055512a2afa59d7389e40b256460d9b1fdcd0100",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.LiquidAlphaConsensusMode",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055535c32912d86f933ce83ce4a034b264f20100",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.PendingOwnerCut",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555619fc1d902020b6627d90e16de3dd5520100",
+     "value": "0x968fa43500000000"
+    },
+    {
+     "item": "Swap.SwapBalancer",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836e8129c00c7f7dc3242d3df9ca2338dc9af1577fbf1d628fdd0100",
+     "value": "0xfc3a81ea585bf006"
+    },
+    {
+     "item": "Swap.FeeRate",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836e9e110c291062e3d22e10ec17c4e83ebdf1577fbf1d628fdd0100",
+     "value": null
+    },
+    {
+     "item": "Swap.BalancerTaoReservoir",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836e84af79154d855fac632e03f22d3f0aa4f1577fbf1d628fdd0100",
+     "value": null
+    },
+    {
+     "item": "Swap.BalancerAlphaReservoir",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836ea21fa33118f2741105fd571c0e9586e9f1577fbf1d628fdd0100",
+     "value": null
+    },
+    {
+     "item": "Swap.AlphaSqrtPrice",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836e0366558e06667059cde5be67d7c3e2d1f1577fbf1d628fdd0100",
+     "value": null
+    },
+    {
+     "item": "Swap.CurrentLiquidity",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836ec87ed115f906e6420cdcafb441786bf4f1577fbf1d628fdd0100",
+     "value": null
+    },
+    {
+     "item": "Swap.CurrentTick",
+     "args": [
+      1
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836e591f20834574415c86ad0ca587ea5f4cf1577fbf1d628fdd0100",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubnetMovingAlpha",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf055565ef4b6311933743a027c3602fbabe20",
+     "value": "0x2aa91300000000000000000000000000"
+    },
+    {
+     "item": "SubtensorModule.EmissionGateBar",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf05557c9b0d2964cc73e7519676c3cc4d5df9",
+     "value": "0xd984f2ac8d7b1d020000000000000000"
+    },
+    {
+     "item": "SubtensorModule.EmissionBarRank",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555d33bd686290d014475513443305882be",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.EmissionGateExponent",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf055588c70e8dd0cf4af3aeb977ba2eee1df4",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.EmissionBarQuantile",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555a772007dde2ed63e0f21b5f9d7f16650",
+     "value": "0x00000000000000c00000000000000000"
+    },
+    {
+     "item": "SubtensorModule.TaoWeight",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf05556b2684762c3b1e22ffb4a92939298741",
+     "value": "0x7a14ae47e17a142e"
+    },
+    {
+     "item": "SubtensorModule.SubnetOwnerCut",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555e799290d4a088ada42cf32b591c69203",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubnetLimit",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555a336e39c4086c4d5f43b7e6dff8a04f6",
+     "value": "0x8000"
+    },
+    {
+     "item": "SubtensorModule.NetworkImmunityPeriod",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555be4bea261cfe8a2b911e689c943bbd43",
+     "value": "0x002f0d0000000000"
+    },
+    {
+     "item": "SubtensorModule.NetworkRateLimit",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf05559432d347db1cb70ce515b7a097bb84d9",
+     "value": "0x4038000000000000"
+    },
+    {
+     "item": "SubtensorModule.NetworkLastLockCost",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555de7b71faea4b83188e1aa22b1f79237c",
+     "value": "0x26ed050b98000000"
+    },
+    {
+     "item": "SubtensorModule.NetworkMinLockCost",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555af4319a20ed58ed2c549e6b6ea25fe88",
+     "value": "0x00ca9a3b00000000"
+    },
+    {
+     "item": "SubtensorModule.NetworkLockReductionInterval",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf055567d5740b25f3ae7aea68123bdcdc6bd4",
+     "value": "0x00c2010000000000"
+    },
+    {
+     "item": "SubtensorModule.TaoInRefundDeploymentBlock",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555dc425fa12c0816e636af7a23ec31d977",
+     "value": "0x722c7f0000000000"
+    },
+    {
+     "item": "SubtensorModule.NominatorMinRequiredStake",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555600828b736cfd977b24a0d2528a8a2e8",
+     "value": "0x8096980000000000"
+    },
+    {
+     "item": "SubtensorModule.TotalIssuance",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf055557c875e4cff74148e4628f264b974c80",
+     "value": "0x9676c6d1f9332900"
+    },
+    {
+     "item": "SubtensorModule.DissolveCleanupQueue",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf05551b3f4fb9309f90f6e26d5767a2118eca",
+     "value": "0x00"
+    },
+    {
+     "item": "SubtensorModule.ShortsEnabled",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf055528fe890359cba5d2a2727a72693689a3",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.NetworkLastRegistered",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555523c2ca14b63d5abaac7b4e6c1f0b65f",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.BlockEmission",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf055534ebdb22bbd04c61ef98f1974907c68d",
+     "value": "0x00ca9a3b00000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetTAO",
+     "args": [
+      0
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05557a57dce016211512d1700561066b85a30000",
+     "value": "0x705564cc97601300"
+    },
+    {
+     "item": "SubtensorModule.LastRateLimitedBlock",
+     "args": [
+      "NetworkLastRegistered"
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05557e1acdaa2002f0505824e25a590c1b7102",
+     "value": "0xf28a8c0000000000"
+    },
+    {
+     "item": "Balances.TotalIssuance",
+     "args": [],
+     "hashers": [],
+     "key": "0xc2261276cc9d1f8598ea4b6a74b15c2f57c875e4cff74148e4628f264b974c80",
+     "value": "0x9676c6d1f9332900"
+    },
+    {
+     "item": "SafeMode.EnteredUntil",
+     "args": [],
+     "hashers": [],
+     "key": "0xf35b44951b86069d9273a961f1e3fbeb1fd1ae5c7c15443bedf0311e151a2a4a",
+     "value": null
+    },
+    {
+     "item": "Timestamp.Now",
+     "args": [],
+     "hashers": [],
+     "key": "0xf0c365c3cf59d671eb72da0e7a4113c49f1f0515f462cdcf84e0f1d6045dfcbb",
+     "value": "0xe079f51ca1010000"
+    },
+    {
+     "item": "System.Number",
+     "args": [],
+     "hashers": [],
+     "key": "0x26aa394eea5630e07c48ae0c9558cef702a5c1b19ab7a04f536c519aca4983ac",
+     "value": "0x44ff8c00"
+    }
+   ],
+   "runtime_api": [
+    {
+     "method": "SwapRuntimeApi_sim_swap_tao_for_alpha",
+     "args": {
+      "netuid": 1,
+      "tao_rao": 1000000000
+     },
+     "args_hex": "0x010000ca9a3b00000000",
+     "result": "0x051b933b00000000dede3a7523000000fbae0700000000000000000000000000000000000000000093a1f70400000000"
+    },
+    {
+     "method": "SwapRuntimeApi_current_alpha_price",
+     "args": {
+      "netuid": 1
+     },
+     "args_hex": "0x0100",
+     "result": "0xf023640000000000"
+    }
+   ]
+  }
+ ],
+ "expected": {
+  "sim_swap_buy_1tao": {
+   "tao_amount": 999496453,
+   "tao_fee": 503547,
+   "alpha_amount_approx": 152290000000,
+   "alpha_amount_design_unreproduced": 152285961807
+  },
+  "spot_rao": 6562800
+ },
+ "checks": {
+  "sim_buy_1tao": {
+   "tao_amount": 999496453,
+   "alpha_amount": 152290647774,
+   "tao_fee": 503547,
+   "alpha_fee": 0,
+   "tao_slippage": 0,
+   "alpha_slippage": 83337619
+  },
+  "current_alpha_price_rao": 6562800
+ },
+ "notes": [
+  "spot == 6,562,800 at this block: True",
+  "DESIGN.md 10.1 lists alpha_out 152,285,961,807 rao; no block in [9,238,000, 9,242,700] reproduces it. At the brief's spot blocks sim_swap returns about 152,290,64x,xxx rao (152.29 alpha, as the brief says); the checks below hold the value at this block. ADR requested to correct the design figure."
+ ]
+}

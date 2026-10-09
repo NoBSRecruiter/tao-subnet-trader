@@ -1,0 +1,64 @@
+# taotrader LIVE configuration example (WP11; DESIGN.md sections 9.2-9.8 and 12.2).
+#
+# Copy to a private file on the Linux/WSL live host (e.g. config/live.toml, git-ignored) and load it AFTER
+# config/default.toml and the books file:  taotrader live --config config/default.toml config/books.live.toml config/live.toml
+#
+# NEVER put secrets here. The arm-token HMAC key lives in the live host's OS keyring (ops.secrets "live_arm_hmac");
+# delegate wallet passwords come from BT_WALLET_PASSWORD_FILE (mode 600); keyed RPC URLs live in the keyring.
+#
+# The four locks (section 9.3), all required for `--submit`:
+#   1 config       [live] enabled = true
+#   2 confirmation [live] mode = "submit", `network` set explicitly in THIS file, the current spec_version listed in
+#                  accepted_specs, and `sleeves` lists only LIVE_ELIGIBLE sleeves
+#   3 CLI          taotrader live --live --submit
+#   4 environment  TAOTRADER_LIVE_ARMED from `taotrader live arm` (expires in <= 24 h; ANY edit of the config
+#                  invalidates it); mainnet also needs TAOTRADER_LIVE_NETWORK_CONFIRM=finney
+# Plan-only (live-dry: real reads and plan(), never submits) needs lock 1 and `--live` only.
+# Ladder before submit: >= 7 days of live-dry with 100% plan() acceptance, test.finney smoke tests first.
+#
+# test.finney dry run - a USER-RUN procedure on the Linux/WSL live host (never run by CI, tooling or agents):
+#  1. Separate venv: verify bittensor 11.3.0 provenance, then `pip install --require-hashes -r requirements-live.txt`
+#     (with the hashed lock described there); run `pytest tests/live/test_sdk_contract.py` - it must pass.
+#  2. On test.finney: create 2-3 delegate wallets, fund each with <= max_ops_balance_tao, and add zero-delay Staking
+#     proxies from a TEST coldkey (btcli proxy add --delegate <ops> --proxy-type Staking --delay 0 --network test).
+#  3. In your copy of this file: enabled = true, network = "test", the test coldkey and delegate names; keep
+#     mode = "plan_only" and run `taotrader live --live` for >= 1 day. The journal must show
+#     "plan_only:accepted:fee=..." for every intent shape, and preflight must pass (RealPaysFee off, no locks,
+#     Staking-only proxies, balances within bounds).
+#  4. Add the test spec_version to accepted_specs, mode = "submit", max_order_tao = 0.01, run `taotrader live arm`,
+#     export TAOTRADER_LIVE_ARMED and run `taotrader live --live --submit`. Submit ONE tiny shielded order per intent
+#     type: a buy, a partial sell, a full exit and a same-subnet move.
+#  5. Record: the shield inclusion and miss rate, the nonce and delegate-lock behaviour after a miss (rotation), plan()
+#     fees vs ExecCfg (V5; section 13 Q6), and confirm the read names for RealPaysFee, stake_availability.locked,
+#     ColdkeySwapScheduled and Proxy.Announcements (section 13 Q19). Then reset mode = "plan_only" and enabled = false.
+#  6. Only after this, and >= 7 days of live-dry on finney, consider network = "finney" (also needs
+#     TAOTRADER_LIVE_NETWORK_CONFIRM=finney).
+
+[live]
+enabled = false                 # lock 1 of 4: keep false until you deliberately go live
+mode = "plan_only"              # "plan_only" | "submit" (lock 2: config confirmation)
+network = "test"                # "test" | "finney": set explicitly here (lock 2); finney also needs the env confirm
+real_coldkey_ss58 = ""          # the trading (real) coldkey's SS58 address: it never touches this host
+delegate_wallets = []           # 2-3 bittensor wallet NAMES of the zero-delay ProxyType::Staking delegates
+                                # (btcli proxy add --delegate <ops> --proxy-type Staking --delay 0, signed by the coldkey)
+sleeves = []                    # only sleeves whose stage is LIVE_ELIGIBLE in every book; you decide
+allowed_netuids = []            # buys only (empty = the overlay universe); sells/moves always allow held netuids
+# Caps below bound BUYS ONLY: sells are bounded by the held position, same-subnet moves by the position on the origin
+# hotkey, and a risk exit (urgency >= URGENT) is never refused for a cap.
+max_order_tao = 1.0             # per buy; also the buy Policy's max_spend_tao
+max_daily_turnover_tao = 5.0    # buy TAO per 7,200 blocks (sells and moves not counted)
+max_position_tao = 5.0          # a buy may not take a position's executable value above this
+max_fee_tao = 0.005             # per-call Policy max_fee_tao (a fee above it fails plan())
+min_fee_float_tao = 0.15        # preflight: delegates' free TAO >= this (the alpha-fee trap buffer)
+max_ops_balance_tao = 0.5       # preflight: each delegate holds <= this (a fee buffer only)
+accepted_specs = []             # runtime spec_versions you accepted after V1-V7 passed; any other spec -> UNARMED
+
+# UNARMED behaviour (section 9.3): YOU must decide this explicitly. When the arm token expires or a runtime upgrade
+# leaves spec_version outside accepted_specs, live keeps reading, reconciling, planning and journaling, but submits
+# NOTHING - unless this is true, in which case it may submit ONLY EMERGENCY or URGENT full sells (never a buy or a
+# move), only while V2 (sim_swap parity), V3 (prune-target parity) and V6 (call indices and the Staking allow-list)
+# pass on the current spec, with limits from the runtime head. All other locks still apply. With it false, the bot
+# alerts 2 h before the arm token expires and on every spec change while you hold ladder exposure (prune_rank <= 15),
+# listing each position with its rank and t*: no exit can be submitted until you re-arm.
+# Runtime upgrades land about every 3 days and prunes about weekly; read the live-arming runbook before choosing.
+risk_exits_when_unarmed = false

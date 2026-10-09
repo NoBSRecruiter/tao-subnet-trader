@@ -1,0 +1,44 @@
+DESIGN.md is now v1.1 (4,442 lines). All 29 critic issues are applied; none were declined. Where I went beyond or against the suggested fix, the entry says why. The §5 code and the §9.4 SdkPort block were pulled out of the document into a scratch package and run under Python 3.11. They import cleanly and pass checks of the order state machine, the new idempotency keys, construction of the new types and the config values. I re-read the changed regions; all tables and code fences are well-formed and no stale references remain.
+
+**Blocker**
+1. **§9.4 Policy vs full exits — fixed.** Buys use a Policy capped at `max_order_tao`. Sells and moves use a per-call Policy with no spend cap. A new `LiveCall` carries exact amounts, so full exits and hotkey moves send the alpha read at the submit head, never `'all'` or u64::MAX. `REMOVE_STAKE_FULL_LIMIT` is never sent live. A drain remainder is handled by the dust rule (§3.9). Updated §3.3, §3.8, §3.12, `OrderKind`/`full_position`/`U64_MAX` comments and preflight 6. Added a §10.5 contract test that `Policy.check()` accepts the exact objects. One addition: sell and move policies allow `allowed_netuids` plus held netuids, so a config edit cannot strand a position.
+
+**Major**
+2. **Unarmed live — fixed.** Added `LiveCfg.risk_exits_when_unarmed` and an UNARMED state (§9.3). With the flag on, only EMERGENCY/URGENT full sells are allowed, only while V2, V3 and V6 pass, with limits from runtime sim_swap. It never buys or moves. With the flag off, alerts fire at T−2 h and on every SPEC_CHANGED while ladder exposure is above 0, listing t*. Updated §3.11, §9.5, §9.8 #10, §12.2, §12.5, the runbooks, `live.example.toml` (WP11) and §10.5 tests. One addition: when the flag is on, an authentic but expired token lets the process start UNARMED, so a systemd restart keeps the risk exits.
+3. **Caps on exits — fixed.** Caps and `max_spend_tao` bound buys only, and turnover counts buy TAO only. Risk exits are never rejected for a cap. Updated §9.6 step 2, §9.8 #12, `LiveCfg` comments, and added the 5-TAO Tier A test with `max_order_tao = 1`.
+4. **Orders stuck in SUBMITTING after a crash — fixed with option (a).** Recovery journals `SubmitUnknown("recovered_submitting")` before any resolve. Updated the §5.4 comment, §4.4, §4.5, `recover()` step 5, and added tests in §10.1, §10.2 and WP7.
+5. **SdkPort could not see extrinsics or events — fixed.** Added `block_extrinsics`, `extrinsic_events`, `proxy_announcements`, `coldkey_swap_scheduled`, `account_events`, plus `real_pays_fee`, `locked_alpha` and `next_index`. A proxied error maps to the matching FailReason (so the planner's SlippageTooHigh fallback still works), else `PROXY_ERROR`, with the decoded name in a new `OrderFailed.detail`. Every key alarm in §9.7 now names its read; §10.5 tests added.
+6. **Shield misses — fixed.** A miss is final as soon as N+2 is finalized, with fee 0 when the carrier is absent; the retry goes to another delegate. A new live-only `CarrierFeeSettled` event books the carrier fee after the era ends, based on the delegate's nonce (n / n+1 / ≥ n+2). A new `ExecutionVenue.reserve()` reads the nonce just before `SubmitStarted`. `submit_shielded` now returns the nonce it used, and a mismatch journals `SubmitUnknown`. `resolve()` follows the same rules. Changed from the suggested fix: sim books the carrier fee on the miss itself, because the measured 1.1% were included-but-undecrypted carriers.
+7. **Removed subnets lingering — fixed.** `ChainSnapshot.subnets` is defined as exactly the NetworksAdded set. The reader asserts it (§6.8), §4.3 explains why DEREGISTERED fires at P, and §10.1 has the removal-block test.
+8. **Router split — fixed.** WP5 publishes book-independent `RouterCandidate`s and `best_candidate`; `Feat.router_hotkey` and `take_increase_recent` are removed from `Feat`. WP8 owns `risk/router.py` with a per-book `RouterState`, journaled as the `risk.router` memory. Universe sections H and I move to WP8. Updated §3.2, §4.2, WP5, WP8 and WP9.
+9. **Frozen signatures missing inputs — fixed.** Added `BookView` (as `TickContext.book_view`), `SleeveStats`, `RouterFn` and `CapsFn`, and new `DecisionTrace` fields (`nav_liq`, `sleeve_nav`, `calib_digest`). The DECIDE order is strategies → router → caps → allocator → overlay → planner. I added the router step in front so the allocator gets this tick's hotkeys without changing its signature.
+10. **Netting — fixed.** New `SleeveTransfer` journal event and `TargetBook.transfers`; no ledger postings. Added to §4.3, §5.7 invariant 3 and the codec and reducer tests.
+11. **Config and secrets loading — fixed.** `ops/config_load.py` and `ops/secrets.py` move to WP0, `books.backtest.toml` to WP10, `books.paper.toml` to WP12. Updated the import rule, the wave table and the WP4, WP10 and WP11 dependencies.
+12. **β horizon — fixed.** h = finality lag + latency (5) on per-block data, or the stride on stride data. `FeatureEngine.update(own_fill_blocks=...)` handles own-fill exclusion. A new `exact_block` flag on `Fill` and `OrderFailed` reports stride fills separately and keeps them out of the failure-burst counters. Updated FT7.
+13. **As-of calibration — fixed.** Added the §8.10 bullet, `fit_hazard`, and the `Calibration` / `CalibrationProvider` interfaces (new `protocol/calibration.py`; WP4 implements the lake-backed provider in `data/calibration.py`). The digest is journaled, and the bias test is in §10.3. The frozen §3.3 table is paper/live only.
+14. **Hotkey panel coverage — fixed.** The panel is collected from 8,466,531 with point-in-time, sticky tracking, plus an optional pre-June panel. Updated the §6.11 cost table. S0/S1 windows without the panel are labelled price-only and are ineligible for promotion.
+15. **Owner-sale formula — fixed.** The (1 − AL) factor is removed and validator-take credits are added. The take-credit recipient is marked VERIFY (§13 Q22).
+
+**Minor**
+16. **Preflight — fixed.** Preflight now checks RealPaysFee and locks. Added `min_free_real_rao` (MIN_FREE_REAL) and `max_ops_balance_tao`. A failure on a periodic preflight run counts as a key alarm.
+17. **Order validity — fixed.** A shielded fill is legal only at N+2. `era_end` is added to `SubmitStarted` and the live submissions table.
+18. **Unwind time — fixed, but changed from the suggested fix.** Keeping L_exec = 3 is not possible once a miss is only known when N+2 is finalized. So L_exec = finality lag 3 + latency 2 = 5 and U = 15 (config validation enforces this), and the Tier A table is regenerated: 165/315/615/1,215 blocks give 2.4/4.5/8.8/17.2% and 4.8/9.4/19.2/41.6%. "Re-quote every block" is replaced as suggested. Sim now models 3 delegates (`ExecCfg.n_delegates`), up from 1, so backtests use the same U as live.
+19. **One emission-parity gate — fixed.** `protocol.emission.parity_ok` is used for both `model_ok` and T2a.
+20. **Double dissolution settlement — fixed.** `DeregSettled` has an idempotency key; in LIVE the position is marked DISSOLVING and only reconciliation settles it.
+21. **Post-spec burn-in — fixed.** A per-spec `touches_econ` flag (set by the lead via ADR), plus automatic triggers on post-spec parity failures.
+22. **Fixed.** Added `SubnetState.max_allowed_validators`. `track_hotkeys` now adds owner hotkeys and keeps tracking sticky.
+23. **Fixed.** Added `consensus_mode` (item name VERIFY) to the PARAM_CHANGED list, plus `MetagraphLite`, the registry rows and the table columns.
+24. **Fixed.** The era-A fee is marked VERIFY and WP4 measures it; era-A results are flagged until then.
+25. **Fixed.** Added `owner_liquid_frac` and `top_holder_frac`, an m_owner haircut that stays monitoring-only until tested, and a backlog row for owner lock→decaying events.
+26. **Fixed.** Added the 72 h idle-proxy alert (`doctor --live` timer) and the single-position guidance in §12.2, §12.5 and the runbooks.
+27. **Fixed.** WP4 produces the spec-boundary table plus an ADR and the lead edits `regimes.py`. The Gatekeeper network test moves to WP10. WP11 dependencies are corrected.
+28. **Fixed.** Fills are built from share-count changes using an extended `post_state`. I also added a rule for two own orders landing in the same block.
+29. **Fixed.** Nominal finality lag is 3; added the three fee-float fields; `K_ENTRY_HARD` removed; the buy rule now fixes `tao_in` first and derives the limit from it.
+
+Other changes:
+- §13 has new rows Q19–Q23 for the new VERIFY items.
+- The title is bumped to v1.1 with a revision note.
+- `src/` contains only a stub, so no WP0 code needs to be updated to match the revised §5.
+
+Files are in %USERPROFILE%/Trading/tao-subnet-trader/docs/:
+- DESIGN.md

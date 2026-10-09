@@ -1,0 +1,184 @@
+{
+ "issues": [
+  {
+   "severity": "blocker",
+   "section": "\u00a79.4 SDK surface / intent mapping (also \u00a73.3 Tier A, \u00a73.8 router switch, \u00a73.12 full exits)",
+   "problem": "Every live call passes bt.Policy(max_spend_tao=max_order_tao, ...), but full exits use RemoveStakeLimit(amount='all') and hotkey switches use MoveStake(..., 'all'). The verified corpus (sdk intents/plan.py) says an intent whose spend() is UNBOUNDED ('all', TransferStake) is blocked by max_spend_tao. plan() would therefore report a violation, and LiveVenue would return VENUE_REJECT for every full exit, including Tier A EMERGENCY, prune-target and emission-off exits, and for every YieldRouter switch. The most important live risk control cannot execute.",
+   "fix": "In \u00a79.4, replace 'Every call passes bt.Policy(max_fee_tao, max_spend_tao=max_order_tao, ...)' with: 'Buys: Policy(max_fee_tao, max_spend_tao=max_order_tao, allowed_netuids, allow_raw_calls=False). Sells and same-subnet moves: a per-call Policy(max_fee_tao, max_spend_tao=None, allowed_netuids, allow_raw_calls=False). A per-call policy replaces the client policy, so LiveVenue enforces its own caps. Full exits and moves pass the exact live alpha amount read by SdkPort.post_state at the submit head, never the string all. A remainder created by a drain between read and inclusion is handled by the dust rule.' Add a \u00a710.5 Linux contract test asserting that Policy.check() accepts the exact RemoveStakeLimit and MoveStake objects LiveVenue builds, with no violations."
+  },
+  {
+   "severity": "major",
+   "section": "\u00a75.9 LiveCfg.accepted_specs, \u00a79.3 lock 4 (arm token), \u00a79.5, \u00a79.8 invariant 10",
+   "problem": "Submit refuses any spec_version not in accepted_specs, and the arm token expires within 24 h. Runtime upgrades arrive about every 3 days (brief \u00a71), and prunes happen about weekly, with 23% of victims reaching rank 1 in under 24 h. After every upgrade, or any day the user does not re-arm, live can submit nothing, including Tier A, backstop and target exits, while positions sit on the prune ladder. That contradicts risk #1's mitigation of exiting before the prune. The design never says what happens to held positions in that state.",
+   "fix": "Add `LiveCfg.risk_exits_when_unarmed: bool` (the user sets it explicitly in live.example.toml; document it in the live-arming runbook). When it is true and the spec is unaccepted or the arm token has expired, LiveVenue may submit only EMERGENCY/URGENT full sells, and only if V2 (sim_swap parity), V3 (prune-target parity) and V6 (call indices and Staking allow-list) pass on the current spec. Limits come from runtime sim_swap at head. Never buys or moves. When it is false, alert at T\u22122 h before arm expiry, and on every SPEC_CHANGED, while ladder exposure (prune_rank \u2264 15) is above 0. List held positions with their t* in the alert."
+  },
+  {
+   "severity": "major",
+   "section": "\u00a79.6 step 2 caps, \u00a75.9 LiveCfg (max_order_tao 1.0, max_daily_turnover_tao 5.0, max_position_tao 5.0)",
+   "problem": "LiveVenue applies max_order_tao, daily turnover and per-position caps without saying they cover buys only. With max_position 5 TAO and max_order 1 TAO, a full Tier A exit of a 5-TAO position is above max_order_tao. A prune exit after the daily turnover is used up would also be rejected. A safety cap can block a mandatory risk exit.",
+   "fix": "In \u00a79.6 step 2 and \u00a79.8 invariant 12, state: max_order_tao, max_daily_turnover_tao and Policy.max_spend_tao bound buys only. Daily turnover counts buy TAO only. Sells are bounded only by the held position, and same-subnet moves by the position on the origin hotkey. Risk exits (ForcedExit urgency \u2265 URGENT) are never VENUE_REJECTed for caps. Add a \u00a710.5 FakeSdkPort test: a 5-TAO Tier A exit with max_order_tao = 1 is submitted."
+  },
+  {
+   "severity": "major",
+   "section": "\u00a75.4 orders.py _NEXT FSM; \u00a74.5 crash windows",
+   "problem": "A crash after SubmitStarted and before VenueAck leaves the order in SUBMITTING. \u00a74.5 says recovery resolves it from chain truth. If resolve() returns LANDED or a miss, reduce must apply FillReported or OrderFailed(expired=True). The FSM only allows SUBMITTING \u2192 {SUBMITTED, FAILED, UNKNOWN}, so SUBMITTING \u2192 FILLED and SUBMITTING \u2192 EXPIRED are illegal. The fill becomes an orphan: entries halt and the portfolio misses the trade. The \u00a710.3 crash-matrix acceptance test cannot pass.",
+   "fix": "Specify that recover() first journals SubmitUnknown(detail='recovered_submitting') for every order in SUBMITTING, moving it to UNKNOWN, before calling venue.resolve(). Alternatively, extend _NEXT[SUBMITTING] to include FILLED and EXPIRED. Pick one in \u00a75.4 and add a reducer test: SUBMITTING + crash + resolve(LANDED) gives FILLED with no orphan."
+  },
+  {
+   "severity": "major",
+   "section": "\u00a79.4 SdkPort, \u00a79.6 steps 4\u20135, \u00a79.7 key alarms, \u00a75.10 ChainReader",
+   "problem": "LiveVenue.advance must find the carrier by hash in blocks submit+1\u2026submit+8, read the inner extrinsic at carrier index + 1, and decode ExtrinsicFailed, Proxy.ProxyExecuted{result} and ItemFailed. Reconcile must detect announcement changes, a scheduled coldkey swap, foreign StakeMoved/Transferred/Swapped events and TransactionFeePaidWithAlpha. Neither the six-method SdkPort nor ChainReader can list block extrinsics or decode System.Events. events_decoder.py is optional, owned by WP4, and Windows/scalecodec. As specified, ProxyExecuted{Err} under ExtrinsicSuccess cannot be detected, and the key alarms cannot be built.",
+   "fix": "Add to SdkPort (implemented in RealSdk with the SDK's substrate interface on the live host, and in FakeSdkPort): `async def block_extrinsics(self, block_hash: str) -> list[tuple[int, str, str | None, int | None]]` returning (index, ext_hash, signer_ss58, nonce); `async def extrinsic_events(self, block_hash: str, index: int) -> list[tuple[str, str, dict[str, object]]]` returning (pallet, event, fields); `async def proxy_announcements(self, real_ss58: str) -> list[tuple[str, str, int]]`; `async def coldkey_swap_scheduled(self, real_ss58: str) -> bool`; `async def account_events(self, block_hash: str, coldkey_ss58: str) -> list[tuple[str, str, dict[str, object]]]`. State in \u00a79.6 that a ProxyExecuted result of Err maps to OrderFailed(PROXY_ERROR, decoded error name). Add \u00a710.5 tests for each."
+  },
+  {
+   "severity": "major",
+   "section": "\u00a79.6 steps 4\u20135, \u00a75.4 FailReason.SHIELD_MISSED, \u00a72.0 cost table, \u00a79.4 submit_shielded",
+   "problem": "(1) A miss is declared only when the carrier is absent by submit+10. Per brief \u00a75.9, an inner whose carrier is not in block N+2 can never execute, so the miss is provable once N+2 is final. Waiting 10 blocks inflates the unwind time U and delays retries. (2) A miss always books tx_fee = carrier fee. A carrier that is never included costs nothing, so every true miss causes a fee_float mismatch, then ReconAdjusted, then an entry quarantine that needs an operator. (3) The rule 'nonce advanced past the recorded nonce \u2192 included \u2192 settle' confuses a carrier that landed late with its inner dropped (nonce N+1) with an executed inner (nonce \u2265 N+2). (4) The SDK chooses nonces itself (carrier at nonce, inner at nonce+1), but SubmitStarted.nonce is reserved before I/O and submit_shielded does not return the nonce it used.",
+   "fix": "In \u00a79.6: (a) Declare OrderFailed(SHIELD_MISSED, expired=True, tx_fee=0) as soon as block N+2 (= VenueAck.expected_fill_block) is finalized without our carrier. The order may be re-decided at once on another free delegate. (b) Settle the carrier fee later from the delegate's nonce after era end, using a fee-only CapitalChanged(fee_float_delta=-observed) or a new carrier_fee_settled journal event. Nonce N means never included (fee 0). N+1 means carrier included and inner dropped (carrier fee charged). N+2 or more means the inner was included: read its dispatch result. (c) Reserve the nonce with pool-aware system_accountNextIndex immediately before SubmitStarted. Extend SdkPort.submit_shielded to return (carrier_hash, inner_hash, submit_head_block, carrier_nonce). If the returned nonce differs from the journaled one, journal SubmitUnknown. Apply the same rules in resolve()."
+  },
+  {
+   "severity": "major",
+   "section": "\u00a75.3 SubnetState / ChainSnapshot; \u00a76.5 registry row 'added'; \u00a74.3 REGISTERED/DEREGISTERED",
+   "problem": "The registry reads NetworksAdded, and \u00a73.2 A, C-U1 and the prune ladder C(t) all require 'in NetworksAdded'. SubnetState has no `added` field, and ChainSnapshot does not say whether a netuid with NetworksAdded = false is included. Per brief \u00a74.3, removal happens in the registration block, but NetworkRegisteredAt and the pool storage are cleared only in later cleanup (17\u201325 blocks). If the reader keys generations on NetworkRegisteredAt alone, DEREGISTERED fires up to 25 blocks late. The removed subnet stays in ladder() as the target, and planner sells fail with SubnetNotExists, paying fees.",
+   "fix": "In the \u00a75.3 ChainSnapshot docstring add: 'subnets contains exactly the non-root netuids with NetworksAdded == true; a netuid that is removed and in cleanup, or queued and not yet added, is excluded.' In \u00a76.8 step 8, make the reader assert this. Add a \u00a710.1 derive test: at the removal block P, DEREGISTERED fires at P even though NetworkRegisteredAt is still present."
+  },
+  {
+   "severity": "major",
+   "section": "\u00a73.8 YieldRouter, \u00a73.2 H, \u00a75.8 Feat.router_hotkey/yield_net_day, WP5 yield_router.py / universe.py",
+   "problem": "Several inputs depend on the individual book: the router's filters and switch rules (Q_MAX against our own alpha, the held hotkey in the candidate set, the 2-epoch hysteresis against the current hotkey), the per-book cooldowns in the universe floor (abnormal fill, failed orders) and the bans. But they are placed in the FeatureEngine, which is computed once per snapshot and shared by all N books. Books with different sizes or different held hotkeys cannot each be served by one Feat.router_hotkey, and features cannot see book order or fill state.",
+   "fix": "Split the work. WP5 publishes only book-independent data: `Feat.router_candidates: tuple[RouterCandidate, ...]` with (hotkey, score_ppm_day, take_u16, childkey_take_u16, member_frac_ppm, permit_rank, ratio_ok, take_increase_recent), plus universe sections A\u2013G. Move per-book selection into WP8 as `risk/router.py`, with switch memory in EngineState: held-hotkey hysteresis, Q_MAX against own shares, switch triggers and the MOVE_STAKE decision. Section H cooldowns and section I aggregates also move to WP8. TargetPosition.hotkey is set there. Remove Feat.router_hotkey, or rename it best_candidate. Update \u00a74.2 ownership and the WP5/WP8 file lists."
+  },
+  {
+   "severity": "major",
+   "section": "\u00a75.10 Planner/Allocator/RiskContext/TickContext signatures; \u00a73.11; \u00a73.12",
+   "problem": "Many rules need inputs the frozen signatures do not carry. The planner needs: attempt counters and K_CHASE state, in-flight and recent terminal orders, delegate availability and locks, recent own fills (\u03b2 own-fill exclusion), and failures per netuid in 600 blocks. The overlay's mode logic needs: DD30, daily NAV_liq loss, sleeve un-netted DD, the 20-trade cost ratio, turnover against backtest, and the 45-day mean against bootstrap. The allocator takes `caps` that \u00a73.5 defines in the overlay, but no protocol or call order says who computes them before the allocator runs. Carry C-U9 needs recent overlay risk exits. Parallel WP7, WP8 and WP9 implementers cannot code against \u00a75.",
+   "fix": "Add to \u00a75.10 a frozen `BookView` passed in TickContext with: orders (open records plus terminal records from the last 7,200 blocks); recent_fills (last 1,800 blocks); delegates_free; delegate_locked_until; nav_liq_daily: tuple[tuple[Block, Rao], ...] (\u2265 45 d); sleeve_stats: tuple[SleeveStats, ...] (un-netted DD, cost_ratio_20, turnover_ratio, mean_45d); fail_counts_600: dict[NetUid, int]; cooldowns and bans; recent_forced_exits. EngineState in the reducer (WP7) maintains all of these. Define `CapsFn = Callable[[TickContext, RiskCfg], dict[SubnetKey, Rao]]`, implemented in risk/liquidity.py. Fix the DECIDE order as: caps \u2192 allocator(signals, ctx, caps) \u2192 overlay.review \u2192 planner(decision, ctx, ...)."
+  },
+  {
+   "severity": "major",
+   "section": "\u00a73.10 step 6 netting; \u00a75.6 journal vocabulary; \u00a75.7 invariant 3",
+   "problem": "Netting lets sleeves trade with each other at the decision spot, which changes SleeveHolding shares and sleeve_cash without a fill. But reduce(journal) is the only allowed state transition, and no journal event kind represents a transfer between sleeves. Netting would either violate replay determinism or break invariant 3 (sleeve shares sum to Position.shares; sleeve cash sums to cash). Un-netted P&L also cannot be reconstructed.",
+   "fix": "Add `@journal_event(\"sleeve_transfer\") SleeveTransfer(book: BookId, block: Block, key: SubnetKey, from_strategy: StrategyId, to_strategy: StrategyId, shares: Decimal, tao: Rao, price: PriceRao)` with idem f\"xfer:{book}:{block}:{key.netuid}:{key.reg_at}:{from}:{to}\". The Engine emits it in EMIT. reduce moves SleeveHolding shares and sleeve_cash and posts no ledger entries (the transfer is virtual). Add it to the \u00a74.3 table, the \u00a710.2 codec round trip and a reducer invariant test."
+  },
+  {
+   "severity": "major",
+   "section": "\u00a711 work-package waves (WP12 owns ops/config_load.py, ops/secrets.py, config/books.backtest.toml)",
+   "problem": "Config loading (TOML \u2192 core.config) and secrets (keyring/env) are owned by WP12 in wave 5, but earlier waves need them. WP4 (wave 2) reads the Taostats and OnFinality keys from keyring/env. WP10 (wave 4) 'expands configs' from books.backtest.toml and must run S0 end to end. WP11 (wave 4) loads live config and the arm-token secret. The dependency is inverted, so parallel implementers would each write their own loader.",
+   "fix": "Move `ops/config_load.py` and `ops/secrets.py`, with their tests, to WP0 (wave 0), or to a new WP3b in wave 1 that depends on WP0. Move `config/books.backtest.toml` to WP10 and `config/books.paper.toml` to WP12. Update the \u00a711 wave table and the WP4, WP10 and WP11 'Depends on' lines."
+  },
+  {
+   "severity": "major",
+   "section": "\u00a73.12 \u03b2_entry/\u03b2_exit; \u00a75.8 Feat.beta_*; WP5 features; \u00a78.4 latency",
+   "problem": "\u03b2 is defined as a quantile of |ln p_t \u2212 ln p_{t\u22122}|, but the limit is computed at finalized block b and fills at b + finality_lag + 2 (\u2248 5 blocks). LiveVenue may only tighten that limit, never loosen it. So the buffer covers 2 blocks of drift against a horizon of about 5, and PriceLimitExceeded/SlippageTooHigh rates will exceed the FT7 targets (\u2264 2% each). In stride-60 backtests, 2-block returns cannot be computed at all, and fills are evaluated at the next 60-block snapshot, so stride replays over-count limit failures and fail-burst cooldowns. Separately, 'own-fill exclusion is applied by the planner' is impossible: the planner receives only the finished quantile.",
+   "fix": "Define the \u03b2 horizon as the venue's effective decision-to-fill latency: h = finality_lag + latency_blocks (paper, live and refined windows), or h = stride (stride replays). Then \u03b2_entry = clamp(q95 |ln p_t \u2212 ln p_{t\u2212h}|, floor, cap) and \u03b2_exit = clamp(q99 |ln p_t \u2212 ln p_{t\u2212h}|, ...) over the last 1,800 blocks (or 30 stride points). Have FeatureEngine.update accept `own_fill_blocks: frozenset[Block]` from the Runner (the union over books) and exclude those blocks. Report limit failures separately for stride fills and per-block fills, and exclude stride fills from the 3-per-600-block cooldown counter."
+  },
+  {
+   "severity": "major",
+   "section": "\u00a73.3 HazardModel / \u03ba_p / Tier B jumps / R fallback; \u00a78.10 bias controls; \u00a75.10 FeatureEngine",
+   "problem": "Several decision inputs are calibrated on the whole 2025-10 to 2026-10 prune and registration history and then used in backtests over the same period: the hazard CDF (n = 32 registrations, Feb\u2013Oct 2026, P_OPEN), \u03ba_p (FT1 logistic), the Tier B jump parameters (fit to 7/52 and 12/52), the R choice (FT10) and the \u03c6 priors. Only FT1a uses an out-of-sample split. \u00a78.10 has no control for look-ahead in calibrated parameters. No interface says who builds the HazardModel, how it is refit weekly, or how it reaches FeatureEngine or PruneView.",
+   "fix": "Add a \u00a78.10 bullet: 'As-of calibration: every calibrated decision input is fit only on events with block < decision block.' Add `protocol.prune.fit_hazard(regs: Sequence[RegistrationRow], asof: Block, prior: HazardModel) -> HazardModel`. Inject a `CalibrationProvider` with `asof(block) -> Calibration(hazard, kappa_p, r_default, tier_b_jumps, phi)`, loaded from the lake registration and generation tables, into the FeatureEngine and RiskOverlay constructors. Journal its digest in DecisionTrace. Add a bias test: perturbing registrations after t leaves every decision before t unchanged. The frozen \u00a73.3 table is allowed only in paper and live."
+  },
+  {
+   "severity": "major",
+   "section": "\u00a76.11 / WP4 hotkey panel; \u00a78.11 S0/S1; \u00a78.7 yield accrual",
+   "problem": "WP4 collects the hotkey panel (TotalHotkeyAlpha and shares) only 'at every epoch block in the gate era' (\u2265 8,765,684). But S0 is specified over the gate era and the post-June era (from 8,466,531), and S1 re-runs SMB/WML/REV on a P\u00d7I panel outside the gate era. P\u00d7I total return is therefore impossible for the pre-gate windows. Also, the tracked set is top-5 plus take-0 earners at each refresh. If a backtest book holds a hotkey that later drops out of that set, its index series is missing mid-position, which surfaces as NO_YIELD_IDX or broken YieldAccrued.",
+   "fix": "In WP4 details, collect the hotkey panel from 8,466,531 (and at 300-block cadence from 4,920,351 if S1 is to cover the Maymin window). Select tracked sets point-in-time with state_getKeysPaged at each historical block hash. Make tracking sticky: once a (hotkey, generation) is tracked, keep it until the generation ends. Update the \u00a76.11 RU table. If the pre-gate panel is not collected, S0 and S1 outside the gate era must be labelled 'price-only + closed-form yield proxy' and are ineligible for promotion decisions."
+  },
+  {
+   "severity": "major",
+   "section": "\u00a72.1 signal 'owner'; \u00a73.6 owner guard",
+   "problem": "owner_sold = max(0, A\u2080\u00b7I\u2081/I\u2080 + c_o\u00b7AE\u00b7(1 \u2212 AL) \u2212 A\u2081). An auto-locked owner cut is a conviction lock on stake that stays in the owner's position (corpus: auto_lock_owner_cut), so expected growth includes the full owner cut whatever AL is. Multiplying by (1 \u2212 AL) hides up to 1,296 alpha/day of real sales on autolock subnets. The formula also omits validator-take credits, which are new shares credited to the owner coldkey on the owner hotkey and not captured by I. When the owner hotkey is a dividend recipient, real sales are under-detected by that amount. Both errors weaken the owner-dump guard for risk #7.",
+   "fix": "Replace the formula with: sold = max(0, A\u2080\u00b7I\u2081/I\u2080 + accrual \u2212 A\u2081), where accrual = c_o\u00b7\u03a3 alpha_out_emission over the interval (no (1 \u2212 AL) factor; drop the factor only if OwnerCutEnabled is false) + \u03a3 over drains in the interval of last_dividend\u00b7t/(1 \u2212 t), t = take_u16/65535 of the owner hotkey when it earns. Keep (1 \u2212 AL) only inside protocol.sellload, where it means the liquid fraction. Mark the take-credit recipient (the hotkey's owner coldkey) as VERIFY."
+  },
+  {
+   "severity": "minor",
+   "section": "\u00a79.3 preflight; \u00a73.12 MIN_FREE_REAL; \u00a75.9 LiveCfg",
+   "problem": "The design assumes inner-call fees are paid by the delegate. Per brief \u00a75.8, the real account can opt in with Proxy.set_real_pays_fee, which moves fees, and the alpha-fee trap, onto the real coldkey. Nothing checks this. MIN_FREE_REAL (used in the planner and in Portfolio.cash) and max_ops_balance (preflight 1) are never defined. Nothing checks for conviction locks on the trading coldkey, which risk #16 says to avoid.",
+   "fix": "Preflight additions: (1) refuse if RealPaysFee(real, delegate) is true for any delegate (storage name VERIFY from the set_real_pays_fee dispatch); (2) refuse if stake_availability(real, n).locked > 0 for any held netuid. Add `RiskCfg.min_free_real_rao: Rao = Rao(50_000_000)`, which must be at least the existential deposit, as MIN_FREE_REAL. Add `LiveCfg.max_ops_balance_tao: float = 0.5`."
+  },
+  {
+   "severity": "minor",
+   "section": "\u00a75.4 OrderIntent.valid_until; \u00a73.12 TTL; \u00a78.4",
+   "problem": "valid_until is 'submit + 8' for shielded orders and paper/backtest fills before it count. A shielded inner can execute only in block N+2. The 8-block era only governs nonce occupancy, and it is anchored at the finalized head, not at submit. A fill at N+3\u2026N+8 is impossible on chain but legal in paper and refined replays.",
+   "fix": "For shielded intents set valid_until = expected_fill_block (submit head + 2). Add a separate `era_end` (finalized anchor + 8) to SubmitStarted and live_submissions for nonce locks. For unshielded era-16 intents, valid_until = era_end. In paper and refined replays, a shielded fill at any block other than N+2 is MISSED. Only stride replays may use the next available snapshot."
+  },
+  {
+   "severity": "minor",
+   "section": "\u00a73.3 unwind time U and Tier A execution",
+   "problem": "U = 3 + 3\u00b73 = 12 assumes each retry starts 3 blocks after the previous attempt. The design waits until submit + 10 to call a miss and allows one in-flight order per netuid, so a miss followed by a retry takes about 13 blocks per attempt. 'Re-quote every block until flat' also contradicts the one-in-flight rule. The Tier A coverage table and FT1b therefore assume faster unwinds than the planner can deliver.",
+   "fix": "After the miss-detection change in the shield-miss issue (miss final at N+2), keep L_exec = 3 and rotate to a free delegate for each retry. Replace 'Re-quote every block until flat' (\u00a73.3, \u00a73.12) with 're-quote at each terminal outcome, at most every L_exec blocks'. If the N+2 rule is not adopted, recompute U = finality_lag + L_exec + retries\u00b7(era_blocks + 2) and regenerate the Tier A table."
+  },
+  {
+   "severity": "minor",
+   "section": "\u00a75.8 EmissionView.model_ok vs \u00a72.1 T2a",
+   "problem": "model_ok is defined two ways: '\u2265 90% of enabled subnets with E > 1 TAO/day within 5%' (EmissionView) and 'median abs rel error < 1% for E > 1 TAO/day \u2192 HALT carry' (T2a). Implementers of WP5 and WP9 would compute different gates.",
+   "fix": "Define one function, `protocol.emission.parity_ok(errors) -> bool` = (median |rel err| < 1%) AND (\u2265 90% within 5%) over enabled subnets with E > 1 TAO/day, on trailing 300-block observed emission. Use it for both EmissionView.model_ok and T2a, and cite it in both places."
+  },
+  {
+   "severity": "minor",
+   "section": "\u00a75.10 JournalRecord.hash vs \u00a77.2 journal DDL",
+   "problem": "\u00a75.10 hashes 'prev_hash || block|phase|sub|book|kind|payload'. \u00a77.2 hashes '\u2026|kind|version|payload'. WP0/WP3 and verify_chain would disagree.",
+   "fix": "Use `blake2b-256(prev_hash || block|phase|sub|book|kind|version|payload)` in \u00a75.10 and add `version: int` to JournalRecord."
+  },
+  {
+   "severity": "minor",
+   "section": "\u00a74.4 ACCOUNT DeregSettled; \u00a79.7 reconciliation; \u00a75.6 DeregSettled",
+   "problem": "In live mode, the engine's ACCOUNT phase emits a modelled DeregSettled on DEREGISTERED, and reconcile emits DeregSettled(model='observed'). DeregSettled has no idem, so a held dissolution can settle twice.",
+   "fix": "Add `idem() -> f\"dereg:{book}:{key.netuid}:{key.reg_at}\"`. In RunMode.LIVE, the engine marks the position DISSOLVING (reducer state) and does not emit DeregSettled. Only reconcile emits the observed one. Backtest and paper keep the modelled settlement."
+  },
+  {
+   "severity": "minor",
+   "section": "\u00a73.10 step 2 post-spec burn-in",
+   "problem": "'After any spec touching emission, dividends or registration' sets m_burnin = 0.5 for 100,800 blocks. No rule or owner decides whether a spec 'touches' these, and specs land about every 3 days. If every spec counts, budgets stay halved permanently.",
+   "fix": "Add `touches_econ: bool` per spec in protocol/regimes.py (lead-maintained via ADR). Also trigger automatically when post-spec V4 emission parity, T6 yield parity or the FT1 hazard validity check moves outside tolerance. No burn-in otherwise."
+  },
+  {
+   "severity": "minor",
+   "section": "\u00a75.3 SubnetState (max_allowed_validators); \u00a75.12 track_hotkeys; \u00a73.6",
+   "problem": "The router permit filter (\u2264 0.8\u00b7MaxAllowedValidators[n]) needs a field that is in the \u00a76.5 registry and the snap_subnet DDL but missing from the SubnetState dataclass, which WP0 commits verbatim. Owner-position value = shares \u00d7 I(owner_hotkey) needs the owner hotkey's index, but track_hotkeys does not include owner hotkeys.",
+   "fix": "Add `max_allowed_validators: int | None = None` to SubnetState. In the track_hotkeys docstring add '+ (owner_hotkey, netuid) for every subnet with owner_hotkey set'."
+  },
+  {
+   "severity": "minor",
+   "section": "\u00a73.8 Null consensus; \u00a72.4 LCW metagraph (risk #22)",
+   "problem": "Null consensus is 'monitored per subnet' as a 'PARAM_CHANGED-style event', but no storage item, SubnetState field or ChainEventKind is defined. LCW's miner-quality gates need metagraph data that has no type in \u00a75.",
+   "fix": "Add a per-subnet consensus-mode item to chain/items.py (name VERIFY from spec-475 metadata). Add `consensus_mode: int | None` to SubnetState and include it in the per-subnet PARAM_CHANGED freeze list. Add a `MetagraphLite(n_miners, n_miner_coldkeys, top1_coldkey_share_ppm, n_permit_coldkeys)` field (None unless lcw.enabled) before WP9 implements LCW."
+  },
+  {
+   "severity": "minor",
+   "section": "\u00a78.2 era A fee; \u00a75.12 fee_rate_default",
+   "problem": "Era A (pre-swap-v3) is assigned fee 33. The brief gives only 196 for specs 290\u2013292 and 33 after; Swap.FeeRate did not exist before v3. The era-A cost model is an unmarked assumption that feeds S1 over the Maymin window.",
+   "fix": "Mark the era-A fee (VERIFY). Have WP4 measure it at about 5 era-A blocks from StakeAdded tao/alpha against T/A, or from the era-A runtime constants. Return the measured value from `fee_rate_default(spec)` for era-A specs, and flag era-A results `Quality.DEFAULT_FILLED` until verified."
+  },
+  {
+   "severity": "minor",
+   "section": "\u00a73.6 / risk register #7 (owner or insider dump)",
+   "problem": "The brief's mitigation asks to monitor holder concentration and lock-to-decaying events and to size down where the owner cut is liquid. The design acts only on owner-sale triggers. There is no standing size-down for liquid owner stake, no concentration feature, and the lock event is deferred with no owner.",
+   "fix": "Add `Feat.owner_liquid_frac` = owner_alpha\u00b7(1 \u2212 autolock)/x and `Feat.top_holder_frac` (owner plus top-5 tracked hotkeys, as a share of AlphaOut \u2212 ProtocolAlpha). Add an overlay MONITOR rule m_owner = 0.5 on V_cap when owner_liquid_frac \u2265 10%, activated only after an FT5-style ablation. Assign lock\u2192decaying event detection to WP4 events_decoder with a backlog entry."
+  },
+  {
+   "severity": "minor",
+   "section": "Risk register #8 / #10; \u00a712.2 keys; runbooks",
+   "problem": "Two brief mitigations are missing. Risk #8 says to revoke idle proxies: the zero-delay Staking proxy stays active on chain after the arm token expires, and a stolen delegate key can still force value-draining round trips. Risk #10 says to avoid a single-position account signature.",
+   "fix": "In \u00a712.2 and the key-compromise and live-arming runbooks, add: if live has not been armed for more than 72 h, alert 'remove Staking proxies (btcli proxy remove)' and list the delegates. Document that a single-position coldkey reveals trade direction even when shielded, and recommend that per-strategy coldkeys hold at least 2 positions or accept the leak."
+  },
+  {
+   "severity": "minor",
+   "section": "\u00a711 WP ownership and dependencies",
+   "problem": "Three problems. (1) WP4 is told to fill and commit protocol/regimes.py, which WP2 owns. (2) WP5's acceptance test (Gatekeeper on the last 10 registrations, network) needs WP1/WP4, which WP5 does not depend on. (3) WP11 runs the full engine and uses state.sqlite live_submissions, but does not list WP3, WP5 or WP9.",
+   "fix": "(1) WP4 outputs the spec_boundary table plus an ADR, and the lead (WP2 owner) edits regimes.py. (2) Move the Gatekeeper network acceptance test to WP10, or add WP1 and WP4 to WP5's dependencies. (3) Set WP11 'Depends on: WP0, WP1, WP3, WP5, WP7, WP8, WP9'."
+  },
+  {
+   "severity": "minor",
+   "section": "\u00a79.6 step 4 fills from post-state deltas; \u00a79.4 post_state",
+   "problem": "FillReported is built from alpha-value deltas of (real, hotkey, netuid) at the inclusion block. An epoch drain in block N+2 runs before extrinsics, so the delta includes yield. That yield is then counted twice: once in the fill and again in YieldAccrued.",
+   "fix": "Extend SdkPort.post_state to return the coldkey's share count on (hotkey, netuid) and the hotkey index at the block. Compute Fill.shares from the change in share count, and Fill.alpha from that change \u00d7 the post index (sells: from the shares debited). Never use the raw value delta."
+  },
+  {
+   "severity": "minor",
+   "section": "\u00a75.9 / \u00a75.6 / \u00a73.11 / \u00a73.12 small inconsistencies",
+   "problem": "Four inconsistencies. (1) HealthObs.nominal() uses finality_lag 2 while ExecCfg.finality_lag_blocks is 3. (2) The fee-float tiers 0.25/0.15/0.05 TAO in \u00a73.11 are not config fields; LiveCfg has only min_fee_float_tao. (3) 'K_ENTRY_HARD' is referenced but never defined. (4) The planner buy rule is circular: tao_in depends on max_buy_to_limit(limit) while limit depends on tao_in.",
+   "fix": "(1) Set HealthObs.nominal() finality_lag_blocks=3. (2) Add RiskCfg fee_float_alert_rao=250_000_000, fee_float_caution_rao=150_000_000, fee_float_exits_rao=50_000_000. (3) Replace the K_ENTRY_HARD comment with 'entry floor'. (4) Specify: tao_in = min(\u0394, cash \u2212 MIN_FREE_REAL); limit = ceil(marginal_after_buy(pool, tao_in)\u00b7(1+\u03b2_entry)); assert tao_in \u2264 max_buy_to_limit(pool, limit), which holds by construction."
+  }
+ ]
+}

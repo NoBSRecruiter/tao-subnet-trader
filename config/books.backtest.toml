@@ -1,0 +1,141 @@
+# taotrader backtest books (WP10). DESIGN.md sections 2.5, 8 and 8.9.
+#
+# Loaded through ops.config_load on top of config/default.toml (taotrader.backtest.books.load_backtest_plan):
+# default.toml < this file < TAOTRADER_CFG_* environment < CLI "path=value" overrides. The [backtest] table is
+# WP10's (replay window and expansion axes); every other key is a plain RunCfg key and is validated strictly.
+#
+# One pass drives every book below: each sleeve alone, the blend and the section 2.5 baselines, at the headline
+# TEMPORARY impact bound and the formula dereg model; the sleeve and blend books are also crossed with the other impact
+# bounds (half-life 14,400 and PERSISTENT) and the fixed dereg payouts (0.35x and 0.65x). 9 + 6 + 6 = 21 books.
+#
+# Capital is an explicit research figure (section 1.6); the capacity sweep re-runs the same books at
+# 1/3/10/30/100/300 TAO. The fee float is sized so ~10,000 orders never drive it negative (WP7 open item 2).
+
+run_id = "bt-main"
+mode = "backtest"
+cadence_blocks = 60
+seed = 0
+
+[backtest]
+start_block = 8_765_684          # gate_rank32 (spec 441): carry valid_from, emission replica exact from here
+end_block = 0                    # 0 = the lake's last stored block
+stride_blocks = 60
+warmup_blocks = 216_000          # 30 d ingested with warm = false before start_block (section 8.1)
+feature_warm_blocks = 216_000    # FeatureParams.warm_blocks
+lake = "data/lake"
+hazard_invalid_from = 0          # 0 = none; the lead may set 9_233_782 (spec-475 PoW registration)
+impact_books = ["carry", "momentum", "blend"]
+dereg_books = ["carry", "momentum", "blend"]
+
+[[backtest.impact]]
+suffix = ""                      # headline and gating bound: TEMPORARY (healed impact)
+half_life_blocks = 0
+[[backtest.impact]]
+suffix = "-hl14400"              # middle case
+half_life_blocks = 14_400
+[[backtest.impact]]
+suffix = "-persist"              # optimistic bound: PERSISTENT
+half_life_blocks = "none"
+
+[[backtest.dereg]]
+suffix = ""
+model = "formula"                # payout = alpha_value x R x spot (section 3.3 recovery ratio)
+[[backtest.dereg]]
+suffix = "-d35"
+model = "fixed:350000"
+[[backtest.dereg]]
+suffix = "-d65"
+model = "fixed:650000"
+
+# ------------------------------------------------------------------ sleeves
+[[books]]
+book = "carry"
+capital_rao = 100_000_000_000    # 100 TAO
+fee_float_rao = 10_000_000_000   # 10 TAO
+[[books.sleeves]]
+strategy = "carry"
+stage = "RESEARCH"
+budget_ppm = 1_000_000
+
+[[books]]
+book = "momentum"
+capital_rao = 100_000_000_000
+fee_float_rao = 10_000_000_000
+[[books.sleeves]]
+strategy = "momentum"
+stage = "RESEARCH"
+budget_ppm = 1_000_000
+
+[[books]]
+book = "blend"
+capital_rao = 100_000_000_000
+fee_float_rao = 10_000_000_000
+[[books.sleeves]]
+strategy = "carry"
+stage = "RESEARCH"
+budget_ppm = 500_000
+[[books.sleeves]]
+strategy = "momentum"
+stage = "RESEARCH"
+budget_ppm = 500_000
+
+# ------------------------------------------------------------------ baselines and placebos (section 2.5)
+[[books]]
+book = "base-cash"
+capital_rao = 100_000_000_000
+fee_float_rao = 10_000_000_000
+[[books.sleeves]]
+strategy = "baseline.cash"
+stage = "RESEARCH"
+budget_ppm = 1_000_000
+
+[[books]]
+book = "base-ew-price"
+capital_rao = 100_000_000_000
+fee_float_rao = 10_000_000_000
+[[books.sleeves]]
+strategy = "baseline.ew_price"
+stage = "RESEARCH"
+budget_ppm = 1_000_000
+
+[[books]]
+book = "base-ew-total"
+capital_rao = 100_000_000_000
+fee_float_rao = 10_000_000_000
+[[books.sleeves]]
+strategy = "baseline.ew_total"
+stage = "RESEARCH"
+budget_ppm = 1_000_000
+
+[[books]]
+book = "base-yield-size"
+capital_rao = 100_000_000_000
+fee_float_rao = 10_000_000_000
+[[books.sleeves]]
+strategy = "baseline.yield_x_size"
+stage = "RESEARCH"
+budget_ppm = 1_000_000
+
+[[books]]
+book = "base-prune-blind"        # the overlay's prune rules are switched off for this book (backtest.books)
+capital_rao = 100_000_000_000
+fee_float_rao = 10_000_000_000
+[[books.sleeves]]
+strategy = "baseline.prune_blind"
+stage = "RESEARCH"
+budget_ppm = 1_000_000
+
+[[books]]
+book = "base-random"             # random-entry placebo, size/turnover matched to the carry sleeve
+capital_rao = 100_000_000_000
+fee_float_rao = 10_000_000_000
+[[books.sleeves]]
+strategy = "baseline.random_entry"
+stage = "RESEARCH"
+budget_ppm = 1_000_000
+[books.sleeves.params]
+n_positions = 6
+hold_days = 5.0
+entries_per_cycle = 2
+rebalance_blocks = 300
+matched_to = "carry"

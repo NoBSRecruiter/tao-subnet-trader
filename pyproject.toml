@@ -1,0 +1,56 @@
+[project]
+name = "taotrader"
+version = "0.1.0"
+description = "Research, backtest and paper trading of micro-cap Bittensor dTAO subnet alpha, with a gated live adapter"
+readme = { text = "See docs/DESIGN.md.", content-type = "text/plain" }
+requires-python = ">=3.11,<3.12"
+# Runtime pins (DESIGN.md section 11, WP0). Every dependency change needs a lockfile diff review (section 10.6).
+# bittensor is NOT here: the live extra lives in requirements-live.txt (WP11) so Windows never resolves it.
+dependencies = [
+    "websockets==15.0.1",
+    "httpx==0.28.1",
+    "xxhash==3.5.0",
+    "duckdb==1.2.2",
+    "numpy==2.2.6",
+    "zstandard==0.23.0",
+    "keyring==25.6.0",
+]
+
+[project.optional-dependencies]
+collector = ["scalecodec==1.2.11"]
+dev = [
+    "pytest==9.1.1",
+    "hypothesis==6.168.5",
+    "mypy==2.4.0",
+    "ruff==0.16.10",
+    "import-linter==2.15",
+    "mutmut==3.8.0",
+]
+
+[project.scripts]
+taotrader = "taotrader.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.12.16,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+minversion = "9.0"
+testpaths = ["tests"]
+# importlib mode: test directories are not packages, so equal basenames in different WP test dirs never collide.
+# Network tests are deselected by default; run them with `-m network` (the later -m wins).
+addopts = ["--import-mode=importlib", "--strict-markers", "-m", "not network"]
+markers = [
+    "network: read-only JSON-RPC against public Bittensor endpoints (<= 3 req/s); run with -m network",
+]
+xfail_strict = true
+
+[tool.mutmut]
+# Section 10.6: a surviving mutant fails review. mutmut needs fork(), so it runs on Linux/WSL CI only.
+paths_to_mutate = [
+    "src/taotrader/protocol/amm.py",
+    "src/taotrader/core/portfolio.py",
+    "src/taotrader/engine/reducer.py",
+    "src/taotrader/portfolio/planner.py",
+]
+tests_dir = ["tests/"]

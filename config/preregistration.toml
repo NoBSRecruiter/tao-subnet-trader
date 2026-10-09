@@ -1,0 +1,585 @@
+# taotrader pre-registration (WP0). DESIGN.md v1.1 sections 2-3, 8.9, 9.1 and 10.4.
+#
+# Every default and threshold the design fixes BEFORE seeing results. ConfigApplied journals prereg_hash
+# (blake2b-256 of the canonical JSON of this file's parsed content, so formatting and line endings do not matter).
+# Any change is a research-protocol change: it needs an ADR, it changes prereg_hash, and every report states which
+# hash it ran under. [risk] and [exec] must equal the core.config defaults (tests/ops/test_config_load.py checks it).
+# Units are in the key names (_blocks, _ppm, _rao, _tao, _pct_day, _frac, _days); bare fractions are plain ratios.
+# kind: T = P&L-tuned (counted in the budget of 11), F = frozen, C = calibrated against a non-P&L target.
+
+[meta]
+design_version = "1.1"
+design_date = "2026-10-08"
+spec_at_registration = 475
+disclaimer = "Thresholds are pre-registered test criteria and priors, not forecasts or financial advice."
+
+# =================================================================================================== RiskCfg (section 3)
+[risk]
+unwind_exec_blocks = 5
+unwind_retries = 2
+margin_a_blocks = 300
+d_stress_ppm = 500_000
+k_bottom = 3
+r_backstop_ppm = 1_200_000
+tier_b_enabled = false
+h_b_blocks = 7200
+pi_b_ppm = 7500
+mc_paths = 2000
+entry_min_rank = 6
+entry_min_rho_ppm = 1_500_000
+pi_entry_7d_ppm = 10_000
+r_default_ppm = 350_000
+emission_ban_blocks = 100_800
+reenable_wait_blocks = 360
+burn_entry_max_ppm = 500_000
+burn_exit_ppm = 900_000
+min_since_start_blocks = 100_800
+min_age_reg_blocks = 216_000
+launch_stop_before_immunity_end = 144_000
+s_exit_entry_ppm = 15_000
+s_exit_hold_max_ppm = 25_000
+d_t_ppm = 200_000
+s_urgent_ppm = 30_000
+nu_max_ppm = 150_000
+g_max_ppm = 800_000
+n_max = 12
+v_min_rao = 500_000_000
+remainder_min_rao = 500_000_000
+band_ppm = 200_000
+ladder_bucket_ppm = 150_000
+owner_cluster_ppm = 200_000
+young_bucket_ppm = 100_000
+exit_budget_ppm = 20_000
+escrow_max_ppm = 500_000
+t_min_pool_rao = 200_000_000_000
+fee_rate_max = 330
+gate_haircuts_active = false
+min_free_real_rao = 50_000_000
+owner_cooldown_blocks = 7200
+owner_unstake_frac_ppm = 20_000
+owner_liquid_max_ppm = 100_000
+owner_haircut_active = false
+take_max_ppm = 50_000
+q_max_ppm = 50_000
+permit_rank_frac_ppm = 800_000
+k_epochs = 20
+switch_min_gain_ppm_day = 200
+beta_entry_floor_ppm = 1000
+beta_entry_cap_ppm = 20_000
+beta_exit_floor_ppm = 2500
+beta_exit_cap_ppm = 50_000
+k_chase = 2
+chi_max_ppm = 15_000
+finality_shield_pause_blocks = 5
+stall_warn_s = 36
+stall_halt_s = 120
+finality_caution_blocks = 30
+stale_prune_blocks = 25
+dd_soft_ppm = 150_000
+dd_hard_ppm = 250_000
+daily_loss_ppm = 80_000
+fail_burst_netuid = 3
+fail_burst_global = 5
+fee_float_alert_rao = 250_000_000
+fee_float_caution_rao = 150_000_000
+fee_float_exits_rao = 50_000_000
+spec_burn_in_blocks = 100_800
+allow_emergency_exits_when_frozen = true
+regime_throttle_active = false
+
+# =================================================================================================== ExecCfg (section 2.0)
+[exec]
+latency_blocks = 2
+finality_lag_blocks = 3
+shield_miss_ppm = 11_000
+buy_tx_fee_rao = 1_028_000
+sell_tx_fee_rao = 837_000
+move_tx_fee_rao = 1_000_000
+rotate_tx_fee_rao = 1_250_000
+carrier_fee_rao = 98_000
+impact_half_life_blocks = 0
+fail_inject_ppm = 0
+n_delegates = 3
+
+# =================================================================================================== section 2.0
+[shared]
+regime_alignment = "setCode block + 1 (protocol/regimes.py)"
+flow_valid_from_block = 8_466_531                 # dSubnetTaoFlow used only from here, within one generation
+flow_fallback_unreliable_before_block = 8_283_784 # reserve-difference flow before spec 411
+impact_bound_gating = "TEMPORARY"                 # RT(V) ~ 2f + 2V/(T+V) + 0.001865/V; PERSISTENT reported only
+round_trip_fixed_tx_tao = 0.001865                # buy 0.001028 + sell 0.000837
+universe_report_min_dates = 10
+universe_min_names_for_capacity_claim = 6
+pnl_tuned_parameter_budget = { total = 11, carry = 3, momentum = 4, mean_reversion_study = 4 }
+common_holdout = "first post-spec-475 forward period, untouched by every sleeve"
+
+# =================================================================================================== section 2.1 carry
+[carry]
+verdict = "CORE"
+decide_every_blocks = 300
+min_cadence_blocks = 60
+valid_from_block = 8_765_684                      # rank-32 gate
+n_max = 12
+wake_on = ["epoch_drain", "emission_toggled", "deregistered", "large_flow", "owner_position", "owner_changed",
+           "autolock_toggled", "take_changed", "dividend_membership", "prune_target_changed"]
+trade_band = "max(V_min, 25% of target)"
+statement = "the level edge cannot be confirmed in under about 1-2 years of data; only components and disasters are testable now"
+
+[carry.params]                                    # kind: T = P&L-tuned, F = frozen, C = calibrated (non-P&L target)
+h_eval_days = { default = 5, range = [2, 14], kind = "T" }
+mu_in_pct_day = { default = 0.10, range = [0.03, 0.40], kind = "T" }
+unc_z = { default = 0.5, range = [0.0, 1.0], kind = "T" }
+mu_out_pct_day = { default = -0.05, range = [-0.20, 0.05], kind = "F" }
+phi_owner = { default = 0.8, range = [0.3, 1.0], kind = "C" }
+phi_miner = { default = 0.6, range = [0.2, 1.0], kind = "C" }
+kappa_basket_per_day = { default = 0.02, range = [0.01, 0.04], kind = "C" }
+kappa_e = { default = 0.7, range = [0.3, 1.0], kind = "F" }
+yield_haircut = { default = 0.10, range = [0.0, 0.30], kind = "F" }
+kappa_p = { default = 4, range = [2, 8], kind = "C" }
+min_age_start_days = { default = 45, range = [14, 90], kind = "F" }
+t_min_tao = { default = 500, range = [300, 1_500], kind = "F" }
+t_max_tao = { default = 8_000, range = [3_000, 20_000], kind = "F" }
+micro_only_t_max_tao = { default = 3_000, kind = "F" }
+v_cap_frac = { default = 0.010, range = [0.005, 0.02], kind = "F" }
+s_max_frac = { default = 0.010, range = [0.005, 0.025], kind = "F" }
+w_max_frac = { default = 0.12, range = [0.05, 0.25], kind = "F" }
+n_max = { default = 12, range = [4, 20], kind = "F" }
+v_min_tao = { default = 1.0, range = [0.5, 3.0], kind = "F" }
+rank_in = { default = 8, range = [5, 15], kind = "F" }
+rho_in = { default = 2.0, range = [1.5, 3.5], kind = "F" }
+rank_exit = { default = 3, range = [2, 5], kind = "F" }
+rho_exit = { default = 1.3, range = [1.15, 1.6], kind = "F" }
+burn_max = { default = 0.20, range = [0.0, 0.5], kind = "F" }
+owner_exit_frac_per_1800_blocks = { default = 0.005, range = [0.002, 0.015], kind = "F" }
+flow_exit_6h_frac = { default = -0.02, range = [-0.05, -0.01], kind = "F" }
+flow_exit_z = { default = -3.5, range = [-5.0, -2.5], kind = "F" }
+dd_stop_frac = { default = 0.20, range = [0.10, 0.35], kind = "F" }
+min_hold_days = { default = 2, range = [1, 5], kind = "F" }
+max_hold_days = { default = 21, range = [10, 45], kind = "F" }
+rebalance_blocks = { default = 300, range = [60, 1_200], kind = "F" }
+
+[carry.model]
+yield_real_ewma_half_life_epochs = 20
+yield_real_k_epochs = 40
+sigma_model_prior_pct_day = 0.30                  # until 30 days of residuals exist
+sigma_model_window_days = 30
+a_earn_trailing_growth_days = 14
+a_earn_growth_clip_pct_day = 3.0
+chain_buy_trailing_blocks = 300
+struct_refresh_blocks = 300
+
+[carry.universe]                                  # C-U1 .. C-U11
+since_start_min_blocks = 324_000                  # 45 d
+pool_tao = [500, 8_000]
+prune_rank_min = 8
+rho_min = 2.0
+immune_expiry_horizon = "H_eval + 3 d"
+miner_burned_max = 0.20
+allow_burn_bucket_research_max = 0.5              # research flag, half size
+router_take_max = 0.05
+router_membership_min = 0.90
+router_positive_dlnI_frac_min = 0.90
+router_realised_net_yield_min_pct_day = 0.10
+router_ratio_band = [0.65, 1.35]
+owner_sold_max_frac_7200_blocks = 0.005
+owner_quiet_days = 7
+carry_risk_exit_cooldown_days = 3
+flow_1d_min_frac = -0.005
+flow_z_1d_min = -1.0
+escrow_frac_max = 0.25
+
+[carry.exits]
+owner_sold_frac_1800_blocks = 0.005               # C-X1 HIGH
+flow_crash_6h_frac = -0.02                        # C-X2 HIGH (AND robust z <= -3.5)
+flow_crash_z = -3.5
+large_flow_outflow_frac = 0.02
+hotkey_loss_epochs = 2                            # C-X3 NORMAL
+dd_stop_frac = 0.20                               # C-X4 HIGH
+prune_rank_max = 3                                # C-X5 HIGH (or rho <= 1.3) while window open or opening within 1,800 blocks
+prune_rho_max = 1.3
+prune_window_lead_blocks = 1_800
+decay_evaluations = 2                             # C-S1 after min hold 2 d
+rank_buffer = 3                                   # C-S2 out of top N_max + 3 for 2 evaluations
+max_hold_days = 21                                # C-S3
+
+[carry.tests]
+T0 = "Study S0 baseline: reported, no threshold; every module must beat it out of sample"
+T1 = { coef_band = [0.7, 1.3], r2_min = 0.7, flow_filter_frac = 0.002 }
+T2a = { median_rel_err_max = 0.01, within_5pct_frac_min = 0.90, min_tao_per_day = 1.0, trailing_blocks = 300, fail = "HALT carry (model_ok false)" }
+T3 = { phi_band = [0.3, 1.0], beta_band = [-1.5, -0.3], combined_t_min = 2.0, cross_sectional_sd_min_pct_day = 0.3, kill = "phi = 0 if the 90% CI of the combined beta includes 0" }
+T4a = { spread_min_pct_day = 0.25, spread_t_min = 2.0, quintile_spearman_min = 0.8, ic_min = 0.04, ic_t_min = 2.0, beat_double_sort_min_pct_day = 0.05, beat_double_sort_t_min = 1.5, fit_days = 45, trade_days = 14, slide_days = 7, bootstrap_reps = 10_000, kill = "spread <= 0 or t < 1" }
+T4b = { kill = "hold TAO if the 90% upper bound < 0" }
+T5 = { fees_mult = 2.0, slippage_mult = 1.5, tx_mult = 2.0, adverse_drift_pct = 0.2, failures_pct = 1.0, v_cap_frac = 0.005, kill_cost_mult = 1.5 }
+T6 = { excess_min_pct_day = 0.03, t_min = 2.0, switching_loss_max_pct_day = 0.02, static_fallback_below_pct_day = 0.01 }
+T9 = { add_min_pct_day = 0.03, t_min = 1.5, same_sign_subperiods = "2 of 3" }
+T12 = { min_days = 30, yield_bias_max_pct_day = 0.05, positive_cycles_min = 0.80, drift_bias_max_pct_day = 0.15, cost_mean_err_max_bp = 10, cost_p90_err_max_bp = 30, halt_rolling_30d_net_pct = -3.0, halt_drawdown_pct = 10.0, halt_model_not_ok_hours = 24 }
+
+# =================================================================================================== section 2.2 momentum
+[momentum]
+verdict = "EXPERIMENTAL (research-gated)"
+decide_every_blocks = 300
+min_cadence_blocks = 60
+valid_from_block = 8_466_531
+wake_on = ["large_flow", "emission_toggled", "deregistered"]
+alpha_days = "min(H, 1) + 0.25 * max(H - 1, 0)"
+max_new_entries_per_cycle = 2
+net_edge_min_frac = 0.0025
+v_min_tao = 1.5
+r_24h_positive = true
+underwrite_max = 2
+
+[momentum.universe]
+pool_tao = [600, 10_000]
+micro_t_max_tao = 3_000
+age_reg_min_days = 30
+age_reg_or_ema_rank = "age_reg >= 90 d OR EMA rank <= 40"
+miner_burned_max = 0.5
+quote_weight_band = [0.45, 0.55]
+router_take_max = 0.02
+childkey_take_max = 0.0
+same_generation_history_min_days = 7
+prune_rank_min = 7
+
+[momentum.params]
+s_in = { default = 1.0, range = [0.5, 1.75], kind = "T" }
+s_out = { default = -0.25, range = [-0.75, 0.25], kind = "F" }
+rho_micro_frac = { default = 0.0030, range = [0.0015, 0.0075], kind = "T" }
+rho_near_frac = { default = 0.0050, range = [0.0025, 0.012], kind = "T" }
+h_e_days = { default = 2, range = [1, 4], kind = "T" }
+k_stop = { default = 2.5, range = [1.5, 4.0], kind = "T" }
+b_s_per_z_day = { default = 0.0010, range = [0.0005, 0.0020], kind = "C" }
+alpha_tail = { default = 0.25, range = [0.0, 1.0], kind = "C" }
+k = { default = 5, range = [3, 8], kind = "F" }
+k_buf = { default = 2, range = [0, 4], kind = "F" }
+lam = { default = 1.5, range = [1.0, 3.0], kind = "F" }
+s_exit_frac = { default = 0.01, range = [0.005, 0.02], kind = "F" }
+w_max_frac = { default = 0.30, range = [0.20, 0.40], kind = "F" }
+net_margin_frac = { default = 0.0025, range = [0.001, 0.008], kind = "F" }
+lat_frac = { default = 0.0005, range = [0.0, 0.003], kind = "F" }
+lat_stress_frac = { default = 0.003, kind = "F" }
+limit_eps_frac = { default = 0.01, range = [0.005, 0.025], kind = "F" }
+turnover_cap_nav_per_day = { default = 0.30, range = [0.15, 0.6], kind = "F" }
+t_min_tao = { default = 600, kind = "F" }
+t_max_tao = { default = 10_000, kind = "F" }
+micro_cut_tao = { default = 3_000, kind = "F" }
+take_max = { default = 0.02, range = [0.0, 0.05], kind = "F" }
+
+[momentum.exits]
+trailing_stop = "clip(2.5 * sigma_d, 10%, 25%) from peak executable value (HIGH)"
+trailing_stop_clip = [0.10, 0.25]
+flow_reversal_1h_frac = -0.025                    # HIGH
+flow_reversal_4h_frac = -0.05                     # HIGH
+decay_cycles = 2
+time_exit_days = { micro = 3, near_micro = 5 }
+universe_fail_cycles = 2
+adaptive_min_hold_days = [1, 4]
+
+[momentum.tests]
+F1 = { ic_300_min = 0.015, ic_300_gate_era_min = 0.01, ic_ratio_300_over_0_min = 0.5, entry_lags_blocks = [0, 300, 1_200], kill = "IC(300) < 0.01 or its CI includes 0" }
+F2 = { point_min = 0.01, lower_bound_min = -0.01, kill = "point <= 0" }
+F3 = { day2_3_cum_excess_min_pct_day = -0.1 }
+F5 = { local_vs_sim_swap_max_bp = 2, triples = 200, paper_slippage_mean_err_max_bp = 10, paper_slippage_p90_err_max_bp = 30, failures_max_frac = 0.05 }
+F6 = { kill = "mean net < 0 at 10 TAO with 1.0x costs" }
+F7 = { size_tao = 10, slippage_mult = 1.5, tx_mult = 2.0, lat_frac = 0.003 }
+F9 = { negative_subperiods_max = "1 of 3 post-June sub-eras", subnet_gross_share_max = 0.35 }
+F10 = { permutations = 1_000, percentile = 95, beat_random_entry_min_pct_day = 0.05 }
+F11 = { flow_match_tolerance = 0.10, min_subnet_days = 30 }
+F12 = { capacity_min_tao = 20, capacity_net_min_pct_day = 0.03 }
+F14 = { impulses = 300, window = "t+60 blocks to +1 d exceeds one-way cost" }
+F16 = { min_days = 60, rt_within_frac = 0.30, fill_failures_max_frac = 0.05 }
+promotion_to_shadow_requires = ["F1", "F3", "F14", "F15"]
+
+# =================================================================================================== section 2.3 mean reversion
+[mean_reversion_study]
+verdict = "FILTER-ONLY (offline event study E-MR)"
+shock_phi_max = -0.0392                           # single-block dF/T <= -3.92% (log price move <= -8%)
+shock_log_move = -0.08
+quiet_prior_drops_max = 1                         # <= 1 prior >= 4% drop in 300 blocks
+quiet_prior_drop_frac = 0.04
+quiet_prior_window_blocks = 300
+quiet_24h_min = -0.25
+quiet_7d_min = -0.45
+power_floor_shocks = 80
+power_floor_after_filters = 40
+F1 = { rho_margin = 0.05, rho_star_at_8pct = 0.30, horizons_h = [1, 6, 12], min_horizons = 2, correction = "Bonferroni" }
+F4 = { placebo_excess_12h_min = 0.01, p_max = 0.05 }
+F7 = { delay_blocks = 12, net_min = 0.0, ratio_to_2_block_min = 0.5 }
+F15 = { identity_residual_max = 0.01, block_coverage_min = 0.98 }
+reproposal = "ADR only if rho_lcb >= rho* + 0.05 with N >= 40 and the edge survives a >= 12-block delay"
+spike_guard_fast_ema_gap = 0.06                   # MONITOR until F9 + an FT5-style ablation pass
+fast_ema_half_life_blocks = 600
+
+# =================================================================================================== section 2.4 launches
+[gatekeeper]
+queued_to_added_lag_blocks = [17, 25]
+dense_recorder = { every_block_for = 600, every_10_blocks_until = 7_200 }
+watch_days_after_start = 14
+ema_warming_since_start_blocks = 72_000           # 10 d
+burning_miner_burned = 0.60
+reg_clock_hot_p_24h = 0.25
+gate_starved_b_over_theta = 0.4                   # monitoring only
+flags = ["UNSTARTED", "SEED_ANOMALY", "EMA_WARMING", "BURNING", "EMISSION_OFF", "YOUNG_IMMUNE", "REG_CLOCK_HOT"]
+
+[lcw]
+enabled = false
+verdict = "EXPERIMENTAL, paper-only; PAPER only after offline FT1 and FT2 pass; never promoted on < 20 paper trades"
+min_paper_trades = 20
+since_start_blocks = [720, 72_000]
+age_reg_max_days = 100
+pool_tao = [600, 6_000]
+spot_over_spot0 = [0.8, 1.6]
+miner_burned_2epoch_max = 0.35
+miner_uids_min = 8
+miner_coldkeys_min = 5
+top1_coldkey_share_max = 0.5
+permit_coldkeys_min = 2
+owner_sold_7d_max_of_accrual = 0.5
+owner_tao_out_24h_max_frac = 0.005
+router_positive_epochs_min = 2
+router_marginal_net_yield_min_pct_day = 0.6
+phi_ewma_min_frac_day = 0.004
+phi_6h_min = 0.0
+mu_hat_min_pct_day = 0.8
+g_minus_2f_min = 0.03
+positions_max = 2
+budget_nav_max = 0.05
+lambda = 0.5
+h_days = 10
+yield_avg_days = [1, 10]
+g_mech_alpha_per_day_approx = 2_950
+tranches = { count = 2, spacing_blocks = 360 }
+sizing = "min(T*(G-2f)/4, V_max at s = 1.5%, 1% of T, 0.5 * daily organic buying, 2.5% NAV)"
+exits = { X2_owner_dump_accrual_mult = 3.0, X2_owner_dump_t_frac_24h = 0.01, X3_miner_burned = 0.60, X3_min_miners = 4, X4_stop_from_cost = -0.08, X4_trailing = 0.12, X5_phi_6h_frac_day = -0.01, X5_after_days = 5, X6_realised_yield_min_pct_day = 0.25, X7_hold_days = 14, X7_before_immunity_end_blocks = 144_000 }
+emission_enable_deadline_days = 21
+
+[lcw.tests]
+FT0 = { lag_blocks = [17, 25], seed_tolerance = [1e-6, 1e-4], ema_forecast_tolerance = 1e-4, emission_tolerance_tao_block = 1e-6, era_b_fill_tolerance = 0.0001 }
+FT1 = { d14_median_min = 0.03, cost_mult = 1.5, size_t_frac = 0.005, positive_frac_min = 0.55, d30_median_min = -0.05, kill_d14_median = 0.01, kill_carry_share = 0.40 }
+FT2 = { median_yield_min_pct_day = 0.8, frac_launches_min = 0.60, frac_threshold_pct_day = 0.5, ex_ante_ratio_max = 1.5, kill_median_pct_day = 0.5 }
+FT3 = { corr_min = 0.2, lower_bound_min = 0.0 }
+FT4 = { median_min = 0.01, cost_mult = 1.5, hit_min = 0.55, worst_decile_min = -0.15, strata_positive = "2 of 3", placebo_beat_pp = 1.0, placebo_p_max = 0.10, min_trades = 8 }
+FT6 = { spearman_ic_min = 0.15 }
+FT7 = { drawdown_cut_min = 0.20, mean_gain_min_pct_day = 0.05, t_min = 2.0, regimes = "2 of 3" }
+FT10 = { median_profit_min_tao = 0.05, fixed_fee_multiple_min = 20 }
+kill_switches = { K1 = "≥ 6 trades with median < 0 and cumulative < 0", K2_single_loss_max = 0.25, K3_owner_exit_slippage_max = 0.05, K4 = "freeze-list change", K5_yield_vs_ex_ante_min = 0.5, K5_trades = 3, K6 = "2 shield misses or head lag > 2" }
+
+# =================================================================================================== section 2.5 baselines
+[baselines]
+books = ["cash", "ew_price", "ew_total", "yield_x_size", "prune_blind", "random_entry"]
+yield_x_size = "high closed-form net-yield tercile x large pool-size tercile"
+rebalance = "daily"
+impact_bounds = ["TEMPORARY", "PERSISTENT"]
+dereg_variants = ["formula", "fixed:350000", "fixed:650000"]
+random_entry_seed = "(seed, block_hash)"
+
+# =================================================================================================== section 3 overlay
+[universe_floor]                                  # sections A-G (book-independent); H and I per book
+subnet_tao_min = 200
+quote_weight_band = [0.30, 0.70]
+fee_rate_max = 330
+escrow_frac_max = 0.50
+since_start_min_blocks = 100_800
+age_reg_min_blocks = 216_000
+miner_burned_max = 0.50
+abnormal_fill_cooldown_blocks = 7_200
+owner_event_cooldown_blocks = 7_200
+failed_orders_per_600_blocks = 3
+failed_orders_cooldown_blocks = 7_200
+
+[prune]
+tier_a = "prune_possible AND block + U + M_A >= W_open AND (k == target OR t*_k <= U + M_A)"
+unwind_u_blocks = 15                              # L_exec 5 x (1 + 2 retries)
+s_emerg = "clamp(0.5 * (1 - R_k), 0.05, 0.25)"
+s_emerg_clamp = [0.05, 0.25]
+d_stress = 0.5
+tier_a_coverage = [                               # a = 0.000286; gap to the bottom EMA that Tier A still clears
+  { m_a_blocks = 150, u_plus_m_a = 165, gap_at_50pct_crash = 0.024, gap_at_spot_zero = 0.048 },
+  { m_a_blocks = 300, u_plus_m_a = 315, gap_at_50pct_crash = 0.045, gap_at_spot_zero = 0.094 },
+  { m_a_blocks = 600, u_plus_m_a = 615, gap_at_50pct_crash = 0.088, gap_at_spot_zero = 0.192 },
+  { m_a_blocks = 1_200, u_plus_m_a = 1_215, gap_at_50pct_crash = 0.172, gap_at_spot_zero = 0.416 },
+]
+backstop = { rank_max = 3, cost_ratio_max = 1.2, delta_blocks_min = 46_080, s_urgent = 0.03 }
+never_hold_target = true
+runtime_crosscheck_blocks = 25
+stale_inputs_blocks = 25
+entry = { rank_min = 6, ema_over_target_min = 1.5, p_prune_7d_loss_max = 0.01, immune_expiry_days = 7, ladder_bucket_rank = 15, ladder_bucket_nav_max = 0.15 }
+reg_clock_hot_entry = { rank_min = 8, ema_over_target_min = 1.7 }
+r_default = 0.35
+recovery_golden = { SN92 = 0.368, SN92_before_basket_sale = 0.41, SN47 = 0.36 }
+tao_in_refund_deployment_block = 8_334_450
+
+[prune.hazard]                                    # frozen table: paper and live only; backtests fit as-of (section 8.10)
+n_registrations = 32
+window = "Feb-Oct 2026"
+cdf_r = [1.75, 1.462, 1.253, 1.132, 1.045, 0.958, 0.872, 0.767, 0.266]
+cdf_f = [0.0625, 0.09, 0.19, 0.31, 0.50, 0.72, 0.84, 0.94, 1.0]
+p_open = 0.0625
+n0_prior = 4
+prior = "F_prior = 1 - exp(-(delta - 14400) / 43200)"
+prior_offset_blocks = 14_400
+prior_scale_blocks = 43_200
+interpolation = "piecewise-linear in r"
+tail_floor_r = 1.045
+tail_floor_hazard_per_block = "ln2 / 7200"
+hot_market = { last_n = 2, r_min = 1.4, p_open = 0.5 }
+reference_p_reg_24h = { at_open = 0.083, d31k = 0.073, d43k = 0.157, d50k = 0.396, d55k = 0.51, d65k = 0.55 }
+invalidation = "spec-475 PoW registration or later change -> hazard_valid = false: window rule + constant ln2/7200 per block; refit after 8 new registrations"
+refit_min_rows = 8
+refit = "weekly and after every registration"
+
+[prune.tier_b]                                    # tier_b_enabled = false until FT1 and FT2 pass
+h_b_blocks = 7_200
+pi_b = 0.0075
+mc_paths = 2_000
+step_blocks = 60
+sigma_floor_per_day = 0.06
+sigma_realised_days = 3
+rho = 0.3
+jump_log_size = "ln(1 - 0.5)"
+jump_p_per_day = 0.03
+seed = "PCG64(int.from_bytes(blake2b(f'{run_seed}|{block_hash}', digest_size=8), 'little'))"
+calibration_targets = { outside_bottom3_two_days_before = "7/52", rank1_under_24h = "12/52", outside_bottom7_within_1d = "2/52", tolerance_pp = 5 }
+asof_prior_until_prunes = 10
+
+[emission_policy]
+disable_ban_blocks = 100_800
+reenable_wait_blocks = 360
+wave_disables_min = 3
+wave_entry_halt_blocks = 7_200
+miner_burned_exit = 0.90
+miner_burned_exit_epochs = 2
+lcw_emission_enable_deadline_days = 21
+
+[liquidity]
+d_t = 0.20
+t_st_lookback_days = 3
+s_exit_entry = 0.015
+s_exit_hold_max = 0.025
+exit_budget_nav = 0.02
+m_esc_clamp = [0.5, 1.0]
+m_gate = { keep_ge_0_5 = 1.0, keep_ge_0_1 = 0.5, below = 0.25, status = "MONITOR until FT4" }
+m_trd = { trd_below_pct_day = -0.25, mult = 0.5, status = "MONITOR until FT4" }
+m_owner = { owner_liquid_frac_min = 0.10, mult = 0.5, status = "MONITOR until FT5-style ablation" }
+quote_bisection_band = 0.01                       # |w_q - 0.5| > 0.01 -> solve shortfall(V) = s on quote_sell
+g_max = 0.80
+nu_max = 0.15
+ladder_bucket = 0.15
+owner_cluster = 0.20
+young_bucket = 0.10
+young_since_start_days = 30
+lcw_bucket = 0.05
+n_eff = "min(12, floor(G_MAX_EFF * NAV_liq / (4 * V_MIN)))"
+v_min_tao = 0.5
+
+[owner_guard]
+sold_frac_of_subnet_tao_7200_blocks = 0.02
+cooldown_blocks = 7_200
+v_cap_halving_days = 1
+moves_to_other_coldkeys_count_as_sales = true
+take_credit_recipient = "VERIFY (section 13 Q22)"
+
+[router]
+top_n_tracked = 5
+membership_frac_min = 0.90
+membership_epochs = 20
+member_last_epochs = 2
+take_max = 0.05
+take_increase_window_blocks = 216_000
+childkey_take_max = 0.05
+permit_rank_frac = 0.8
+ratio_band = [0.65, 1.35]
+score_ewma_half_life_epochs = 20
+q_max = 0.05
+switch_fail_epochs = 2
+switch_take_jump_pp = 5
+switch_beat_min_pct_day = 0.02
+switch_beat_min_relative = 0.10
+switch_beat_epochs = 2
+switch_gain_over_fee_mult = 3.0
+switch_gain_horizon_days = 30
+
+[allocator]
+b_max_paper_sleeve = 0.40
+lcw_budget_max = 0.05
+m_stage = { RESEARCH = 0, SHADOW = 0, PAPER = 1, LIVE_ELIGIBLE = 1, backtest_books = 1 }
+inverse_vol_after_paper_days = 60
+inverse_vol_requires = "FT8"
+inverse_vol_shrink_to_fixed = 0.5
+burn_in_multiplier = 0.5
+burn_in_blocks = 100_800
+burn_in_triggers = ["regimes.touches_econ(spec)", "post-spec emission_parity / yield_parity / hazard_validity drift"]
+over_cap_priority = ["existing sleeve holdings (pro rata to shares)", "higher stage", "pro rata"]
+regime_throttle = { every_blocks = 7_200, ewma_half_life_days = 7, scale_pct_day = 0.5, clip = [0.0, 1.0], status = "MONITOR until FT-R1" }
+
+[modes]
+spec_change = "CAUTION; V1-V7 pass -> NORMAL (live re-arms), fail -> EXITS_ONLY"
+tx_version_change = { live = "FROZEN", paper = "CAUTION" }
+safe_mode = "FROZEN"
+stall = { caution_s = 36, exits_only_s = 120 }
+finality_caution_blocks = 30
+healthy_endpoints_min = 2
+sim_swap_drift_caution_bp = 5
+fail_burst = { netuid = 3, book = 5, window_blocks = 600, netuid_cooldown_blocks = 7_200, book_caution_blocks = 300 }
+dd30 = { soft = 0.15, hard = 0.25, soft_g_max_mult = 0.5, hard_g_max_mult = 0.25, unwind_days = 3 }
+daily_loss = { threshold = 0.08, caution_blocks = 7_200 }
+calibration = "DD_SOFT/DD_HARD/DAILY_LOSS are replaced before PAPER by 7-day block-bootstrap values with <= 5% false CAUTION days"
+frozen_emergency_exit_s_max = 0.05
+
+[modes.sleeve_kill]
+reduced = { dd = 0.08, cost_ratio_20 = 1.5, turnover_mult = 2.0, budget_mult = 0.5 }
+suspended = { dd = 0.15, mean_45d_below = "5th percentile of the backtest bootstrap", cost_ratio_20 = 2.5, unwind_days = 3 }
+repromote_suspended_to_reduced = { paper_days = 30, mean_min = 0.0, dd_max = 0.05 }
+repromote_reduced_to_active = { days = 30, dd_max = 0.04 }
+
+[planner]
+priority = ["EMERGENCY", "URGENT", "HIGH", "NORMAL sells", "NORMAL buys"]
+n_delegates = 3
+delegate_lock = "era_end + 2 blocks after a miss"
+pretrade_sim_swap_rel_tol = 1e-5
+drain_deferral_blocks = 30
+urgent_widen_mult = 1.5
+tranche_v_frac = 0.01
+tranche_spacing_blocks = [10, 600]
+shield_fallback_finality_lag_blocks = 5
+unshielded_era_blocks = 16
+shielded_era_blocks = 8
+era_margin_blocks = 2
+beta_sample_blocks = 1_800
+beta_stride_points = 30
+beta_horizon = "finality_lag + latency (5) on per-block data; stride on stride data"
+
+[metrics]                                         # section 8.9
+newey_west_lag = 5
+bootstrap_mean_block_days = 7
+capacity_sweep_tao = [1, 3, 10, 30, 100, 300]
+promotion = ["frozen pre-registered configuration", "walk-forward only, embargo >= 1 d",
+             "same sign in both halves and leave-one-subnet-out", "non-negative at fees x2 and latency x2 (kill if negative at x1.5)",
+             "capacity consistent with the configured capital"]
+decomposition_identity_tolerance_rao = 1
+
+[paper_gates]                                     # section 9.1, LIVE_ELIGIBLE (the user still decides)
+carry_post475_days_min = 30
+momentum_days_min = 60
+lcw_trades_min = 20
+cost_mean_err_max_bp = 10
+cost_p90_err_max_bp = 30
+fill_failures_max_frac = 0.05
+live_dry_days_min = 7
+plan_acceptance = 1.0
+
+# =================================================================================================== section 10.4
+[falsification]
+FT1a = { prunes = "27-52 out-of-sample", synthetic_size_t_frac = [0.005, 0.01, 0.015], pass_min = "25/26", redesign_below = "23/26", ci = 0.95 }
+FT1b = { last_prunes = 10, ema_rebuild_err_max = 0.001, m_a = "smallest value with full recall on these 10" }
+FT1c = { avoided_over_false_alarm_min = 3.0, sizing_frac = 0.01, drop_below = 1.5 }
+FT2 = { brier_skill_min = 0.10, mc_reproduce = ["7/52", "12/52"], tolerance_pp = 5, fallback = "constant hazard + window rule; Tier B stays off" }
+FT3 = { median_gain_min = 0.02, frac_events_min = 0.60, horizons_days = [7, 30], fallback = "freeze entries + cap x0.25" }
+FT4 = { weekly_ic_min = 0.05, nw_t_min = 2.0, terciles = "monotone", lambda_sell = [0.3, 0.7], fallback = "haircuts stay MONITOR" }
+FT5 = { dd_cut_min = 0.30, return_cost_max = 0.10, regimes = "2 of 3", fallback = "delete components that lose in all regimes" }
+FT6 = { normal_exits_within_hold_max = 0.95, urgent_within_budget = 0.80, fallback = "raise D_T, lower S_EXIT_ENTRY" }
+FT7 = { fills_min = 0.97, price_limit_exceeded_max = 0.02, slippage_too_high_max = 0.02, shortfall_err = "<= 0.1% + 25% of predicted", risk_exits_within_u_plus_m_a = 0.99, scope = "per-block fills only" }
+FT8 = { false_suspend_max = 0.05, bootstrap_paths = 1_000, true_kill_min = 0.80, within_days = 45, netting_savings_min = 0.0 }
+FT9 = { chosen_ge_median_frac = 0.60, fallback = "static rule (take 0, largest stake)" }
+FT10 = { abs_err_max = 0.05, subnets = ["SN116", "SN82", "SN108", "SN35"], fallback = "R = min(formula, 0.35)" }
+FT11 = { drills = ["spec change", "SafeMode", "2-min stall", "finality lag 10", "30% RPC errors", "stale ladder", "unexplained stake delta", "nonce jump"], mode_within_blocks = 1, blocks = "LIVE_ELIGIBLE" }
+FT_R1 = { oos_net_min_pct_day = 0.03, max_dd_cut_min = 0.25, days_off_max = 0.40 }

@@ -1,0 +1,20 @@
+{
+ "block_hash": "0xa57ba6d8ca74f815cb2f4b50be731fbc7e612128b4d8a5d98de30e11e9408524",
+ "method": "chain_getHeader",
+ "params": [
+  "0xa57ba6d8ca74f815cb2f4b50be731fbc7e612128b4d8a5d98de30e11e9408524"
+ ],
+ "result": {
+  "digest": {
+   "logs": [
+    "0x06617572612069fee50800000000",
+    "0x0466726f6e880157cc5aecfc08e6fa5b27248a5cf60d9f38bb6421db78d7037af5b891f49507b900",
+    "0x05617572610101866631d84937a4fb53522fcaee0e307e01ac7d0bf10114e0bbe7c585e59ed83d380e4e8e4abeb821b06f38be3769e5a66711791e80782aac14c36bfd2cd7938a"
+   ]
+  },
+  "extrinsicsRoot": "0x33a5fac3ba3cbbd56256b9c44654fb78a9ea51739e9a34577302d5ba7ed82be7",
+  "number": "0x8cff44",
+  "parentHash": "0xfa765816fad493364d3f32a3d116c883e062e6e67969565e72c6ced620ef936d",
+  "stateRoot": "0xd6a9e3b944f077d6c4b0743eaff6101c4d7e4ab385dd46d2736481ef229c1f6f"
+ }
+}

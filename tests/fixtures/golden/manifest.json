@@ -1,0 +1,604 @@
+{
+ "endpoint": "https://bittensor-finney.api.onfinality.io/public",
+ "captured_utc": "2026-10-09T03:28:05Z",
+ "rate_per_s": 2.5,
+ "rpc_calls": 765,
+ "rpc_retries": 0,
+ "fixtures": [
+  {
+   "file": "emission_parity/b8766000.json",
+   "purpose": "Emission parity pair: state at 8765999 (inputs, EMA_(n-1)) and 8766000 (observed SubnetTaoInEmission + SubnetExcessTao, reservoirs) for every netuid 0..144",
+   "notes": [],
+   "snapshots": [
+    {
+     "block": 8765999,
+     "block_hash": "0x72a51d71c94bf9ba9160ed0b650b79fe9d8f6e755e1dc5d31407cbbe3b47006b",
+     "spec_version": 441,
+     "transaction_version": 1
+    },
+    {
+     "block": 8766000,
+     "block_hash": "0x37ba886e5e76882b6d48b270d852b51f24b74bd2e68318c343ae0f3cbbc1e8b1",
+     "spec_version": 441,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "803740e48d90472eab7c3da7468c40a6fe89c8178f46044536ed35e9771deadc"
+  },
+  {
+   "file": "emission_parity/b8789720.json",
+   "purpose": "Emission parity pair: state at 8789719 (inputs, EMA_(n-1)) and 8789720 (observed SubnetTaoInEmission + SubnetExcessTao, reservoirs) for every netuid 0..144",
+   "notes": [],
+   "snapshots": [
+    {
+     "block": 8789719,
+     "block_hash": "0x79d051c58cfa29a575622ef9d96a4b41f6d834ce8e97e249c4686e61477c398f",
+     "spec_version": 443,
+     "transaction_version": 1
+    },
+    {
+     "block": 8789720,
+     "block_hash": "0xb87d8e04bed8be3c949cc4fc68db9ce97941bc0177e890b06bd1c12c44ee836f",
+     "spec_version": 443,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "75f089f5cf95d66048350c666c263f30581a6772fcc5b06d7f4a972ef30368bf"
+  },
+  {
+   "file": "emission_parity/b8813880.json",
+   "purpose": "Emission parity pair: state at 8813879 (inputs, EMA_(n-1)) and 8813880 (observed SubnetTaoInEmission + SubnetExcessTao, reservoirs) for every netuid 0..144",
+   "notes": [],
+   "snapshots": [
+    {
+     "block": 8813879,
+     "block_hash": "0x77932b32f5ee40e8ee55d26c2affa0a2201c09c32bdc01d78057a565805421eb",
+     "spec_version": 443,
+     "transaction_version": 1
+    },
+    {
+     "block": 8813880,
+     "block_hash": "0x6ad19e14fdbec33f3a135dc264b4cf3dad09930112865da53ec42d595d145d81",
+     "spec_version": 443,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "bb620d8634fa241b5b97d2e948ec2ec28736639e51cbf1fdf11e2776e9a9e78e"
+  },
+  {
+   "file": "emission_parity/b8837720.json",
+   "purpose": "Emission parity pair: state at 8837719 (inputs, EMA_(n-1)) and 8837720 (observed SubnetTaoInEmission + SubnetExcessTao, reservoirs) for every netuid 0..144",
+   "notes": [],
+   "snapshots": [
+    {
+     "block": 8837719,
+     "block_hash": "0x2af53c2cfa8cee87491ceda04c5ceda8c358d36b94fcb83c2b9b8ccaaf795d4d",
+     "spec_version": 445,
+     "transaction_version": 1
+    },
+    {
+     "block": 8837720,
+     "block_hash": "0x4e7fb596e1af1b47d1d221e2952f695e81688b91e76d88cb25e0ebf6918e7fbb",
+     "spec_version": 445,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "5eaac2e0cf9f6e02d37d7c127586dfd4771d10d875eedd7c396f6edc4320ba8e"
+  },
+  {
+   "file": "emission_parity/b8861760.json",
+   "purpose": "Emission parity pair: state at 8861759 (inputs, EMA_(n-1)) and 8861760 (observed SubnetTaoInEmission + SubnetExcessTao, reservoirs) for every netuid 0..144",
+   "notes": [],
+   "snapshots": [
+    {
+     "block": 8861759,
+     "block_hash": "0x4ffec9abb5721165f2d76fa7b531fa43481b086aa207d76f7f06786bdc929a66",
+     "spec_version": 447,
+     "transaction_version": 1
+    },
+    {
+     "block": 8861760,
+     "block_hash": "0xe9ecea31fd55e422aed27cf0ca3d924e150b6144b6f191098a3aa69892e560fb",
+     "spec_version": 447,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "1507c636374aae3632728c4c09cf4db7b853c0e10bbdcce9a161c71d36538e24"
+  },
+  {
+   "file": "emission_parity/b8885720.json",
+   "purpose": "Emission parity pair: state at 8885719 (inputs, EMA_(n-1)) and 8885720 (observed SubnetTaoInEmission + SubnetExcessTao, reservoirs) for every netuid 0..144",
+   "notes": [],
+   "snapshots": [
+    {
+     "block": 8885719,
+     "block_hash": "0xa742aea191340420f40985d3e35f58d2527a472c76b7e70fb87d3344a00da6a4",
+     "spec_version": 447,
+     "transaction_version": 1
+    },
+    {
+     "block": 8885720,
+     "block_hash": "0xa01d3908c60d76fe34884c7050c5710abc70663cf649a287892d0fa623f76719",
+     "spec_version": 447,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "d7612da26f2963dab78855dd58500ee82cf438c99c819b7e00df68abd5d04516"
+  },
+  {
+   "file": "emission_parity/b8910000.json",
+   "purpose": "Emission parity pair: state at 8909999 (inputs, EMA_(n-1)) and 8910000 (observed SubnetTaoInEmission + SubnetExcessTao, reservoirs) for every netuid 0..144",
+   "notes": [],
+   "snapshots": [
+    {
+     "block": 8909999,
+     "block_hash": "0x08e9e7e7e215a78f8eceb16f35ee3cdc553b0c8992deb521ed6dd59f2727e538",
+     "spec_version": 448,
+     "transaction_version": 1
+    },
+    {
+     "block": 8910000,
+     "block_hash": "0x6222e636a70d0107fbde34f963af3b63995c4fdf4e493827d8da4cb67cd23051",
+     "spec_version": 448,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "43fb7593d18f9bfd712361c2fa6e09535c881a958cbf66e0de9a02a6c5485a85"
+  },
+  {
+   "file": "emission_parity/b8933720.json",
+   "purpose": "Emission parity pair: state at 8933719 (inputs, EMA_(n-1)) and 8933720 (observed SubnetTaoInEmission + SubnetExcessTao, reservoirs) for every netuid 0..144",
+   "notes": [],
+   "snapshots": [
+    {
+     "block": 8933719,
+     "block_hash": "0xd8d459b6f6ea578588798d3109bbf2a464ad6e6ed4c6e3e1598ea4a7155118fd",
+     "spec_version": 448,
+     "transaction_version": 1
+    },
+    {
+     "block": 8933720,
+     "block_hash": "0x35e69ce2ea3f0c8ca27ce2570984188ecd65256218593961eb62067ab2c1f2ce",
+     "spec_version": 448,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "a091ca5dd6e76365dcd00225d19797ed9fc04eb2440dc64789488f102488507d"
+  },
+  {
+   "file": "emission_parity/b8957880.json",
+   "purpose": "Emission parity pair: state at 8957879 (inputs, EMA_(n-1)) and 8957880 (observed SubnetTaoInEmission + SubnetExcessTao, reservoirs) for every netuid 0..144",
+   "notes": [],
+   "snapshots": [
+    {
+     "block": 8957879,
+     "block_hash": "0x8d27798803d6211cb08918ae7f5999547b0e6d55a76222bab3aee4549c43ca92",
+     "spec_version": 452,
+     "transaction_version": 1
+    },
+    {
+     "block": 8957880,
+     "block_hash": "0x808b495bd103ac2dc93e477dcd81b755238a57da505cf1d3c9c550f89448b7d0",
+     "spec_version": 452,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "707c9e1a20227523f0e98f719c7f6dae60f83c25b06792b25b52c2ee3584cba4"
+  },
+  {
+   "file": "emission_parity/b8981720.json",
+   "purpose": "Emission parity pair: state at 8981719 (inputs, EMA_(n-1)) and 8981720 (observed SubnetTaoInEmission + SubnetExcessTao, reservoirs) for every netuid 0..144",
+   "notes": [],
+   "snapshots": [
+    {
+     "block": 8981719,
+     "block_hash": "0x02aab14f07351eb59d28f69dd73c27463de6c0ed7c4307ba94d47fee4a70ff03",
+     "spec_version": 452,
+     "transaction_version": 1
+    },
+    {
+     "block": 8981720,
+     "block_hash": "0x43d3e7166aae2e83bd763c4aae04e2c223ba763820f85b5198167cd5421ce65e",
+     "spec_version": 452,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "bc1e937787117e7a12d2473a9eae847fb32648f9bea6d0e999031ea928cb1d81"
+  },
+  {
+   "file": "emission_parity/b9005760.json",
+   "purpose": "Emission parity pair: state at 9005759 (inputs, EMA_(n-1)) and 9005760 (observed SubnetTaoInEmission + SubnetExcessTao, reservoirs) for every netuid 0..144",
+   "notes": [],
+   "snapshots": [
+    {
+     "block": 9005759,
+     "block_hash": "0x2e78d601e24f22720b053b19433b283ee6af8326fb71070f8015ea729857992d",
+     "spec_version": 454,
+     "transaction_version": 1
+    },
+    {
+     "block": 9005760,
+     "block_hash": "0xf3735ae32fa3d166ed535f07036d9ef120f4923a728496f4508461ccf18f9d6d",
+     "spec_version": 454,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "e82e70f91efd9dad78df293d9527b485fdfc0c7b976a61db5aedd82c614a0f71"
+  },
+  {
+   "file": "emission_parity/b9029720.json",
+   "purpose": "Emission parity pair: state at 9029719 (inputs, EMA_(n-1)) and 9029720 (observed SubnetTaoInEmission + SubnetExcessTao, reservoirs) for every netuid 0..144",
+   "notes": [],
+   "snapshots": [
+    {
+     "block": 9029719,
+     "block_hash": "0xd120c5f1971ad419a17ac73eeb3844a0184fe4752bc32bae52619e5ad12ca216",
+     "spec_version": 455,
+     "transaction_version": 1
+    },
+    {
+     "block": 9029720,
+     "block_hash": "0xcbcb0f0562ae2c98976e70a0e35509dd84c6a6e3cb61738aa00b6fca86eb08d3",
+     "spec_version": 455,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "6862c99fd3b6440a6cb4596df98627860d36c209b793ad9263041353b1d064c6"
+  },
+  {
+   "file": "emission_parity/b9054000.json",
+   "purpose": "Emission parity pair: state at 9053999 (inputs, EMA_(n-1)) and 9054000 (observed SubnetTaoInEmission + SubnetExcessTao, reservoirs) for every netuid 0..144",
+   "notes": [],
+   "snapshots": [
+    {
+     "block": 9053999,
+     "block_hash": "0x99f4d25106c2597ea663c24a096621d9d310bbb0f898d2fb76c1e9b9db49001a",
+     "spec_version": 455,
+     "transaction_version": 1
+    },
+    {
+     "block": 9054000,
+     "block_hash": "0x213af6a5d5efaf810f4ea22b92b1efa9992e53b3f9bfef899aeb3550f6630659",
+     "spec_version": 455,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "6e7ab92fbb29157c98d9c80d650b39842163c299a9fbf77ea834a307e45bfe6f"
+  },
+  {
+   "file": "emission_parity/b9077720.json",
+   "purpose": "Emission parity pair: state at 9077719 (inputs, EMA_(n-1)) and 9077720 (observed SubnetTaoInEmission + SubnetExcessTao, reservoirs) for every netuid 0..144",
+   "notes": [],
+   "snapshots": [
+    {
+     "block": 9077719,
+     "block_hash": "0x2458b97bd4c43d7f530662671d28a6558c98b57be6b87863df8917fbe7f21974",
+     "spec_version": 459,
+     "transaction_version": 1
+    },
+    {
+     "block": 9077720,
+     "block_hash": "0x90bed0baae9125381446f8cfd4c52fa272fd37e9e8157a8f03de5426f2f3675f",
+     "spec_version": 459,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "1342a6125a037088109fc56058f1f12a3f90bc6f91100841aab2bf40341e198f"
+  },
+  {
+   "file": "emission_parity/b9101880.json",
+   "purpose": "Emission parity pair: state at 9101879 (inputs, EMA_(n-1)) and 9101880 (observed SubnetTaoInEmission + SubnetExcessTao, reservoirs) for every netuid 0..144",
+   "notes": [],
+   "snapshots": [
+    {
+     "block": 9101879,
+     "block_hash": "0x607df53511474e9be5d50688efaee5e4bc73f2cb41bd7575c094a1ddb9670553",
+     "spec_version": 467,
+     "transaction_version": 1
+    },
+    {
+     "block": 9101880,
+     "block_hash": "0x45019965ade87be7fbe3a10bde658fbcf22fe880db8d283d6ea7da7630279cf9",
+     "spec_version": 467,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "8e7ebe596780631e773658995e5e69cf0faf85bdb91c3d2e8b22629c02fedb64"
+  },
+  {
+   "file": "emission_parity/b9125720.json",
+   "purpose": "Emission parity pair: state at 9125719 (inputs, EMA_(n-1)) and 9125720 (observed SubnetTaoInEmission + SubnetExcessTao, reservoirs) for every netuid 0..144",
+   "notes": [],
+   "snapshots": [
+    {
+     "block": 9125719,
+     "block_hash": "0x1ec129465217078a4af61a86bb6b0f4ad5f30662837f16571296e8bdcb761af2",
+     "spec_version": 469,
+     "transaction_version": 1
+    },
+    {
+     "block": 9125720,
+     "block_hash": "0x69b689654563f63044420af619c9f48b2018bf9c57b1adf9529a4fbb08e8b630",
+     "spec_version": 469,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "1e91063de6da4aeea502fe0bb874318f6f12743c8df45c9a8a1067244586f2c8"
+  },
+  {
+   "file": "emission_parity/b9149760.json",
+   "purpose": "Emission parity pair: state at 9149759 (inputs, EMA_(n-1)) and 9149760 (observed SubnetTaoInEmission + SubnetExcessTao, reservoirs) for every netuid 0..144",
+   "notes": [],
+   "snapshots": [
+    {
+     "block": 9149759,
+     "block_hash": "0x477ac10366a22e9ac273ff4c2de0af6ddc5dd89328cfe9d2c8803f1525423dd2",
+     "spec_version": 470,
+     "transaction_version": 1
+    },
+    {
+     "block": 9149760,
+     "block_hash": "0x9b0bde56e31fdf8cb34213d5abf04f3e313c7348ed1e2951a25df5fde452cf61",
+     "spec_version": 470,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "c390a80b9111d36d4c37c7e538d9b5aa19ba122263b0d3ac2b1dc232e24a035a"
+  },
+  {
+   "file": "emission_parity/b9173720.json",
+   "purpose": "Emission parity pair: state at 9173719 (inputs, EMA_(n-1)) and 9173720 (observed SubnetTaoInEmission + SubnetExcessTao, reservoirs) for every netuid 0..144",
+   "notes": [],
+   "snapshots": [
+    {
+     "block": 9173719,
+     "block_hash": "0x873b6fdd1eb63cfc83c8106ee931ed194abd295b1b0bc542946ef4fc8baaf911",
+     "spec_version": 470,
+     "transaction_version": 1
+    },
+    {
+     "block": 9173720,
+     "block_hash": "0x1eb95695081dfbd8422490a1c81f75f1e3e893f658da2cbf94396e504e50d722",
+     "spec_version": 470,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "fb4b25b48c314250a1fb41e1fd30dd638efeaa759a054c805f811e3e115e46e8"
+  },
+  {
+   "file": "emission_parity/b9198000.json",
+   "purpose": "Emission parity pair: state at 9197999 (inputs, EMA_(n-1)) and 9198000 (observed SubnetTaoInEmission + SubnetExcessTao, reservoirs) for every netuid 0..144",
+   "notes": [],
+   "snapshots": [
+    {
+     "block": 9197999,
+     "block_hash": "0xd4570573aae63874f2dced76fac949c05dcb4aa6f27156ed7d364bb4c538dbad",
+     "spec_version": 472,
+     "transaction_version": 1
+    },
+    {
+     "block": 9198000,
+     "block_hash": "0x96c2104ca9aeb88f5133c3afd90f3683980784dc47c7e8341d68b3f4f0462282",
+     "spec_version": 472,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "1d58b7fabb946fdfed4fcd7261105f3435d95e0915a9f60fa28afbf290c5dc51"
+  },
+  {
+   "file": "emission_parity/b9221720.json",
+   "purpose": "Emission parity pair: state at 9221719 (inputs, EMA_(n-1)) and 9221720 (observed SubnetTaoInEmission + SubnetExcessTao, reservoirs) for every netuid 0..144",
+   "notes": [],
+   "snapshots": [
+    {
+     "block": 9221719,
+     "block_hash": "0x08969d01d3983989a890fb5f7e18ddebabe13031cbb507251780b41107afe5e9",
+     "spec_version": 473,
+     "transaction_version": 1
+    },
+    {
+     "block": 9221720,
+     "block_hash": "0xc58b78bf0b0ba8a2b8fe4bbccb41857caaefaabee74c48cb426cafc417178adc",
+     "spec_version": 473,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "8fc3e6d25293765aa41cc7f4cc53d96b30e1c6d36c6ff6c3f1201da29238d35e"
+  },
+  {
+   "file": "erab_7000020.json",
+   "purpose": "Era-B (swap v3) pools of SN1/SN19/SN64 at 7,000,020: SubnetTAO/AlphaIn plus Swap.AlphaSqrtPrice and Swap.CurrentLiquidity (virtual reserves L*sqrtP, L/sqrtP) with sim_swap buys of 1/10/100 TAO and sells of about 1/10/100 TAO of alpha (32-byte SimSwapResult at this spec)",
+   "notes": [],
+   "snapshots": [
+    {
+     "block": 7000020,
+     "block_hash": "0x8a362ac93297572fa4abfbf8f89dade28054ec9d835165f360111c44fd286805",
+     "spec_version": 348,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "4b8003e6939bff4de5ce90e30c8a6f95f9cc4e240373b0026012ed66f384d82d"
+  },
+  {
+   "file": "escrow_9240388.json",
+   "purpose": "Raw validator-basket and escrow-coldkey stake results at 9,240,388 (SCALE structs decoded with scalecodec + runtime-API metadata; DESIGN.md section 13 Q7)",
+   "notes": [],
+   "snapshots": [
+    {
+     "block": 9240388,
+     "block_hash": "0xa57ba6d8ca74f815cb2f4b50be731fbc7e612128b4d8a5d98de30e11e9408524",
+     "spec_version": 475,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "30803e406d13f53bbe4b6b550a5b765a57973919457489e1789333dd1196797d"
+  },
+  {
+   "file": "globals_9240878.json",
+   "purpose": "Globals and prune-ladder inputs at 9,240,878 with the runtime registration cost",
+   "notes": [],
+   "snapshots": [
+    {
+     "block": 9240878,
+     "block_hash": "0xa8efb421200725c10ac5c72182d39833c14b6004b7a199708b219e9edea422f7",
+     "spec_version": 475,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "ef60fae6c72aaeb74b08a3d66d058ca2198eb13097440c3e2649ae5047f657f5"
+  },
+  {
+   "file": "metadata_spec475_9240388.json",
+   "purpose": "raw runtime metadata (state_getMetadata)",
+   "snapshots": [
+    {
+     "block": 9240388,
+     "block_hash": "0xa57ba6d8ca74f815cb2f4b50be731fbc7e612128b4d8a5d98de30e11e9408524",
+     "spec_version": 475,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "631725030e1b39facac5c161871c6b4f8cd89741fc29d4b3510f3346ea4ea1cd"
+  },
+  {
+   "file": "metadata_storage_spec348.json",
+   "purpose": "storage layout (hashers, key/value types, defaults) decoded from the metadata with scalecodec",
+   "snapshots": [
+    {
+     "block": 7000020,
+     "block_hash": "0x8a362ac93297572fa4abfbf8f89dade28054ec9d835165f360111c44fd286805",
+     "spec_version": 348,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "c8c1140785965daaaec1d48dd665fafc44ed19f025113c2ee9875546be1ccf45"
+  },
+  {
+   "file": "metadata_storage_spec441.json",
+   "purpose": "storage layout (hashers, key/value types, defaults) decoded from the metadata with scalecodec",
+   "snapshots": [
+    {
+     "block": 8765720,
+     "block_hash": "0x4ded6e469234aa4d30113c7f13923ad1045c6ef5ea6ad5d7ea3d4b136812bc77",
+     "spec_version": 441,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "50a2497c74994796f0ba78115e2cdc1fd0394e3c672067e2981562bca583a748"
+  },
+  {
+   "file": "metadata_storage_spec475.json",
+   "purpose": "storage layout (hashers, key/value types, defaults) decoded from the metadata with scalecodec",
+   "snapshots": [
+    {
+     "block": 9240388,
+     "block_hash": "0xa57ba6d8ca74f815cb2f4b50be731fbc7e612128b4d8a5d98de30e11e9408524",
+     "spec_version": 475,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "caffd8886c4dd11eef53cd0cee054d3fd9d4739d6c3d01f797d255d2656ac584"
+  },
+  {
+   "file": "sn1_quote_9240388.json",
+   "purpose": "SN1 pool and the 1-TAO sim_swap quote vector (brief 2.8)",
+   "notes": [
+    "spot == 6,562,800 at this block: True",
+    "DESIGN.md 10.1 lists alpha_out 152,285,961,807 rao; no block in [9,238,000, 9,242,700] reproduces it. At the brief's spot blocks sim_swap returns about 152,290,64x,xxx rao (152.29 alpha, as the brief says); the checks below hold the value at this block. ADR requested to correct the design figure."
+   ],
+   "snapshots": [
+    {
+     "block": 9240388,
+     "block_hash": "0xa57ba6d8ca74f815cb2f4b50be731fbc7e612128b4d8a5d98de30e11e9408524",
+     "spec_version": 475,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "96cf3f3304b348c07901cb0303d99109d1d7070e6b3b353edf845e47e805db9d"
+  },
+  {
+   "file": "sn51_emission_9240382.json",
+   "purpose": "Full emission state at 9,240,381 (inputs: EMA_{n-1}) and 9,240,382 (observed per-block emission) for the SN51 injection-split vector",
+   "notes": [],
+   "snapshots": [
+    {
+     "block": 9240381,
+     "block_hash": "0x563477199d8e8706d8fd42a7509378f553d92fbd856a40fdeeb2c0f1c5612cdd",
+     "spec_version": 475,
+     "transaction_version": 1
+    },
+    {
+     "block": 9240382,
+     "block_hash": "0x36fe0397ffe2bd34a32fa6bdf26f6f21b50ecd595171c8d85ad26046290dfa89",
+     "spec_version": 475,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "de071cff0afea08b42d6361f4b04b864b6d74ba20663d4ab42be8c189e45047f"
+  },
+  {
+   "file": "sn70_index_9240222_9240582.json",
+   "purpose": "SN70 share-price index: flat 9,240,222 -> 9,240,581, then +0.0279% at 9,240,582 (= LastEpochBlock); index I = TotalHotkeyAlpha / shares (V2 SafeFloat when V1 is absent)",
+   "notes": [
+    "hotkey 56a9 = 0x56a9aee6291bd03ab6d36d4d13e2bebae7cd403518066c72fba1b417d6ddd748; the 4th snapshot (30 d = 216,000 blocks earlier) holds only its index inputs"
+   ],
+   "snapshots": [
+    {
+     "block": 9240222,
+     "block_hash": "0xe322b6f098fd927f1e026d2b4b6c9aaae1fe3b170a25f3fdd8aab8d8690999c5",
+     "spec_version": 475,
+     "transaction_version": 1
+    },
+    {
+     "block": 9240581,
+     "block_hash": "0x081f2fbf7d5624ab01929d1b38a35fcc082c275f622ad78f14df206eb327ab11",
+     "spec_version": 475,
+     "transaction_version": 1
+    },
+    {
+     "block": 9240582,
+     "block_hash": "0xbb2e6f444bc9491f9c147143e8748797572a672a69d1afeb861925b126d263fc",
+     "spec_version": 475,
+     "transaction_version": 1
+    },
+    {
+     "block": 9024582,
+     "block_hash": "0x7955bd3d5761d8e336e1b8d6d40199580764e309835707c513b48a3c1ff1cf2b",
+     "spec_version": 455,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "4cd473db29b78ea9f4e044bf03fe1c7caa9f0613840129f7bafdca4a321db377"
+  },
+  {
+   "file": "sn92_9240388.json",
+   "purpose": "SN92 pool, dividend panel, owner position and prune ladder at 9,240,388 (AMM 10/100-TAO buy vectors, live prune target, recovery-ratio inputs, closed-form yield inputs)",
+   "notes": [],
+   "snapshots": [
+    {
+     "block": 9240388,
+     "block_hash": "0xa57ba6d8ca74f815cb2f4b50be731fbc7e612128b4d8a5d98de30e11e9408524",
+     "spec_version": 475,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "5b156e014e8da033dedf8c529abfdf38eddfffee4611c8bdb14651aed3d02590"
+  },
+  {
+   "file": "yield_inputs_9240388.json",
+   "purpose": "Closed-form yield inputs for SN70 / SN92 / SN64 (RootProp, alpha_out emission, owner cut, A_earn = sum of TotalHotkeyAlpha over AlphaDividendsPerSubnet recipients, takes)",
+   "notes": [
+    "The brief's yield table was measured around blocks 9,240,3xx; values here are at 9,240,388 and should agree to the brief's rounding."
+   ],
+   "snapshots": [
+    {
+     "block": 9240388,
+     "block_hash": "0xa57ba6d8ca74f815cb2f4b50be731fbc7e612128b4d8a5d98de30e11e9408524",
+     "spec_version": 475,
+     "transaction_version": 1
+    }
+   ],
+   "sha256": "296d1e0f31505bc50f80d246be9fe3ebc449b3191e3717677b1e86c4debdba06"
+  }
+ ]
+}

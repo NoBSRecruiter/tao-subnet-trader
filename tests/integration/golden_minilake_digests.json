@@ -1,0 +1,26 @@
+{
+ "books": {
+  "base-cash": "105ddc150be207834dabbc71d0d37c3c",
+  "base-ew-price": "ea650edb0368cbe8e113b440c862fe6a",
+  "base-ew-total": "0598a9229994b3439a5077a26d3d7a88",
+  "base-prune-blind": "87364aa3fc44c9d2902ab9534efdbf8a",
+  "base-random": "f14f8a368ed4de5a91fe63534f403ece",
+  "base-yield-size": "a6379cf6213a75e77c25062d468968a2",
+  "carry": "e4212e5d6d9ad82d3e7bf61e9256b6e3"
+ },
+ "feature_warm_blocks": 7200,
+ "manifest_hash": "01567a3faa7c87846f6bb5cc2b9a6a4d9c691e8b9d715afe7d153c28d28ff3ff",
+ "money": {
+  "base-cash": "516d20d65c7059d2bd6f9e33c77f38e5",
+  "base-ew-price": "7ee1c155b448dff874760ae3d89ce012",
+  "base-ew-total": "2b809997fd714cc101fcc88226835110",
+  "base-prune-blind": "02104ddc5afd65cc6bc2902e671fc9e3",
+  "base-random": "9af1676ee2fc1bab1cf7804a74e6b896",
+  "base-yield-size": "f4ccf560b0db0cc108074c192cdf9990",
+  "carry": "692a5d73b05da382578bafb5f6fc5a29"
+ },
+ "window": [
+  8765400,
+  8830000
+ ]
+}

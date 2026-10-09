@@ -1,0 +1,23 @@
+# taotrader LIVE adapter requirements (WP11; DESIGN.md sections 9.2 and 12.2). Linux/WSL live host ONLY.
+#
+# Native Windows never resolves this file: bittensor does not support Windows, and it is deliberately NOT in
+# pyproject.toml. Only taotrader.live.sdk_port.load_bittensor() imports it.
+#
+# Install in a SEPARATE venv on the live host (user-run, never by CI or agents):
+#   pip install --require-hashes -r requirements-live.txt
+#
+# Before the first install, verify the PyPI Trusted Publishing provenance of bittensor 11.3.0:
+#   repository RaoFoundation/subtensor, workflow .github/workflows/watch-mainnet-release.yml, environment mainnet,
+#   commit d1718c99c34cf96abbf2bf09c0e9e48b945c76f5 (brief section 5.1).
+# Never install bittensor-cli or bittensor-wallet separately (11.3.0 bundles both). Known malicious look-alikes:
+# bittensor==6.12.2, bitensor, bittenso, bittenso-cli, qbittensor 9.9.4/9.9.5, bittensor-burn-message.
+#
+# --require-hashes needs a hash for EVERY distribution that gets installed. The pin below is the authoritative,
+# reviewed top-level hash (the wheel; sdist sha256 8ce05029a712866048c6cf3e3d5df1592ac896175f5b4227f63044b7e7b7edb3
+# is intentionally NOT accepted). Generate the hashed closure of bittensor's own dependencies on the live host with
+#   uv pip compile --generate-hashes --python-version 3.11 requirements-live.txt -o requirements-live.lock.txt
+# review the lock diff (section 10.6), and install from that lock. taotrader's runtime pins come from uv.lock
+# (`uv export --frozen --no-dev --format requirements-txt`, which carries hashes).
+
+bittensor==11.3.0 \
+    --hash=sha256:4651d9125cd29ecfda1eed0ef758fe9e29563dd81ecd9d42a9f1c9ec6603cbaa

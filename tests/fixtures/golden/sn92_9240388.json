@@ -1,0 +1,5394 @@
+{
+ "fixture": "sn92_9240388",
+ "purpose": "SN92 pool, dividend panel, owner position and prune ladder at 9,240,388 (AMM 10/100-TAO buy vectors, live prune target, recovery-ratio inputs, closed-form yield inputs)",
+ "endpoint": "https://bittensor-finney.api.onfinality.io/public",
+ "captured_utc": "2026-10-09T03:28:05Z",
+ "snapshots": [
+  {
+   "block": 9240388,
+   "block_hash": "0xa57ba6d8ca74f815cb2f4b50be731fbc7e612128b4d8a5d98de30e11e9408524",
+   "spec_version": 475,
+   "transaction_version": 1,
+   "storage": [
+    {
+     "item": "SubtensorModule.NetworksAdded",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05550e30450fc4d507a846032a7fa65d9a435c00",
+     "value": "0x01"
+    },
+    {
+     "item": "SubtensorModule.NetworkRegisteredAt",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555271d29b9b717ce3d8c571f1cbc180fa25c00",
+     "value": "0x06717f0000000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetTAO",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05557a57dce016211512d1700561066b85a35c00",
+     "value": "0x0e69cab788000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetAlphaIn",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05552ce12f7007574647d692ac7edf8b7a535c00",
+     "value": "0x0825c7f11e8c0100"
+    },
+    {
+     "item": "SubtensorModule.SubnetAlphaOut",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05557837978cc6746112a2c9e680a18cfcb95c00",
+     "value": "0x85e2fa9ed83e0200"
+    },
+    {
+     "item": "SubtensorModule.SubnetProtocolAlpha",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ff7ebe49c2927c367a84c8fd80bbce7d5c00",
+     "value": "0x4e6aca9775250000"
+    },
+    {
+     "item": "SubtensorModule.SubnetMovingPrice",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05551abf1b0f4fd14f7b72ee50f9d91d59155c00",
+     "value": "0xb0065900000000000000000000000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetFastMovingPrice",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555035ba74afd4748c0f821ed38ecf524365c00",
+     "value": "0xa3bcd91d5a7758000000000000000000"
+    },
+    {
+     "item": "SubtensorModule.RootProp",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555010cf3b550f933211beccf08e00433e45c00",
+     "value": "0x4fa7a37a000000000000000000000000"
+    },
+    {
+     "item": "SubtensorModule.MinerBurned",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05551eac6222ebba7feba4ca36a94736815e5c00",
+     "value": "0x00000000000000000000000000000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetEmissionEnabled",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555c97bb5c5631e5f593b5bd2da84a5fa165c00",
+     "value": "0x01"
+    },
+    {
+     "item": "SubtensorModule.SubtokenEnabled",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e9348e9224ea06c9c2da12ce69e619c55c00",
+     "value": "0x01"
+    },
+    {
+     "item": "SubtensorModule.NetworkRegistrationAllowed",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d5fe74da02c7b4bbb340fb368eee3e775c00",
+     "value": "0x01"
+    },
+    {
+     "item": "SubtensorModule.FirstEmissionBlockNumber",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e4cfee4e36f2419d8863a3fda65c428f5c00",
+     "value": "0xab717f0000000000"
+    },
+    {
+     "item": "SubtensorModule.Tempo",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05557641384bb339f3758acddfd7053d33175c00",
+     "value": "0x6801"
+    },
+    {
+     "item": "SubtensorModule.LastEpochBlock",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055590010c37124c14146041452f9ffba0df5c00",
+     "value": "0x47fe8c0000000000"
+    },
+    {
+     "item": "SubtensorModule.EMAPriceHalvingBlocks",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05550c8a87705ba85a17daa1bb11f7899de15c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubnetTaoInEmission",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555dd62ae7237581e8f6a684f1ecae062155c00",
+     "value": "0x7411000000000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetExcessTao",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555857b0a5b920bc5e41cb0695a4b7d38e75c00",
+     "value": "0x0000000000000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetAlphaOutEmission",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055525257fbc5458419b7bc7e8c44c5215215c00",
+     "value": "0x00ca9a3b00000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetAlphaInEmission",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05551905df3b2516a166b6f9fba54fef1cd85c00",
+     "value": "0xab91320000000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetTaoFlow",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055522c7158f6b2746f4085b8920570362585c00",
+     "value": "0x60179ffcb6ffffff"
+    },
+    {
+     "item": "SubtensorModule.SubnetVolume",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553c3226e141696000b4b239c65bc2b2b45c00",
+     "value": "0x2740fd30584b00000000000000000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetOwner",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055536e3e82152c8758267395fe524fbbd165c00",
+     "value": "0x5c006881ac1a232097cd7ed2edea82f2ce3c058066adf12133c6a6af742c377a"
+    },
+    {
+     "item": "SubtensorModule.SubnetOwnerHotkey",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055568b7553499633fe05caf4d8a51aefe5c5c00",
+     "value": "0xe22a71b444f8d46de558f57f7c98ee23bb7a3a687da6afd7be8f961e6bc8986a"
+    },
+    {
+     "item": "SubtensorModule.OwnerCutEnabled",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055584287ee5b733a503a6d7f008ece51ba75c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.OwnerCutAutoLockEnabled",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05558856bedc66ab9c3ae426e5b6b52c8a1b5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalAlphaStaked",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05554f7d0814270246a648a7714c1e45cfa85c00",
+     "value": "0xd2c89d9951450100"
+    },
+    {
+     "item": "SubtensorModule.MaxAllowedValidators",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555741b883d2519eed91857993bfd4df0ba5c00",
+     "value": "0x4000"
+    },
+    {
+     "item": "SubtensorModule.SubnetEpochConsensus",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055512a2afa59d7389e40b256460d9b1fdcd5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.LiquidAlphaConsensusMode",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055535c32912d86f933ce83ce4a034b264f25c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.PendingOwnerCut",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555619fc1d902020b6627d90e16de3dd5525c00",
+     "value": "0xa694539a0a000000"
+    },
+    {
+     "item": "Swap.SwapBalancer",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836e8129c00c7f7dc3242d3df9ca2338dc9a95662049602f4e645c00",
+     "value": "0x06262e98515bf006"
+    },
+    {
+     "item": "Swap.FeeRate",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836e9e110c291062e3d22e10ec17c4e83ebd95662049602f4e645c00",
+     "value": null
+    },
+    {
+     "item": "Swap.BalancerTaoReservoir",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836e84af79154d855fac632e03f22d3f0aa495662049602f4e645c00",
+     "value": null
+    },
+    {
+     "item": "Swap.BalancerAlphaReservoir",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836ea21fa33118f2741105fd571c0e9586e995662049602f4e645c00",
+     "value": null
+    },
+    {
+     "item": "Swap.AlphaSqrtPrice",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836e0366558e06667059cde5be67d7c3e2d195662049602f4e645c00",
+     "value": null
+    },
+    {
+     "item": "Swap.CurrentLiquidity",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836ec87ed115f906e6420cdcafb441786bf495662049602f4e645c00",
+     "value": null
+    },
+    {
+     "item": "Swap.CurrentTick",
+     "args": [
+      92
+     ],
+     "hashers": [
+      "Twox64Concat"
+     ],
+     "key": "0x746cc6d1e9dbcf1d03868e492c1d836e591f20834574415c86ad0ca587ea5f4c95662049602f4e645c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubnetMovingAlpha",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf055565ef4b6311933743a027c3602fbabe20",
+     "value": "0x2aa91300000000000000000000000000"
+    },
+    {
+     "item": "SubtensorModule.EmissionGateBar",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf05557c9b0d2964cc73e7519676c3cc4d5df9",
+     "value": "0xd984f2ac8d7b1d020000000000000000"
+    },
+    {
+     "item": "SubtensorModule.EmissionBarRank",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555d33bd686290d014475513443305882be",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.EmissionGateExponent",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf055588c70e8dd0cf4af3aeb977ba2eee1df4",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.EmissionBarQuantile",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555a772007dde2ed63e0f21b5f9d7f16650",
+     "value": "0x00000000000000c00000000000000000"
+    },
+    {
+     "item": "SubtensorModule.TaoWeight",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf05556b2684762c3b1e22ffb4a92939298741",
+     "value": "0x7a14ae47e17a142e"
+    },
+    {
+     "item": "SubtensorModule.SubnetOwnerCut",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555e799290d4a088ada42cf32b591c69203",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.SubnetLimit",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555a336e39c4086c4d5f43b7e6dff8a04f6",
+     "value": "0x8000"
+    },
+    {
+     "item": "SubtensorModule.NetworkImmunityPeriod",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555be4bea261cfe8a2b911e689c943bbd43",
+     "value": "0x002f0d0000000000"
+    },
+    {
+     "item": "SubtensorModule.NetworkRateLimit",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf05559432d347db1cb70ce515b7a097bb84d9",
+     "value": "0x4038000000000000"
+    },
+    {
+     "item": "SubtensorModule.NetworkLastLockCost",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555de7b71faea4b83188e1aa22b1f79237c",
+     "value": "0x26ed050b98000000"
+    },
+    {
+     "item": "SubtensorModule.NetworkMinLockCost",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555af4319a20ed58ed2c549e6b6ea25fe88",
+     "value": "0x00ca9a3b00000000"
+    },
+    {
+     "item": "SubtensorModule.NetworkLockReductionInterval",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf055567d5740b25f3ae7aea68123bdcdc6bd4",
+     "value": "0x00c2010000000000"
+    },
+    {
+     "item": "SubtensorModule.TaoInRefundDeploymentBlock",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555dc425fa12c0816e636af7a23ec31d977",
+     "value": "0x722c7f0000000000"
+    },
+    {
+     "item": "SubtensorModule.NominatorMinRequiredStake",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555600828b736cfd977b24a0d2528a8a2e8",
+     "value": "0x8096980000000000"
+    },
+    {
+     "item": "SubtensorModule.TotalIssuance",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf055557c875e4cff74148e4628f264b974c80",
+     "value": "0x9676c6d1f9332900"
+    },
+    {
+     "item": "SubtensorModule.DissolveCleanupQueue",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf05551b3f4fb9309f90f6e26d5767a2118eca",
+     "value": "0x00"
+    },
+    {
+     "item": "SubtensorModule.ShortsEnabled",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf055528fe890359cba5d2a2727a72693689a3",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.NetworkLastRegistered",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf0555523c2ca14b63d5abaac7b4e6c1f0b65f",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.BlockEmission",
+     "args": [],
+     "hashers": [],
+     "key": "0x658faa385070e074c85bf6b568cf055534ebdb22bbd04c61ef98f1974907c68d",
+     "value": "0x00ca9a3b00000000"
+    },
+    {
+     "item": "SubtensorModule.SubnetTAO",
+     "args": [
+      0
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05557a57dce016211512d1700561066b85a30000",
+     "value": "0x705564cc97601300"
+    },
+    {
+     "item": "SubtensorModule.LastRateLimitedBlock",
+     "args": [
+      "NetworkLastRegistered"
+     ],
+     "hashers": [
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05557e1acdaa2002f0505824e25a590c1b7102",
+     "value": "0xf28a8c0000000000"
+    },
+    {
+     "item": "Balances.TotalIssuance",
+     "args": [],
+     "hashers": [],
+     "key": "0xc2261276cc9d1f8598ea4b6a74b15c2f57c875e4cff74148e4628f264b974c80",
+     "value": "0x9676c6d1f9332900"
+    },
+    {
+     "item": "SafeMode.EnteredUntil",
+     "args": [],
+     "hashers": [],
+     "key": "0xf35b44951b86069d9273a961f1e3fbeb1fd1ae5c7c15443bedf0311e151a2a4a",
+     "value": null
+    },
+    {
+     "item": "Timestamp.Now",
+     "args": [],
+     "hashers": [],
+     "key": "0xf0c365c3cf59d671eb72da0e7a4113c49f1f0515f462cdcf84e0f1d6045dfcbb",
+     "value": "0xe079f51ca1010000"
+    },
+    {
+     "item": "System.Number",
+     "args": [],
+     "hashers": [],
+     "key": "0x26aa394eea5630e07c48ae0c9558cef702a5c1b19ab7a04f536c519aca4983ac",
+     "value": "0x44ff8c00"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x0457ecae2e05bb3fba174ca6ccc6c5b3f63cf057d2035bc88a55f0268b06c24c"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c008739773ed125181549bfccc654a3faad0457ecae2e05bb3fba174ca6ccc6c5b3f63cf057d2035bc88a55f0268b06c24c",
+     "value": "0x5681093d00000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x0457ecae2e05bb3fba174ca6ccc6c5b3f63cf057d2035bc88a55f0268b06c24c",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e68739773ed125181549bfccc654a3faad0457ecae2e05bb3fba174ca6ccc6c5b3f63cf057d2035bc88a55f0268b06c24c5c00",
+     "value": "0x8efeabae91040000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x0457ecae2e05bb3fba174ca6ccc6c5b3f63cf057d2035bc88a55f0268b06c24c",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e58739773ed125181549bfccc654a3faad0457ecae2e05bb3fba174ca6ccc6c5b3f63cf057d2035bc88a55f0268b06c24c5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x0457ecae2e05bb3fba174ca6ccc6c5b3f63cf057d2035bc88a55f0268b06c24c",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c58739773ed125181549bfccc654a3faad0457ecae2e05bb3fba174ca6ccc6c5b3f63cf057d2035bc88a55f0268b06c24c5c00",
+     "value": "0x7f191cab30c9d5101400000000000000f8ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x0457ecae2e05bb3fba174ca6ccc6c5b3f63cf057d2035bc88a55f0268b06c24c",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b7094438739773ed125181549bfccc654a3faad0457ecae2e05bb3fba174ca6ccc6c5b3f63cf057d2035bc88a55f0268b06c24c5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x0457ecae2e05bb3fba174ca6ccc6c5b3f63cf057d2035bc88a55f0268b06c24c"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d40388739773ed125181549bfccc654a3faad0457ecae2e05bb3fba174ca6ccc6c5b3f63cf057d2035bc88a55f0268b06c24c",
+     "value": "0x0a17"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x1e6a13fdfb36d77467c3f7fe1d7eeedee18b9f2a82d8d9bc7e595721efd9c97f"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00edc2bda6593310d17d1cc09edfdbd1751e6a13fdfb36d77467c3f7fe1d7eeedee18b9f2a82d8d9bc7e595721efd9c97f",
+     "value": "0x93df262800000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x1e6a13fdfb36d77467c3f7fe1d7eeedee18b9f2a82d8d9bc7e595721efd9c97f",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6edc2bda6593310d17d1cc09edfdbd1751e6a13fdfb36d77467c3f7fe1d7eeedee18b9f2a82d8d9bc7e595721efd9c97f5c00",
+     "value": "0x27a78c1658030000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x1e6a13fdfb36d77467c3f7fe1d7eeedee18b9f2a82d8d9bc7e595721efd9c97f",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5edc2bda6593310d17d1cc09edfdbd1751e6a13fdfb36d77467c3f7fe1d7eeedee18b9f2a82d8d9bc7e595721efd9c97f5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x1e6a13fdfb36d77467c3f7fe1d7eeedee18b9f2a82d8d9bc7e595721efd9c97f",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5edc2bda6593310d17d1cc09edfdbd1751e6a13fdfb36d77467c3f7fe1d7eeedee18b9f2a82d8d9bc7e595721efd9c97f5c00",
+     "value": "0xa26988ef9b6bbafb0900000000000000f8ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x1e6a13fdfb36d77467c3f7fe1d7eeedee18b9f2a82d8d9bc7e595721efd9c97f",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443edc2bda6593310d17d1cc09edfdbd1751e6a13fdfb36d77467c3f7fe1d7eeedee18b9f2a82d8d9bc7e595721efd9c97f5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x1e6a13fdfb36d77467c3f7fe1d7eeedee18b9f2a82d8d9bc7e595721efd9c97f"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038edc2bda6593310d17d1cc09edfdbd1751e6a13fdfb36d77467c3f7fe1d7eeedee18b9f2a82d8d9bc7e595721efd9c97f",
+     "value": "0x142e"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x20b0f8ac1d5416d32f5a552f98b570f06e8392ccb803029e04f63fbe0553c954"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00d76423399121ca4a59c6d6b99db6baed20b0f8ac1d5416d32f5a552f98b570f06e8392ccb803029e04f63fbe0553c954",
+     "value": "0x26426d0500000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x20b0f8ac1d5416d32f5a552f98b570f06e8392ccb803029e04f63fbe0553c954",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6d76423399121ca4a59c6d6b99db6baed20b0f8ac1d5416d32f5a552f98b570f06e8392ccb803029e04f63fbe0553c9545c00",
+     "value": "0x072391aa63000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x20b0f8ac1d5416d32f5a552f98b570f06e8392ccb803029e04f63fbe0553c954",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5d76423399121ca4a59c6d6b99db6baed20b0f8ac1d5416d32f5a552f98b570f06e8392ccb803029e04f63fbe0553c9545c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x20b0f8ac1d5416d32f5a552f98b570f06e8392ccb803029e04f63fbe0553c954",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5d76423399121ca4a59c6d6b99db6baed20b0f8ac1d5416d32f5a552f98b570f06e8392ccb803029e04f63fbe0553c9545c00",
+     "value": "0x6657b191b1d9283d0b00000000000000f7ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x20b0f8ac1d5416d32f5a552f98b570f06e8392ccb803029e04f63fbe0553c954",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443d76423399121ca4a59c6d6b99db6baed20b0f8ac1d5416d32f5a552f98b570f06e8392ccb803029e04f63fbe0553c9545c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x20b0f8ac1d5416d32f5a552f98b570f06e8392ccb803029e04f63fbe0553c954"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038d76423399121ca4a59c6d6b99db6baed20b0f8ac1d5416d32f5a552f98b570f06e8392ccb803029e04f63fbe0553c954",
+     "value": "0xcc0c"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x221a8357a8280453bd142870c5a55780759bcdefb5f4f9e026fa3f0e32123f33"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c001d6773460c85791c6a00445c8b402651221a8357a8280453bd142870c5a55780759bcdefb5f4f9e026fa3f0e32123f33",
+     "value": "0x3024500000000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x221a8357a8280453bd142870c5a55780759bcdefb5f4f9e026fa3f0e32123f33",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e61d6773460c85791c6a00445c8b402651221a8357a8280453bd142870c5a55780759bcdefb5f4f9e026fa3f0e32123f335c00",
+     "value": "0x79f501ff05000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x221a8357a8280453bd142870c5a55780759bcdefb5f4f9e026fa3f0e32123f33",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e51d6773460c85791c6a00445c8b402651221a8357a8280453bd142870c5a55780759bcdefb5f4f9e026fa3f0e32123f335c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x221a8357a8280453bd142870c5a55780759bcdefb5f4f9e026fa3f0e32123f33",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c51d6773460c85791c6a00445c8b402651221a8357a8280453bd142870c5a55780759bcdefb5f4f9e026fa3f0e32123f335c00",
+     "value": "0xa9e5ad55ae6a0c3b0600000000000000f6ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x221a8357a8280453bd142870c5a55780759bcdefb5f4f9e026fa3f0e32123f33",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b7094431d6773460c85791c6a00445c8b402651221a8357a8280453bd142870c5a55780759bcdefb5f4f9e026fa3f0e32123f335c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x221a8357a8280453bd142870c5a55780759bcdefb5f4f9e026fa3f0e32123f33"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d40381d6773460c85791c6a00445c8b402651221a8357a8280453bd142870c5a55780759bcdefb5f4f9e026fa3f0e32123f33",
+     "value": "0x0a17"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x2402d2dd859f24ff5305ce12d54e02f3c2cafe6788af4b405bbe0d407695af37"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c006be6c484fa8c7e270399e4cb0910d6552402d2dd859f24ff5305ce12d54e02f3c2cafe6788af4b405bbe0d407695af37",
+     "value": "0xd5229d2f00000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x2402d2dd859f24ff5305ce12d54e02f3c2cafe6788af4b405bbe0d407695af37",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e66be6c484fa8c7e270399e4cb0910d6552402d2dd859f24ff5305ce12d54e02f3c2cafe6788af4b405bbe0d407695af375c00",
+     "value": "0xb7f1597590030000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x2402d2dd859f24ff5305ce12d54e02f3c2cafe6788af4b405bbe0d407695af37",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e56be6c484fa8c7e270399e4cb0910d6552402d2dd859f24ff5305ce12d54e02f3c2cafe6788af4b405bbe0d407695af375c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x2402d2dd859f24ff5305ce12d54e02f3c2cafe6788af4b405bbe0d407695af37",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c56be6c484fa8c7e270399e4cb0910d6552402d2dd859f24ff5305ce12d54e02f3c2cafe6788af4b405bbe0d407695af375c00",
+     "value": "0x1a2765294a50d1c70900000000000000f8ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x2402d2dd859f24ff5305ce12d54e02f3c2cafe6788af4b405bbe0d407695af37",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b7094436be6c484fa8c7e270399e4cb0910d6552402d2dd859f24ff5305ce12d54e02f3c2cafe6788af4b405bbe0d407695af375c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x2402d2dd859f24ff5305ce12d54e02f3c2cafe6788af4b405bbe0d407695af37"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d40386be6c484fa8c7e270399e4cb0910d6552402d2dd859f24ff5305ce12d54e02f3c2cafe6788af4b405bbe0d407695af37",
+     "value": "0x0a17"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x2410116f3b1163d8b934f70648d20ea7722cdb2bc70abcd2a1be80fa441e865b"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00631a20fb088312f53fdad0c52489c1c22410116f3b1163d8b934f70648d20ea7722cdb2bc70abcd2a1be80fa441e865b",
+     "value": "0x5db2ec1b00000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x2410116f3b1163d8b934f70648d20ea7722cdb2bc70abcd2a1be80fa441e865b",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6631a20fb088312f53fdad0c52489c1c22410116f3b1163d8b934f70648d20ea7722cdb2bc70abcd2a1be80fa441e865b5c00",
+     "value": "0xc3034ac905020000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x2410116f3b1163d8b934f70648d20ea7722cdb2bc70abcd2a1be80fa441e865b",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5631a20fb088312f53fdad0c52489c1c22410116f3b1163d8b934f70648d20ea7722cdb2bc70abcd2a1be80fa441e865b5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x2410116f3b1163d8b934f70648d20ea7722cdb2bc70abcd2a1be80fa441e865b",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5631a20fb088312f53fdad0c52489c1c22410116f3b1163d8b934f70648d20ea7722cdb2bc70abcd2a1be80fa441e865b5c00",
+     "value": "0xd52b479b64eb28043600000000000000f7ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x2410116f3b1163d8b934f70648d20ea7722cdb2bc70abcd2a1be80fa441e865b",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443631a20fb088312f53fdad0c52489c1c22410116f3b1163d8b934f70648d20ea7722cdb2bc70abcd2a1be80fa441e865b5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x2410116f3b1163d8b934f70648d20ea7722cdb2bc70abcd2a1be80fa441e865b"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038631a20fb088312f53fdad0c52489c1c22410116f3b1163d8b934f70648d20ea7722cdb2bc70abcd2a1be80fa441e865b",
+     "value": "0x5c0f"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x2c36c8b88903c8507aa3a9a6dcfc016caf5cfd3d8bf755b97e63f8f8b7c56836"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c0013c28f9368615d99a8b38f3d2c856a9d2c36c8b88903c8507aa3a9a6dcfc016caf5cfd3d8bf755b97e63f8f8b7c56836",
+     "value": "0xaf991e0a00000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x2c36c8b88903c8507aa3a9a6dcfc016caf5cfd3d8bf755b97e63f8f8b7c56836",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e613c28f9368615d99a8b38f3d2c856a9d2c36c8b88903c8507aa3a9a6dcfc016caf5cfd3d8bf755b97e63f8f8b7c568365c00",
+     "value": "0x690cc777b0000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x2c36c8b88903c8507aa3a9a6dcfc016caf5cfd3d8bf755b97e63f8f8b7c56836",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e513c28f9368615d99a8b38f3d2c856a9d2c36c8b88903c8507aa3a9a6dcfc016caf5cfd3d8bf755b97e63f8f8b7c568365c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x2c36c8b88903c8507aa3a9a6dcfc016caf5cfd3d8bf755b97e63f8f8b7c56836",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c513c28f9368615d99a8b38f3d2c856a9d2c36c8b88903c8507aa3a9a6dcfc016caf5cfd3d8bf755b97e63f8f8b7c568365c00",
+     "value": "0xa20ff26b5992b93d1200000000000000f7ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x2c36c8b88903c8507aa3a9a6dcfc016caf5cfd3d8bf755b97e63f8f8b7c56836",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b70944313c28f9368615d99a8b38f3d2c856a9d2c36c8b88903c8507aa3a9a6dcfc016caf5cfd3d8bf755b97e63f8f8b7c568365c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x2c36c8b88903c8507aa3a9a6dcfc016caf5cfd3d8bf755b97e63f8f8b7c56836"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d403813c28f9368615d99a8b38f3d2c856a9d2c36c8b88903c8507aa3a9a6dcfc016caf5cfd3d8bf755b97e63f8f8b7c56836",
+     "value": "0x0000"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x38bebacdaaf2648eb65bc692d7ed483a54208c6d4c5ff32ecf713d133baa8011"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00ad49cbc5ce8dd66311628bdf33b084fc38bebacdaaf2648eb65bc692d7ed483a54208c6d4c5ff32ecf713d133baa8011",
+     "value": "0xa1ecd40000000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x38bebacdaaf2648eb65bc692d7ed483a54208c6d4c5ff32ecf713d133baa8011",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6ad49cbc5ce8dd66311628bdf33b084fc38bebacdaaf2648eb65bc692d7ed483a54208c6d4c5ff32ecf713d133baa80115c00",
+     "value": "0x46c5b8bd0f000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x38bebacdaaf2648eb65bc692d7ed483a54208c6d4c5ff32ecf713d133baa8011",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5ad49cbc5ce8dd66311628bdf33b084fc38bebacdaaf2648eb65bc692d7ed483a54208c6d4c5ff32ecf713d133baa80115c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x38bebacdaaf2648eb65bc692d7ed483a54208c6d4c5ff32ecf713d133baa8011",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5ad49cbc5ce8dd66311628bdf33b084fc38bebacdaaf2648eb65bc692d7ed483a54208c6d4c5ff32ecf713d133baa80115c00",
+     "value": "0x33478fa721e21ced1300000000000000f6ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x38bebacdaaf2648eb65bc692d7ed483a54208c6d4c5ff32ecf713d133baa8011",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443ad49cbc5ce8dd66311628bdf33b084fc38bebacdaaf2648eb65bc692d7ed483a54208c6d4c5ff32ecf713d133baa80115c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x38bebacdaaf2648eb65bc692d7ed483a54208c6d4c5ff32ecf713d133baa8011"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038ad49cbc5ce8dd66311628bdf33b084fc38bebacdaaf2648eb65bc692d7ed483a54208c6d4c5ff32ecf713d133baa8011",
+     "value": "0x3914"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x3eb07d26d2eb18f2fe4dbfbc4892b6ed0b189be11a308557295c973512544a30"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c003da214aa162b6f6e66001e3a94b5789a3eb07d26d2eb18f2fe4dbfbc4892b6ed0b189be11a308557295c973512544a30",
+     "value": "0xbbfb0b0000000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x3eb07d26d2eb18f2fe4dbfbc4892b6ed0b189be11a308557295c973512544a30",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e63da214aa162b6f6e66001e3a94b5789a3eb07d26d2eb18f2fe4dbfbc4892b6ed0b189be11a308557295c973512544a305c00",
+     "value": "0x227eded000000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x3eb07d26d2eb18f2fe4dbfbc4892b6ed0b189be11a308557295c973512544a30",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e53da214aa162b6f6e66001e3a94b5789a3eb07d26d2eb18f2fe4dbfbc4892b6ed0b189be11a308557295c973512544a305c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x3eb07d26d2eb18f2fe4dbfbc4892b6ed0b189be11a308557295c973512544a30",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c53da214aa162b6f6e66001e3a94b5789a3eb07d26d2eb18f2fe4dbfbc4892b6ed0b189be11a308557295c973512544a305c00",
+     "value": "0x30845d565b920c8c0d00000000000000f5ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x3eb07d26d2eb18f2fe4dbfbc4892b6ed0b189be11a308557295c973512544a30",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b7094433da214aa162b6f6e66001e3a94b5789a3eb07d26d2eb18f2fe4dbfbc4892b6ed0b189be11a308557295c973512544a305c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x3eb07d26d2eb18f2fe4dbfbc4892b6ed0b189be11a308557295c973512544a30"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d40383da214aa162b6f6e66001e3a94b5789a3eb07d26d2eb18f2fe4dbfbc4892b6ed0b189be11a308557295c973512544a30",
+     "value": "0x0000"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x40c47b6a294686fe9612b5d78dd369f4c77fa3bbf96a4286ede97410ba2e3209"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00cc822126219e7a8d4401938bfb00f72540c47b6a294686fe9612b5d78dd369f4c77fa3bbf96a4286ede97410ba2e3209",
+     "value": "0x30e3214900000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x40c47b6a294686fe9612b5d78dd369f4c77fa3bbf96a4286ede97410ba2e3209",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6cc822126219e7a8d4401938bfb00f72540c47b6a294686fe9612b5d78dd369f4c77fa3bbf96a4286ede97410ba2e32095c00",
+     "value": "0xf941b0277b050000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x40c47b6a294686fe9612b5d78dd369f4c77fa3bbf96a4286ede97410ba2e3209",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5cc822126219e7a8d4401938bfb00f72540c47b6a294686fe9612b5d78dd369f4c77fa3bbf96a4286ede97410ba2e32095c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x40c47b6a294686fe9612b5d78dd369f4c77fa3bbf96a4286ede97410ba2e3209",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5cc822126219e7a8d4401938bfb00f72540c47b6a294686fe9612b5d78dd369f4c77fa3bbf96a4286ede97410ba2e32095c00",
+     "value": "0x9cf610ea03ae1e7b0f00000000000000f8ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x40c47b6a294686fe9612b5d78dd369f4c77fa3bbf96a4286ede97410ba2e3209",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443cc822126219e7a8d4401938bfb00f72540c47b6a294686fe9612b5d78dd369f4c77fa3bbf96a4286ede97410ba2e32095c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x40c47b6a294686fe9612b5d78dd369f4c77fa3bbf96a4286ede97410ba2e3209"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038cc822126219e7a8d4401938bfb00f72540c47b6a294686fe9612b5d78dd369f4c77fa3bbf96a4286ede97410ba2e3209",
+     "value": "0x0a17"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x44f7a87e1b1de487eaf9e10413f485855444a46148bfe32cf6b225fdc610a03b"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c007715485dec653442ca23d9dd141b9aee44f7a87e1b1de487eaf9e10413f485855444a46148bfe32cf6b225fdc610a03b",
+     "value": "0xce1fd33b00000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x44f7a87e1b1de487eaf9e10413f485855444a46148bfe32cf6b225fdc610a03b",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e67715485dec653442ca23d9dd141b9aee44f7a87e1b1de487eaf9e10413f485855444a46148bfe32cf6b225fdc610a03b5c00",
+     "value": "0xd7940a4d13040000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x44f7a87e1b1de487eaf9e10413f485855444a46148bfe32cf6b225fdc610a03b",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e57715485dec653442ca23d9dd141b9aee44f7a87e1b1de487eaf9e10413f485855444a46148bfe32cf6b225fdc610a03b5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x44f7a87e1b1de487eaf9e10413f485855444a46148bfe32cf6b225fdc610a03b",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c57715485dec653442ca23d9dd141b9aee44f7a87e1b1de487eaf9e10413f485855444a46148bfe32cf6b225fdc610a03b5c00",
+     "value": "0xab5eef343b462d511100000000000000f8ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x44f7a87e1b1de487eaf9e10413f485855444a46148bfe32cf6b225fdc610a03b",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b7094437715485dec653442ca23d9dd141b9aee44f7a87e1b1de487eaf9e10413f485855444a46148bfe32cf6b225fdc610a03b5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x44f7a87e1b1de487eaf9e10413f485855444a46148bfe32cf6b225fdc610a03b"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d40387715485dec653442ca23d9dd141b9aee44f7a87e1b1de487eaf9e10413f485855444a46148bfe32cf6b225fdc610a03b",
+     "value": "0x0000"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x463c6131db33685e022246b775f8d338dad3d8ac8c672d87ed3cf4b9eeb8c51c"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00fdd935b0d4b2d2c8472d2ede598b069f463c6131db33685e022246b775f8d338dad3d8ac8c672d87ed3cf4b9eeb8c51c",
+     "value": "0xf791e20100000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x463c6131db33685e022246b775f8d338dad3d8ac8c672d87ed3cf4b9eeb8c51c",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6fdd935b0d4b2d2c8472d2ede598b069f463c6131db33685e022246b775f8d338dad3d8ac8c672d87ed3cf4b9eeb8c51c5c00",
+     "value": "0x7a873a4a28000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x463c6131db33685e022246b775f8d338dad3d8ac8c672d87ed3cf4b9eeb8c51c",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5fdd935b0d4b2d2c8472d2ede598b069f463c6131db33685e022246b775f8d338dad3d8ac8c672d87ed3cf4b9eeb8c51c5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x463c6131db33685e022246b775f8d338dad3d8ac8c672d87ed3cf4b9eeb8c51c",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5fdd935b0d4b2d2c8472d2ede598b069f463c6131db33685e022246b775f8d338dad3d8ac8c672d87ed3cf4b9eeb8c51c5c00",
+     "value": "0x1208d1b2d75dcb4b0600000000000000f7ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x463c6131db33685e022246b775f8d338dad3d8ac8c672d87ed3cf4b9eeb8c51c",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443fdd935b0d4b2d2c8472d2ede598b069f463c6131db33685e022246b775f8d338dad3d8ac8c672d87ed3cf4b9eeb8c51c5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x463c6131db33685e022246b775f8d338dad3d8ac8c672d87ed3cf4b9eeb8c51c"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038fdd935b0d4b2d2c8472d2ede598b069f463c6131db33685e022246b775f8d338dad3d8ac8c672d87ed3cf4b9eeb8c51c",
+     "value": "0x142e"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x4a1f885debc56a3a42eb6399683e74e672bdfc58ca9d31da29e46ad429af2126"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00d175ec91ffbd7619e2acee9c4cfd01a24a1f885debc56a3a42eb6399683e74e672bdfc58ca9d31da29e46ad429af2126",
+     "value": "0x7a4b1d0000000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x4a1f885debc56a3a42eb6399683e74e672bdfc58ca9d31da29e46ad429af2126",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6d175ec91ffbd7619e2acee9c4cfd01a24a1f885debc56a3a42eb6399683e74e672bdfc58ca9d31da29e46ad429af21265c00",
+     "value": "0x97c799fe01000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x4a1f885debc56a3a42eb6399683e74e672bdfc58ca9d31da29e46ad429af2126",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5d175ec91ffbd7619e2acee9c4cfd01a24a1f885debc56a3a42eb6399683e74e672bdfc58ca9d31da29e46ad429af21265c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x4a1f885debc56a3a42eb6399683e74e672bdfc58ca9d31da29e46ad429af2126",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5d175ec91ffbd7619e2acee9c4cfd01a24a1f885debc56a3a42eb6399683e74e672bdfc58ca9d31da29e46ad429af21265c00",
+     "value": "0x7d4b45e01145c31f2a00000000000000f5ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x4a1f885debc56a3a42eb6399683e74e672bdfc58ca9d31da29e46ad429af2126",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443d175ec91ffbd7619e2acee9c4cfd01a24a1f885debc56a3a42eb6399683e74e672bdfc58ca9d31da29e46ad429af21265c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x4a1f885debc56a3a42eb6399683e74e672bdfc58ca9d31da29e46ad429af2126"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038d175ec91ffbd7619e2acee9c4cfd01a24a1f885debc56a3a42eb6399683e74e672bdfc58ca9d31da29e46ad429af2126",
+     "value": "0x0000"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x4a646bd87d6e84ff6d57f4d2d94fa137fa69733208392ac3e816ad59a7f45f5f"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c003d519c0737c34e5b6f4f35346892b1234a646bd87d6e84ff6d57f4d2d94fa137fa69733208392ac3e816ad59a7f45f5f",
+     "value": "0x96cbb20400000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x4a646bd87d6e84ff6d57f4d2d94fa137fa69733208392ac3e816ad59a7f45f5f",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e63d519c0737c34e5b6f4f35346892b1234a646bd87d6e84ff6d57f4d2d94fa137fa69733208392ac3e816ad59a7f45f5f5c00",
+     "value": "0x941aee2c5a000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x4a646bd87d6e84ff6d57f4d2d94fa137fa69733208392ac3e816ad59a7f45f5f",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e53d519c0737c34e5b6f4f35346892b1234a646bd87d6e84ff6d57f4d2d94fa137fa69733208392ac3e816ad59a7f45f5f5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x4a646bd87d6e84ff6d57f4d2d94fa137fa69733208392ac3e816ad59a7f45f5f",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c53d519c0737c34e5b6f4f35346892b1234a646bd87d6e84ff6d57f4d2d94fa137fa69733208392ac3e816ad59a7f45f5f5c00",
+     "value": "0x7497a71f7f3d8fcf1100000000000000f7ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x4a646bd87d6e84ff6d57f4d2d94fa137fa69733208392ac3e816ad59a7f45f5f",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b7094433d519c0737c34e5b6f4f35346892b1234a646bd87d6e84ff6d57f4d2d94fa137fa69733208392ac3e816ad59a7f45f5f5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x4a646bd87d6e84ff6d57f4d2d94fa137fa69733208392ac3e816ad59a7f45f5f"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d40383d519c0737c34e5b6f4f35346892b1234a646bd87d6e84ff6d57f4d2d94fa137fa69733208392ac3e816ad59a7f45f5f",
+     "value": "0x0a17"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x5200a98464dcefa3304153aef5195ee6be96ae336dc547f9d1bbaa8799d28d40"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00e1e09af65d6b02002daa44089470a1dc5200a98464dcefa3304153aef5195ee6be96ae336dc547f9d1bbaa8799d28d40",
+     "value": "0xd61b010000000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x5200a98464dcefa3304153aef5195ee6be96ae336dc547f9d1bbaa8799d28d40",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6e1e09af65d6b02002daa44089470a1dc5200a98464dcefa3304153aef5195ee6be96ae336dc547f9d1bbaa8799d28d405c00",
+     "value": "0x6fd1911700000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x5200a98464dcefa3304153aef5195ee6be96ae336dc547f9d1bbaa8799d28d40",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5e1e09af65d6b02002daa44089470a1dc5200a98464dcefa3304153aef5195ee6be96ae336dc547f9d1bbaa8799d28d405c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x5200a98464dcefa3304153aef5195ee6be96ae336dc547f9d1bbaa8799d28d40",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5e1e09af65d6b02002daa44089470a1dc5200a98464dcefa3304153aef5195ee6be96ae336dc547f9d1bbaa8799d28d405c00",
+     "value": "0x6e59e6f2fbac6d240a00000000000000f4ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x5200a98464dcefa3304153aef5195ee6be96ae336dc547f9d1bbaa8799d28d40",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443e1e09af65d6b02002daa44089470a1dc5200a98464dcefa3304153aef5195ee6be96ae336dc547f9d1bbaa8799d28d405c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x5200a98464dcefa3304153aef5195ee6be96ae336dc547f9d1bbaa8799d28d40"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038e1e09af65d6b02002daa44089470a1dc5200a98464dcefa3304153aef5195ee6be96ae336dc547f9d1bbaa8799d28d40",
+     "value": "0x142e"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x522f432f51287df57711a3a00f6c7a334b0c813ff178c22649f01566ef4a5d48"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c004e3b994f7a21564e5640b772d168a694522f432f51287df57711a3a00f6c7a334b0c813ff178c22649f01566ef4a5d48",
+     "value": "0x31492d0800000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x522f432f51287df57711a3a00f6c7a334b0c813ff178c22649f01566ef4a5d48",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e64e3b994f7a21564e5640b772d168a694522f432f51287df57711a3a00f6c7a334b0c813ff178c22649f01566ef4a5d485c00",
+     "value": "0x73cfa09f9c000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x522f432f51287df57711a3a00f6c7a334b0c813ff178c22649f01566ef4a5d48",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e54e3b994f7a21564e5640b772d168a694522f432f51287df57711a3a00f6c7a334b0c813ff178c22649f01566ef4a5d485c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x522f432f51287df57711a3a00f6c7a334b0c813ff178c22649f01566ef4a5d48",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c54e3b994f7a21564e5640b772d168a694522f432f51287df57711a3a00f6c7a334b0c813ff178c22649f01566ef4a5d485c00",
+     "value": "0x288d762e2790c5a01000000000000000f7ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x522f432f51287df57711a3a00f6c7a334b0c813ff178c22649f01566ef4a5d48",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b7094434e3b994f7a21564e5640b772d168a694522f432f51287df57711a3a00f6c7a334b0c813ff178c22649f01566ef4a5d485c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x522f432f51287df57711a3a00f6c7a334b0c813ff178c22649f01566ef4a5d48"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d40384e3b994f7a21564e5640b772d168a694522f432f51287df57711a3a00f6c7a334b0c813ff178c22649f01566ef4a5d48",
+     "value": "0x0a17"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x56a9aee6291bd03ab6d36d4d13e2bebae7cd403518066c72fba1b417d6ddd748"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c006c1664b37fae67165907bd92805ee93856a9aee6291bd03ab6d36d4d13e2bebae7cd403518066c72fba1b417d6ddd748",
+     "value": "0xc7979c2107000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x56a9aee6291bd03ab6d36d4d13e2bebae7cd403518066c72fba1b417d6ddd748",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e66c1664b37fae67165907bd92805ee93856a9aee6291bd03ab6d36d4d13e2bebae7cd403518066c72fba1b417d6ddd7485c00",
+     "value": "0x6a02a7f74e7c0000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x56a9aee6291bd03ab6d36d4d13e2bebae7cd403518066c72fba1b417d6ddd748",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e56c1664b37fae67165907bd92805ee93856a9aee6291bd03ab6d36d4d13e2bebae7cd403518066c72fba1b417d6ddd7485c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x56a9aee6291bd03ab6d36d4d13e2bebae7cd403518066c72fba1b417d6ddd748",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c56c1664b37fae67165907bd92805ee93856a9aee6291bd03ab6d36d4d13e2bebae7cd403518066c72fba1b417d6ddd7485c00",
+     "value": "0x08a31c16981a770f1e00000000000000f9ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x56a9aee6291bd03ab6d36d4d13e2bebae7cd403518066c72fba1b417d6ddd748",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b7094436c1664b37fae67165907bd92805ee93856a9aee6291bd03ab6d36d4d13e2bebae7cd403518066c72fba1b417d6ddd7485c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x56a9aee6291bd03ab6d36d4d13e2bebae7cd403518066c72fba1b417d6ddd748"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d40386c1664b37fae67165907bd92805ee93856a9aee6291bd03ab6d36d4d13e2bebae7cd403518066c72fba1b417d6ddd748",
+     "value": "0x0000"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x58aef7b1efb44806fe14c6c58d0c1eb634a59fd2513f0ced6f2d10e0569af40d"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c006e6e04bbb6b585d7524e31eb27dfae6a58aef7b1efb44806fe14c6c58d0c1eb634a59fd2513f0ced6f2d10e0569af40d",
+     "value": "0x67f8167d01000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x58aef7b1efb44806fe14c6c58d0c1eb634a59fd2513f0ced6f2d10e0569af40d",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e66e6e04bbb6b585d7524e31eb27dfae6a58aef7b1efb44806fe14c6c58d0c1eb634a59fd2513f0ced6f2d10e0569af40d5c00",
+     "value": "0x7c188231831c0000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x58aef7b1efb44806fe14c6c58d0c1eb634a59fd2513f0ced6f2d10e0569af40d",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e56e6e04bbb6b585d7524e31eb27dfae6a58aef7b1efb44806fe14c6c58d0c1eb634a59fd2513f0ced6f2d10e0569af40d5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x58aef7b1efb44806fe14c6c58d0c1eb634a59fd2513f0ced6f2d10e0569af40d",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c56e6e04bbb6b585d7524e31eb27dfae6a58aef7b1efb44806fe14c6c58d0c1eb634a59fd2513f0ced6f2d10e0569af40d5c00",
+     "value": "0x2d39229adb0699ad0700000000000000f9ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x58aef7b1efb44806fe14c6c58d0c1eb634a59fd2513f0ced6f2d10e0569af40d",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b7094436e6e04bbb6b585d7524e31eb27dfae6a58aef7b1efb44806fe14c6c58d0c1eb634a59fd2513f0ced6f2d10e0569af40d5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x58aef7b1efb44806fe14c6c58d0c1eb634a59fd2513f0ced6f2d10e0569af40d"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d40386e6e04bbb6b585d7524e31eb27dfae6a58aef7b1efb44806fe14c6c58d0c1eb634a59fd2513f0ced6f2d10e0569af40d",
+     "value": "0x0a17"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x5cfce9536637d5e1d4d987c701c1ad039e48441c695876f8c33c1692110fb327"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00a5d5f93c9249cb644c0901b6b2af5ff05cfce9536637d5e1d4d987c701c1ad039e48441c695876f8c33c1692110fb327",
+     "value": "0xba861a0000000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x5cfce9536637d5e1d4d987c701c1ad039e48441c695876f8c33c1692110fb327",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6a5d5f93c9249cb644c0901b6b2af5ff05cfce9536637d5e1d4d987c701c1ad039e48441c695876f8c33c1692110fb3275c00",
+     "value": "0x3d65c1e601000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x5cfce9536637d5e1d4d987c701c1ad039e48441c695876f8c33c1692110fb327",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5a5d5f93c9249cb644c0901b6b2af5ff05cfce9536637d5e1d4d987c701c1ad039e48441c695876f8c33c1692110fb3275c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x5cfce9536637d5e1d4d987c701c1ad039e48441c695876f8c33c1692110fb327",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5a5d5f93c9249cb644c0901b6b2af5ff05cfce9536637d5e1d4d987c701c1ad039e48441c695876f8c33c1692110fb3275c00",
+     "value": "0xa40faceb889b41812800000000000000f5ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x5cfce9536637d5e1d4d987c701c1ad039e48441c695876f8c33c1692110fb327",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443a5d5f93c9249cb644c0901b6b2af5ff05cfce9536637d5e1d4d987c701c1ad039e48441c695876f8c33c1692110fb3275c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x5cfce9536637d5e1d4d987c701c1ad039e48441c695876f8c33c1692110fb327"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038a5d5f93c9249cb644c0901b6b2af5ff05cfce9536637d5e1d4d987c701c1ad039e48441c695876f8c33c1692110fb327",
+     "value": "0xcd0c"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x5e046a820e2a75597064a4089caafff0f8cb4660ba8abee41850f6a9af29c041"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c001a629e28bf50f87b00a88e2f12d97a865e046a820e2a75597064a4089caafff0f8cb4660ba8abee41850f6a9af29c041",
+     "value": "0xe5b3210000000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x5e046a820e2a75597064a4089caafff0f8cb4660ba8abee41850f6a9af29c041",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e61a629e28bf50f87b00a88e2f12d97a865e046a820e2a75597064a4089caafff0f8cb4660ba8abee41850f6a9af29c0415c00",
+     "value": "0x2c7499ce02000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x5e046a820e2a75597064a4089caafff0f8cb4660ba8abee41850f6a9af29c041",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e51a629e28bf50f87b00a88e2f12d97a865e046a820e2a75597064a4089caafff0f8cb4660ba8abee41850f6a9af29c0415c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x5e046a820e2a75597064a4089caafff0f8cb4660ba8abee41850f6a9af29c041",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c51a629e28bf50f87b00a88e2f12d97a865e046a820e2a75597064a4089caafff0f8cb4660ba8abee41850f6a9af29c0415c00",
+     "value": "0x2d8aecea8750c0f83000000000000000f5ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x5e046a820e2a75597064a4089caafff0f8cb4660ba8abee41850f6a9af29c041",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b7094431a629e28bf50f87b00a88e2f12d97a865e046a820e2a75597064a4089caafff0f8cb4660ba8abee41850f6a9af29c0415c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x5e046a820e2a75597064a4089caafff0f8cb4660ba8abee41850f6a9af29c041"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d40381a629e28bf50f87b00a88e2f12d97a865e046a820e2a75597064a4089caafff0f8cb4660ba8abee41850f6a9af29c041",
+     "value": "0x142e"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x647471cfcbece5b4bc955b4ef88052d2556a0ac830df321ac4fab68250cb4719"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00d75099f6eb1e6ebb451c36325f62df54647471cfcbece5b4bc955b4ef88052d2556a0ac830df321ac4fab68250cb4719",
+     "value": "0x3e95870000000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x647471cfcbece5b4bc955b4ef88052d2556a0ac830df321ac4fab68250cb4719",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6d75099f6eb1e6ebb451c36325f62df54647471cfcbece5b4bc955b4ef88052d2556a0ac830df321ac4fab68250cb47195c00",
+     "value": "0xd7cc2b3b09000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x647471cfcbece5b4bc955b4ef88052d2556a0ac830df321ac4fab68250cb4719",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5d75099f6eb1e6ebb451c36325f62df54647471cfcbece5b4bc955b4ef88052d2556a0ac830df321ac4fab68250cb47195c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x647471cfcbece5b4bc955b4ef88052d2556a0ac830df321ac4fab68250cb4719",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5d75099f6eb1e6ebb451c36325f62df54647471cfcbece5b4bc955b4ef88052d2556a0ac830df321ac4fab68250cb47195c00",
+     "value": "0x24cb08eb518d7b520f00000000000000f6ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x647471cfcbece5b4bc955b4ef88052d2556a0ac830df321ac4fab68250cb4719",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443d75099f6eb1e6ebb451c36325f62df54647471cfcbece5b4bc955b4ef88052d2556a0ac830df321ac4fab68250cb47195c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x647471cfcbece5b4bc955b4ef88052d2556a0ac830df321ac4fab68250cb4719"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038d75099f6eb1e6ebb451c36325f62df54647471cfcbece5b4bc955b4ef88052d2556a0ac830df321ac4fab68250cb4719",
+     "value": "0x0000"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x7aab789abbbd053eddd86cb12c58225d2b01127e37ee5020fc72caa4c9712f0a"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c000b709b545d93488964183c00324097e97aab789abbbd053eddd86cb12c58225d2b01127e37ee5020fc72caa4c9712f0a",
+     "value": "0xe709610000000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x7aab789abbbd053eddd86cb12c58225d2b01127e37ee5020fc72caa4c9712f0a",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e60b709b545d93488964183c00324097e97aab789abbbd053eddd86cb12c58225d2b01127e37ee5020fc72caa4c9712f0a5c00",
+     "value": "0x30c1d00e08000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x7aab789abbbd053eddd86cb12c58225d2b01127e37ee5020fc72caa4c9712f0a",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e50b709b545d93488964183c00324097e97aab789abbbd053eddd86cb12c58225d2b01127e37ee5020fc72caa4c9712f0a5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x7aab789abbbd053eddd86cb12c58225d2b01127e37ee5020fc72caa4c9712f0a",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c50b709b545d93488964183c00324097e97aab789abbbd053eddd86cb12c58225d2b01127e37ee5020fc72caa4c9712f0a5c00",
+     "value": "0x406586f81417618a0d00000000000000f6ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x7aab789abbbd053eddd86cb12c58225d2b01127e37ee5020fc72caa4c9712f0a",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b7094430b709b545d93488964183c00324097e97aab789abbbd053eddd86cb12c58225d2b01127e37ee5020fc72caa4c9712f0a5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x7aab789abbbd053eddd86cb12c58225d2b01127e37ee5020fc72caa4c9712f0a"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d40380b709b545d93488964183c00324097e97aab789abbbd053eddd86cb12c58225d2b01127e37ee5020fc72caa4c9712f0a",
+     "value": "0x142e"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x7ce76d0477c45a6d22ba6b82d72882700d6af2206bbda5de672efe97ae907179"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00cd705a2bd98c0c14138343243eaf073e7ce76d0477c45a6d22ba6b82d72882700d6af2206bbda5de672efe97ae907179",
+     "value": "0xbabcd65c00000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x7ce76d0477c45a6d22ba6b82d72882700d6af2206bbda5de672efe97ae907179",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6cd705a2bd98c0c14138343243eaf073e7ce76d0477c45a6d22ba6b82d72882700d6af2206bbda5de672efe97ae9071795c00",
+     "value": "0x6833d3ee05070000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x7ce76d0477c45a6d22ba6b82d72882700d6af2206bbda5de672efe97ae907179",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5cd705a2bd98c0c14138343243eaf073e7ce76d0477c45a6d22ba6b82d72882700d6af2206bbda5de672efe97ae9071795c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x7ce76d0477c45a6d22ba6b82d72882700d6af2206bbda5de672efe97ae907179",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5cd705a2bd98c0c14138343243eaf073e7ce76d0477c45a6d22ba6b82d72882700d6af2206bbda5de672efe97ae9071795c00",
+     "value": "0xffc70e07d174145f1300000000000000f8ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x7ce76d0477c45a6d22ba6b82d72882700d6af2206bbda5de672efe97ae907179",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443cd705a2bd98c0c14138343243eaf073e7ce76d0477c45a6d22ba6b82d72882700d6af2206bbda5de672efe97ae9071795c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x7ce76d0477c45a6d22ba6b82d72882700d6af2206bbda5de672efe97ae907179"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038cd705a2bd98c0c14138343243eaf073e7ce76d0477c45a6d22ba6b82d72882700d6af2206bbda5de672efe97ae907179",
+     "value": "0x9919"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x86f12d1bbcd4450ea8f135ca367280f9ced006f896663a865ccd2943902bbc41"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00c42f99c1b06f3b7f83b648a204ff413786f12d1bbcd4450ea8f135ca367280f9ced006f896663a865ccd2943902bbc41",
+     "value": "0x74dd4b0000000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x86f12d1bbcd4450ea8f135ca367280f9ced006f896663a865ccd2943902bbc41",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6c42f99c1b06f3b7f83b648a204ff413786f12d1bbcd4450ea8f135ca367280f9ced006f896663a865ccd2943902bbc415c00",
+     "value": "0x38914ebd05000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x86f12d1bbcd4450ea8f135ca367280f9ced006f896663a865ccd2943902bbc41",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5c42f99c1b06f3b7f83b648a204ff413786f12d1bbcd4450ea8f135ca367280f9ced006f896663a865ccd2943902bbc415c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x86f12d1bbcd4450ea8f135ca367280f9ced006f896663a865ccd2943902bbc41",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5c42f99c1b06f3b7f83b648a204ff413786f12d1bbcd4450ea8f135ca367280f9ced006f896663a865ccd2943902bbc415c00",
+     "value": "0xce9daf1674cd08e40900000000000000f6ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x86f12d1bbcd4450ea8f135ca367280f9ced006f896663a865ccd2943902bbc41",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443c42f99c1b06f3b7f83b648a204ff413786f12d1bbcd4450ea8f135ca367280f9ced006f896663a865ccd2943902bbc415c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x86f12d1bbcd4450ea8f135ca367280f9ced006f896663a865ccd2943902bbc41"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038c42f99c1b06f3b7f83b648a204ff413786f12d1bbcd4450ea8f135ca367280f9ced006f896663a865ccd2943902bbc41",
+     "value": "0x9919"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x8cd280d43e4cf6501ae3b425583975ff63ce4d7470cf518074b5903ff375600e"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c001afda7b1657fd38df0a4c87e51a094078cd280d43e4cf6501ae3b425583975ff63ce4d7470cf518074b5903ff375600e",
+     "value": "0x7036fc0400000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x8cd280d43e4cf6501ae3b425583975ff63ce4d7470cf518074b5903ff375600e",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e61afda7b1657fd38df0a4c87e51a094078cd280d43e4cf6501ae3b425583975ff63ce4d7470cf518074b5903ff375600e5c00",
+     "value": "0x04b682146a000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x8cd280d43e4cf6501ae3b425583975ff63ce4d7470cf518074b5903ff375600e",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e51afda7b1657fd38df0a4c87e51a094078cd280d43e4cf6501ae3b425583975ff63ce4d7470cf518074b5903ff375600e5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x8cd280d43e4cf6501ae3b425583975ff63ce4d7470cf518074b5903ff375600e",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c51afda7b1657fd38df0a4c87e51a094078cd280d43e4cf6501ae3b425583975ff63ce4d7470cf518074b5903ff375600e5c00",
+     "value": "0x90bde3962728cd420c00000000000000f7ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x8cd280d43e4cf6501ae3b425583975ff63ce4d7470cf518074b5903ff375600e",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b7094431afda7b1657fd38df0a4c87e51a094078cd280d43e4cf6501ae3b425583975ff63ce4d7470cf518074b5903ff375600e5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x8cd280d43e4cf6501ae3b425583975ff63ce4d7470cf518074b5903ff375600e"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d40381afda7b1657fd38df0a4c87e51a094078cd280d43e4cf6501ae3b425583975ff63ce4d7470cf518074b5903ff375600e",
+     "value": "0x142e"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x8ce3a57a4092955b903289e59515c3fe795319676c434e53375c35207fc8c151"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c0078194818dd313e79ed7b54c51130b65a8ce3a57a4092955b903289e59515c3fe795319676c434e53375c35207fc8c151",
+     "value": "0x04538d0000000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x8ce3a57a4092955b903289e59515c3fe795319676c434e53375c35207fc8c151",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e678194818dd313e79ed7b54c51130b65a8ce3a57a4092955b903289e59515c3fe795319676c434e53375c35207fc8c1515c00",
+     "value": "0x661d1ac109000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x8ce3a57a4092955b903289e59515c3fe795319676c434e53375c35207fc8c151",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e578194818dd313e79ed7b54c51130b65a8ce3a57a4092955b903289e59515c3fe795319676c434e53375c35207fc8c1515c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x8ce3a57a4092955b903289e59515c3fe795319676c434e53375c35207fc8c151",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c578194818dd313e79ed7b54c51130b65a8ce3a57a4092955b903289e59515c3fe795319676c434e53375c35207fc8c1515c00",
+     "value": "0x6664b42f6178ca870c00000000000000f6ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x8ce3a57a4092955b903289e59515c3fe795319676c434e53375c35207fc8c151",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b70944378194818dd313e79ed7b54c51130b65a8ce3a57a4092955b903289e59515c3fe795319676c434e53375c35207fc8c1515c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x8ce3a57a4092955b903289e59515c3fe795319676c434e53375c35207fc8c151"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d403878194818dd313e79ed7b54c51130b65a8ce3a57a4092955b903289e59515c3fe795319676c434e53375c35207fc8c151",
+     "value": "0x7803"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x988b534323ca088a6e8b82867b8064d0a858b747304cdbafa041e655bbff684b"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00c516b63b91a68d85558d6a309e2d23fb988b534323ca088a6e8b82867b8064d0a858b747304cdbafa041e655bbff684b",
+     "value": "0x535b000000000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x988b534323ca088a6e8b82867b8064d0a858b747304cdbafa041e655bbff684b",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6c516b63b91a68d85558d6a309e2d23fb988b534323ca088a6e8b82867b8064d0a858b747304cdbafa041e655bbff684b5c00",
+     "value": "0xed53950700000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x988b534323ca088a6e8b82867b8064d0a858b747304cdbafa041e655bbff684b",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5c516b63b91a68d85558d6a309e2d23fb988b534323ca088a6e8b82867b8064d0a858b747304cdbafa041e655bbff684b5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x988b534323ca088a6e8b82867b8064d0a858b747304cdbafa041e655bbff684b",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5c516b63b91a68d85558d6a309e2d23fb988b534323ca088a6e8b82867b8064d0a858b747304cdbafa041e655bbff684b5c00",
+     "value": "0xa5c2d1f2268eeb422200000000000000f3ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x988b534323ca088a6e8b82867b8064d0a858b747304cdbafa041e655bbff684b",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443c516b63b91a68d85558d6a309e2d23fb988b534323ca088a6e8b82867b8064d0a858b747304cdbafa041e655bbff684b5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x988b534323ca088a6e8b82867b8064d0a858b747304cdbafa041e655bbff684b"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038c516b63b91a68d85558d6a309e2d23fb988b534323ca088a6e8b82867b8064d0a858b747304cdbafa041e655bbff684b",
+     "value": "0x142e"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0x9e59078f38458a82998a7a1487c14e600a3a4008942af71f4c5feb6739bc5265"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00c82c0debcfb9aaba51cd5094a8d3f7629e59078f38458a82998a7a1487c14e600a3a4008942af71f4c5feb6739bc5265",
+     "value": "0x6a05a7d001000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0x9e59078f38458a82998a7a1487c14e600a3a4008942af71f4c5feb6739bc5265",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6c82c0debcfb9aaba51cd5094a8d3f7629e59078f38458a82998a7a1487c14e600a3a4008942af71f4c5feb6739bc52655c00",
+     "value": "0xf18d968826230000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0x9e59078f38458a82998a7a1487c14e600a3a4008942af71f4c5feb6739bc5265",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5c82c0debcfb9aaba51cd5094a8d3f7629e59078f38458a82998a7a1487c14e600a3a4008942af71f4c5feb6739bc52655c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0x9e59078f38458a82998a7a1487c14e600a3a4008942af71f4c5feb6739bc5265",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5c82c0debcfb9aaba51cd5094a8d3f7629e59078f38458a82998a7a1487c14e600a3a4008942af71f4c5feb6739bc52655c00",
+     "value": "0xe46ca1f01f9cceab0a00000000000000f9ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0x9e59078f38458a82998a7a1487c14e600a3a4008942af71f4c5feb6739bc5265",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443c82c0debcfb9aaba51cd5094a8d3f7629e59078f38458a82998a7a1487c14e600a3a4008942af71f4c5feb6739bc52655c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0x9e59078f38458a82998a7a1487c14e600a3a4008942af71f4c5feb6739bc5265"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038c82c0debcfb9aaba51cd5094a8d3f7629e59078f38458a82998a7a1487c14e600a3a4008942af71f4c5feb6739bc5265",
+     "value": "0x9919"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0xa46744bcb265665d326da016bee88d65f678d4bcdb5cbd9c9d3314646dc91c6e"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00845f8caaf2b357f806c916705ef08e18a46744bcb265665d326da016bee88d65f678d4bcdb5cbd9c9d3314646dc91c6e",
+     "value": "0xe843ba0100000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0xa46744bcb265665d326da016bee88d65f678d4bcdb5cbd9c9d3314646dc91c6e",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6845f8caaf2b357f806c916705ef08e18a46744bcb265665d326da016bee88d65f678d4bcdb5cbd9c9d3314646dc91c6e5c00",
+     "value": "0xa6ddbb351e000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0xa46744bcb265665d326da016bee88d65f678d4bcdb5cbd9c9d3314646dc91c6e",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5845f8caaf2b357f806c916705ef08e18a46744bcb265665d326da016bee88d65f678d4bcdb5cbd9c9d3314646dc91c6e5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0xa46744bcb265665d326da016bee88d65f678d4bcdb5cbd9c9d3314646dc91c6e",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5845f8caaf2b357f806c916705ef08e18a46744bcb265665d326da016bee88d65f678d4bcdb5cbd9c9d3314646dc91c6e5c00",
+     "value": "0xda957a649c0ca09a1e00000000000000f6ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0xa46744bcb265665d326da016bee88d65f678d4bcdb5cbd9c9d3314646dc91c6e",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443845f8caaf2b357f806c916705ef08e18a46744bcb265665d326da016bee88d65f678d4bcdb5cbd9c9d3314646dc91c6e5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0xa46744bcb265665d326da016bee88d65f678d4bcdb5cbd9c9d3314646dc91c6e"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038845f8caaf2b357f806c916705ef08e18a46744bcb265665d326da016bee88d65f678d4bcdb5cbd9c9d3314646dc91c6e",
+     "value": "0x0000"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0xa66491ad06b2f93fa69cd46a5ac8dae2aaaf4e92cd0b8067ccf8fb342eeb5365"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00ffdc6dd90622dbf848a5f0333cb0d77ca66491ad06b2f93fa69cd46a5ac8dae2aaaf4e92cd0b8067ccf8fb342eeb5365",
+     "value": "0xc840000000000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0xa66491ad06b2f93fa69cd46a5ac8dae2aaaf4e92cd0b8067ccf8fb342eeb5365",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6ffdc6dd90622dbf848a5f0333cb0d77ca66491ad06b2f93fa69cd46a5ac8dae2aaaf4e92cd0b8067ccf8fb342eeb53655c00",
+     "value": "0x5b7f610500000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0xa66491ad06b2f93fa69cd46a5ac8dae2aaaf4e92cd0b8067ccf8fb342eeb5365",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5ffdc6dd90622dbf848a5f0333cb0d77ca66491ad06b2f93fa69cd46a5ac8dae2aaaf4e92cd0b8067ccf8fb342eeb53655c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0xa66491ad06b2f93fa69cd46a5ac8dae2aaaf4e92cd0b8067ccf8fb342eeb5365",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5ffdc6dd90622dbf848a5f0333cb0d77ca66491ad06b2f93fa69cd46a5ac8dae2aaaf4e92cd0b8067ccf8fb342eeb53655c00",
+     "value": "0x0ade48232db478c51500000000000000f3ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0xa66491ad06b2f93fa69cd46a5ac8dae2aaaf4e92cd0b8067ccf8fb342eeb5365",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443ffdc6dd90622dbf848a5f0333cb0d77ca66491ad06b2f93fa69cd46a5ac8dae2aaaf4e92cd0b8067ccf8fb342eeb53655c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0xa66491ad06b2f93fa69cd46a5ac8dae2aaaf4e92cd0b8067ccf8fb342eeb5365"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038ffdc6dd90622dbf848a5f0333cb0d77ca66491ad06b2f93fa69cd46a5ac8dae2aaaf4e92cd0b8067ccf8fb342eeb5365",
+     "value": "0x142e"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0xa68dc1932f29b5e5eb4285713dd9a6ce4c9f3c575b66184b1583515114f67b1e"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00fef0f677f5a88a3e4ea3e414845c6f80a68dc1932f29b5e5eb4285713dd9a6ce4c9f3c575b66184b1583515114f67b1e",
+     "value": "0xddb5990900000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0xa68dc1932f29b5e5eb4285713dd9a6ce4c9f3c575b66184b1583515114f67b1e",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6fef0f677f5a88a3e4ea3e414845c6f80a68dc1932f29b5e5eb4285713dd9a6ce4c9f3c575b66184b1583515114f67b1e5c00",
+     "value": "0xac513d0cb6000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0xa68dc1932f29b5e5eb4285713dd9a6ce4c9f3c575b66184b1583515114f67b1e",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5fef0f677f5a88a3e4ea3e414845c6f80a68dc1932f29b5e5eb4285713dd9a6ce4c9f3c575b66184b1583515114f67b1e5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0xa68dc1932f29b5e5eb4285713dd9a6ce4c9f3c575b66184b1583515114f67b1e",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5fef0f677f5a88a3e4ea3e414845c6f80a68dc1932f29b5e5eb4285713dd9a6ce4c9f3c575b66184b1583515114f67b1e5c00",
+     "value": "0xa203cb107ed48b511300000000000000f7ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0xa68dc1932f29b5e5eb4285713dd9a6ce4c9f3c575b66184b1583515114f67b1e",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443fef0f677f5a88a3e4ea3e414845c6f80a68dc1932f29b5e5eb4285713dd9a6ce4c9f3c575b66184b1583515114f67b1e5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0xa68dc1932f29b5e5eb4285713dd9a6ce4c9f3c575b66184b1583515114f67b1e"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038fef0f677f5a88a3e4ea3e414845c6f80a68dc1932f29b5e5eb4285713dd9a6ce4c9f3c575b66184b1583515114f67b1e",
+     "value": "0x7a14"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0xa8eb4153119d95c0fc6c143573d82fa07d68748261d64a42a70f896a286e9810"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00f9434f97325d90e08365c9607a60a348a8eb4153119d95c0fc6c143573d82fa07d68748261d64a42a70f896a286e9810",
+     "value": "0x7019f50f00000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0xa8eb4153119d95c0fc6c143573d82fa07d68748261d64a42a70f896a286e9810",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6f9434f97325d90e08365c9607a60a348a8eb4153119d95c0fc6c143573d82fa07d68748261d64a42a70f896a286e98105c00",
+     "value": "0x92c99bd431010000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0xa8eb4153119d95c0fc6c143573d82fa07d68748261d64a42a70f896a286e9810",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5f9434f97325d90e08365c9607a60a348a8eb4153119d95c0fc6c143573d82fa07d68748261d64a42a70f896a286e98105c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0xa8eb4153119d95c0fc6c143573d82fa07d68748261d64a42a70f896a286e9810",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5f9434f97325d90e08365c9607a60a348a8eb4153119d95c0fc6c143573d82fa07d68748261d64a42a70f896a286e98105c00",
+     "value": "0xc26c4a12002197bb2000000000000000f7ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0xa8eb4153119d95c0fc6c143573d82fa07d68748261d64a42a70f896a286e9810",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443f9434f97325d90e08365c9607a60a348a8eb4153119d95c0fc6c143573d82fa07d68748261d64a42a70f896a286e98105c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0xa8eb4153119d95c0fc6c143573d82fa07d68748261d64a42a70f896a286e9810"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038f9434f97325d90e08365c9607a60a348a8eb4153119d95c0fc6c143573d82fa07d68748261d64a42a70f896a286e9810",
+     "value": "0x0a17"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0xac4ba7704623c5beb4950ef97ddea57c9c12b91938c86f28475f8050741ac956"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00f3763d70aa137d50b9cf15d7430edfabac4ba7704623c5beb4950ef97ddea57c9c12b91938c86f28475f8050741ac956",
+     "value": "0x66edf00000000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0xac4ba7704623c5beb4950ef97ddea57c9c12b91938c86f28475f8050741ac956",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6f3763d70aa137d50b9cf15d7430edfabac4ba7704623c5beb4950ef97ddea57c9c12b91938c86f28475f8050741ac9565c00",
+     "value": "0x2017700114000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0xac4ba7704623c5beb4950ef97ddea57c9c12b91938c86f28475f8050741ac956",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5f3763d70aa137d50b9cf15d7430edfabac4ba7704623c5beb4950ef97ddea57c9c12b91938c86f28475f8050741ac9565c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0xac4ba7704623c5beb4950ef97ddea57c9c12b91938c86f28475f8050741ac956",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5f3763d70aa137d50b9cf15d7430edfabac4ba7704623c5beb4950ef97ddea57c9c12b91938c86f28475f8050741ac9565c00",
+     "value": "0xf87095491b5a7c1f1700000000000000f6ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0xac4ba7704623c5beb4950ef97ddea57c9c12b91938c86f28475f8050741ac956",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443f3763d70aa137d50b9cf15d7430edfabac4ba7704623c5beb4950ef97ddea57c9c12b91938c86f28475f8050741ac9565c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0xac4ba7704623c5beb4950ef97ddea57c9c12b91938c86f28475f8050741ac956"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038f3763d70aa137d50b9cf15d7430edfabac4ba7704623c5beb4950ef97ddea57c9c12b91938c86f28475f8050741ac956",
+     "value": "0x142e"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0xac9f1bbd2e45cdb5788d6c094284c22e96cbecf1643216f9c51e4cd81e0e9938"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00a80b19f2037981f2be4f776360c693d8ac9f1bbd2e45cdb5788d6c094284c22e96cbecf1643216f9c51e4cd81e0e9938",
+     "value": "0x6244250800000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0xac9f1bbd2e45cdb5788d6c094284c22e96cbecf1643216f9c51e4cd81e0e9938",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6a80b19f2037981f2be4f776360c693d8ac9f1bbd2e45cdb5788d6c094284c22e96cbecf1643216f9c51e4cd81e0e99385c00",
+     "value": "0x43698a229c000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0xac9f1bbd2e45cdb5788d6c094284c22e96cbecf1643216f9c51e4cd81e0e9938",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5a80b19f2037981f2be4f776360c693d8ac9f1bbd2e45cdb5788d6c094284c22e96cbecf1643216f9c51e4cd81e0e99385c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0xac9f1bbd2e45cdb5788d6c094284c22e96cbecf1643216f9c51e4cd81e0e9938",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5a80b19f2037981f2be4f776360c693d8ac9f1bbd2e45cdb5788d6c094284c22e96cbecf1643216f9c51e4cd81e0e99385c00",
+     "value": "0x4955307d8f3803b61000000000000000f7ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0xac9f1bbd2e45cdb5788d6c094284c22e96cbecf1643216f9c51e4cd81e0e9938",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443a80b19f2037981f2be4f776360c693d8ac9f1bbd2e45cdb5788d6c094284c22e96cbecf1643216f9c51e4cd81e0e99385c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0xac9f1bbd2e45cdb5788d6c094284c22e96cbecf1643216f9c51e4cd81e0e9938"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038a80b19f2037981f2be4f776360c693d8ac9f1bbd2e45cdb5788d6c094284c22e96cbecf1643216f9c51e4cd81e0e9938",
+     "value": "0x0a17"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0xae66d26fed539fc501b4340faaef65e20feb0dbf388658997c034babad06bf43"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c0017a4772f2beb208910373fecff807cbeae66d26fed539fc501b4340faaef65e20feb0dbf388658997c034babad06bf43",
+     "value": "0x894a351500000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0xae66d26fed539fc501b4340faaef65e20feb0dbf388658997c034babad06bf43",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e617a4772f2beb208910373fecff807cbeae66d26fed539fc501b4340faaef65e20feb0dbf388658997c034babad06bf435c00",
+     "value": "0xd91cc8fbc2010000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0xae66d26fed539fc501b4340faaef65e20feb0dbf388658997c034babad06bf43",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e517a4772f2beb208910373fecff807cbeae66d26fed539fc501b4340faaef65e20feb0dbf388658997c034babad06bf435c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0xae66d26fed539fc501b4340faaef65e20feb0dbf388658997c034babad06bf43",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c517a4772f2beb208910373fecff807cbeae66d26fed539fc501b4340faaef65e20feb0dbf388658997c034babad06bf435c00",
+     "value": "0x67692382e77a21203400000000000000f7ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0xae66d26fed539fc501b4340faaef65e20feb0dbf388658997c034babad06bf43",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b70944317a4772f2beb208910373fecff807cbeae66d26fed539fc501b4340faaef65e20feb0dbf388658997c034babad06bf435c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0xae66d26fed539fc501b4340faaef65e20feb0dbf388658997c034babad06bf43"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d403817a4772f2beb208910373fecff807cbeae66d26fed539fc501b4340faaef65e20feb0dbf388658997c034babad06bf43",
+     "value": "0x142e"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0xb05b1de3868a6b49f218680ef3978d2ade38e04700a4006bd22ec529a7517045"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00c736e5c94d6040e2ceddd5cf0fc85071b05b1de3868a6b49f218680ef3978d2ade38e04700a4006bd22ec529a7517045",
+     "value": "0x4282574500000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0xb05b1de3868a6b49f218680ef3978d2ade38e04700a4006bd22ec529a7517045",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6c736e5c94d6040e2ceddd5cf0fc85071b05b1de3868a6b49f218680ef3978d2ade38e04700a4006bd22ec529a75170455c00",
+     "value": "0xa2112192c2050000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0xb05b1de3868a6b49f218680ef3978d2ade38e04700a4006bd22ec529a7517045",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5c736e5c94d6040e2ceddd5cf0fc85071b05b1de3868a6b49f218680ef3978d2ade38e04700a4006bd22ec529a75170455c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0xb05b1de3868a6b49f218680ef3978d2ade38e04700a4006bd22ec529a7517045",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5c736e5c94d6040e2ceddd5cf0fc85071b05b1de3868a6b49f218680ef3978d2ade38e04700a4006bd22ec529a75170455c00",
+     "value": "0xf44974040b86190b1100000000000000f8ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0xb05b1de3868a6b49f218680ef3978d2ade38e04700a4006bd22ec529a7517045",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443c736e5c94d6040e2ceddd5cf0fc85071b05b1de3868a6b49f218680ef3978d2ade38e04700a4006bd22ec529a75170455c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0xb05b1de3868a6b49f218680ef3978d2ade38e04700a4006bd22ec529a7517045"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038c736e5c94d6040e2ceddd5cf0fc85071b05b1de3868a6b49f218680ef3978d2ade38e04700a4006bd22ec529a7517045",
+     "value": "0x142e"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0xb4c087119097fbe3985298eef52f35ef6271c48322a8c2d430902a9cc38d9473"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c005410ca7d17d5c641ea125657e96aa6c9b4c087119097fbe3985298eef52f35ef6271c48322a8c2d430902a9cc38d9473",
+     "value": "0x91bc640700000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0xb4c087119097fbe3985298eef52f35ef6271c48322a8c2d430902a9cc38d9473",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e65410ca7d17d5c641ea125657e96aa6c9b4c087119097fbe3985298eef52f35ef6271c48322a8c2d430902a9cc38d94735c00",
+     "value": "0x1ae8bf5182000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0xb4c087119097fbe3985298eef52f35ef6271c48322a8c2d430902a9cc38d9473",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e55410ca7d17d5c641ea125657e96aa6c9b4c087119097fbe3985298eef52f35ef6271c48322a8c2d430902a9cc38d94735c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0xb4c087119097fbe3985298eef52f35ef6271c48322a8c2d430902a9cc38d9473",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c55410ca7d17d5c641ea125657e96aa6c9b4c087119097fbe3985298eef52f35ef6271c48322a8c2d430902a9cc38d94735c00",
+     "value": "0x8f9549ddd26cf6e00c00000000000000f7ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0xb4c087119097fbe3985298eef52f35ef6271c48322a8c2d430902a9cc38d9473",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b7094435410ca7d17d5c641ea125657e96aa6c9b4c087119097fbe3985298eef52f35ef6271c48322a8c2d430902a9cc38d94735c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0xb4c087119097fbe3985298eef52f35ef6271c48322a8c2d430902a9cc38d9473"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d40385410ca7d17d5c641ea125657e96aa6c9b4c087119097fbe3985298eef52f35ef6271c48322a8c2d430902a9cc38d9473",
+     "value": "0x8f02"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0xb4ccc02bfc47047e3129e976ad201aa4f53a55f54d9337fffad02d4765e82e05"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00484d07a5292828ffdd101d566998aeecb4ccc02bfc47047e3129e976ad201aa4f53a55f54d9337fffad02d4765e82e05",
+     "value": "0x83715e0000000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0xb4ccc02bfc47047e3129e976ad201aa4f53a55f54d9337fffad02d4765e82e05",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6484d07a5292828ffdd101d566998aeecb4ccc02bfc47047e3129e976ad201aa4f53a55f54d9337fffad02d4765e82e055c00",
+     "value": "0x1d4fcef907000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0xb4ccc02bfc47047e3129e976ad201aa4f53a55f54d9337fffad02d4765e82e05",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5484d07a5292828ffdd101d566998aeecb4ccc02bfc47047e3129e976ad201aa4f53a55f54d9337fffad02d4765e82e055c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0xb4ccc02bfc47047e3129e976ad201aa4f53a55f54d9337fffad02d4765e82e05",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5484d07a5292828ffdd101d566998aeecb4ccc02bfc47047e3129e976ad201aa4f53a55f54d9337fffad02d4765e82e055c00",
+     "value": "0xd9388c392817f5370900000000000000f6ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0xb4ccc02bfc47047e3129e976ad201aa4f53a55f54d9337fffad02d4765e82e05",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443484d07a5292828ffdd101d566998aeecb4ccc02bfc47047e3129e976ad201aa4f53a55f54d9337fffad02d4765e82e055c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0xb4ccc02bfc47047e3129e976ad201aa4f53a55f54d9337fffad02d4765e82e05"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038484d07a5292828ffdd101d566998aeecb4ccc02bfc47047e3129e976ad201aa4f53a55f54d9337fffad02d4765e82e05",
+     "value": "0x142e"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0xbc0e6b701243978c1fe73d721c7b157943a713fca9f3c88cad7a9f7799bc6b26"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00f45a4ebe3c627b9ecc18af4978916660bc0e6b701243978c1fe73d721c7b157943a713fca9f3c88cad7a9f7799bc6b26",
+     "value": "0xb85e07d700000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0xbc0e6b701243978c1fe73d721c7b157943a713fca9f3c88cad7a9f7799bc6b26",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6f45a4ebe3c627b9ecc18af4978916660bc0e6b701243978c1fe73d721c7b157943a713fca9f3c88cad7a9f7799bc6b265c00",
+     "value": "0x18c39d0b18100000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0xbc0e6b701243978c1fe73d721c7b157943a713fca9f3c88cad7a9f7799bc6b26",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5f45a4ebe3c627b9ecc18af4978916660bc0e6b701243978c1fe73d721c7b157943a713fca9f3c88cad7a9f7799bc6b265c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0xbc0e6b701243978c1fe73d721c7b157943a713fca9f3c88cad7a9f7799bc6b26",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5f45a4ebe3c627b9ecc18af4978916660bc0e6b701243978c1fe73d721c7b157943a713fca9f3c88cad7a9f7799bc6b265c00",
+     "value": "0x9681d2b5fa6b860f2c00000000000000f8ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0xbc0e6b701243978c1fe73d721c7b157943a713fca9f3c88cad7a9f7799bc6b26",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443f45a4ebe3c627b9ecc18af4978916660bc0e6b701243978c1fe73d721c7b157943a713fca9f3c88cad7a9f7799bc6b265c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0xbc0e6b701243978c1fe73d721c7b157943a713fca9f3c88cad7a9f7799bc6b26"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038f45a4ebe3c627b9ecc18af4978916660bc0e6b701243978c1fe73d721c7b157943a713fca9f3c88cad7a9f7799bc6b26",
+     "value": "0x0a17"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0xbefb4b2b719c0dc08273b9293fa8166180fe3c0e6e0fc9f4cb224f429dc8163c"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c0086ea96859e1ba3ddab743c35adf13b3fbefb4b2b719c0dc08273b9293fa8166180fe3c0e6e0fc9f4cb224f429dc8163c",
+     "value": "0x0184032800000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0xbefb4b2b719c0dc08273b9293fa8166180fe3c0e6e0fc9f4cb224f429dc8163c",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e686ea96859e1ba3ddab743c35adf13b3fbefb4b2b719c0dc08273b9293fa8166180fe3c0e6e0fc9f4cb224f429dc8163c5c00",
+     "value": "0x8641f653ba020000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0xbefb4b2b719c0dc08273b9293fa8166180fe3c0e6e0fc9f4cb224f429dc8163c",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e586ea96859e1ba3ddab743c35adf13b3fbefb4b2b719c0dc08273b9293fa8166180fe3c0e6e0fc9f4cb224f429dc8163c5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0xbefb4b2b719c0dc08273b9293fa8166180fe3c0e6e0fc9f4cb224f429dc8163c",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c586ea96859e1ba3ddab743c35adf13b3fbefb4b2b719c0dc08273b9293fa8166180fe3c0e6e0fc9f4cb224f429dc8163c5c00",
+     "value": "0xad3f6dd073e8ca720600000000000000f8ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0xbefb4b2b719c0dc08273b9293fa8166180fe3c0e6e0fc9f4cb224f429dc8163c",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b70944386ea96859e1ba3ddab743c35adf13b3fbefb4b2b719c0dc08273b9293fa8166180fe3c0e6e0fc9f4cb224f429dc8163c5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0xbefb4b2b719c0dc08273b9293fa8166180fe3c0e6e0fc9f4cb224f429dc8163c"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d403886ea96859e1ba3ddab743c35adf13b3fbefb4b2b719c0dc08273b9293fa8166180fe3c0e6e0fc9f4cb224f429dc8163c",
+     "value": "0x4100"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0xc256da3199a6bad8b3e7ddecbfaca7215cdc28c99ac70c2bc13fea751ed0924e"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c002cf240fa974ea1f497f435ebc7daebe5c256da3199a6bad8b3e7ddecbfaca7215cdc28c99ac70c2bc13fea751ed0924e",
+     "value": "0x706b515d00000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0xc256da3199a6bad8b3e7ddecbfaca7215cdc28c99ac70c2bc13fea751ed0924e",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e62cf240fa974ea1f497f435ebc7daebe5c256da3199a6bad8b3e7ddecbfaca7215cdc28c99ac70c2bc13fea751ed0924e5c00",
+     "value": "0xc5d971d65a060000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0xc256da3199a6bad8b3e7ddecbfaca7215cdc28c99ac70c2bc13fea751ed0924e",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e52cf240fa974ea1f497f435ebc7daebe5c256da3199a6bad8b3e7ddecbfaca7215cdc28c99ac70c2bc13fea751ed0924e5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0xc256da3199a6bad8b3e7ddecbfaca7215cdc28c99ac70c2bc13fea751ed0924e",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c52cf240fa974ea1f497f435ebc7daebe5c256da3199a6bad8b3e7ddecbfaca7215cdc28c99ac70c2bc13fea751ed0924e5c00",
+     "value": "0xbcb6f18ede6011290f00000000000000f8ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0xc256da3199a6bad8b3e7ddecbfaca7215cdc28c99ac70c2bc13fea751ed0924e",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b7094432cf240fa974ea1f497f435ebc7daebe5c256da3199a6bad8b3e7ddecbfaca7215cdc28c99ac70c2bc13fea751ed0924e5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0xc256da3199a6bad8b3e7ddecbfaca7215cdc28c99ac70c2bc13fea751ed0924e"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d40382cf240fa974ea1f497f435ebc7daebe5c256da3199a6bad8b3e7ddecbfaca7215cdc28c99ac70c2bc13fea751ed0924e",
+     "value": "0x0000"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0xc8ef68d174659bc68bf2af5986f1df36a601b5a52dd1a57fe7820e33625ae057"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00c6c57d83c0e0014f3c4862bda89bc584c8ef68d174659bc68bf2af5986f1df36a601b5a52dd1a57fe7820e33625ae057",
+     "value": "0x74e7ae0000000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0xc8ef68d174659bc68bf2af5986f1df36a601b5a52dd1a57fe7820e33625ae057",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6c6c57d83c0e0014f3c4862bda89bc584c8ef68d174659bc68bf2af5986f1df36a601b5a52dd1a57fe7820e33625ae0575c00",
+     "value": "0xa0f83d1c0c000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0xc8ef68d174659bc68bf2af5986f1df36a601b5a52dd1a57fe7820e33625ae057",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5c6c57d83c0e0014f3c4862bda89bc584c8ef68d174659bc68bf2af5986f1df36a601b5a52dd1a57fe7820e33625ae0575c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0xc8ef68d174659bc68bf2af5986f1df36a601b5a52dd1a57fe7820e33625ae057",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5c6c57d83c0e0014f3c4862bda89bc584c8ef68d174659bc68bf2af5986f1df36a601b5a52dd1a57fe7820e33625ae0575c00",
+     "value": "0xc4be5913332d51f41300000000000000f6ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0xc8ef68d174659bc68bf2af5986f1df36a601b5a52dd1a57fe7820e33625ae057",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443c6c57d83c0e0014f3c4862bda89bc584c8ef68d174659bc68bf2af5986f1df36a601b5a52dd1a57fe7820e33625ae0575c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0xc8ef68d174659bc68bf2af5986f1df36a601b5a52dd1a57fe7820e33625ae057"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038c6c57d83c0e0014f3c4862bda89bc584c8ef68d174659bc68bf2af5986f1df36a601b5a52dd1a57fe7820e33625ae057",
+     "value": "0x0000"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0xcc4e45cdde2c1f2c4762333b3754faf7407e973e731884584fdbb7b16e25354c"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c0014e3418dc2c5123da9f626c1a3d85fd3cc4e45cdde2c1f2c4762333b3754faf7407e973e731884584fdbb7b16e25354c",
+     "value": "0x7c14951500000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0xcc4e45cdde2c1f2c4762333b3754faf7407e973e731884584fdbb7b16e25354c",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e614e3418dc2c5123da9f626c1a3d85fd3cc4e45cdde2c1f2c4762333b3754faf7407e973e731884584fdbb7b16e25354c5c00",
+     "value": "0x60cc862bcb010000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0xcc4e45cdde2c1f2c4762333b3754faf7407e973e731884584fdbb7b16e25354c",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e514e3418dc2c5123da9f626c1a3d85fd3cc4e45cdde2c1f2c4762333b3754faf7407e973e731884584fdbb7b16e25354c5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0xcc4e45cdde2c1f2c4762333b3754faf7407e973e731884584fdbb7b16e25354c",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c514e3418dc2c5123da9f626c1a3d85fd3cc4e45cdde2c1f2c4762333b3754faf7407e973e731884584fdbb7b16e25354c5c00",
+     "value": "0x7284302ced8711e90500000000000000f8ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0xcc4e45cdde2c1f2c4762333b3754faf7407e973e731884584fdbb7b16e25354c",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b70944314e3418dc2c5123da9f626c1a3d85fd3cc4e45cdde2c1f2c4762333b3754faf7407e973e731884584fdbb7b16e25354c5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0xcc4e45cdde2c1f2c4762333b3754faf7407e973e731884584fdbb7b16e25354c"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d403814e3418dc2c5123da9f626c1a3d85fd3cc4e45cdde2c1f2c4762333b3754faf7407e973e731884584fdbb7b16e25354c",
+     "value": "0x142e"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0xd0622986d748433d484b9b351b9a38737ee869ef2a50b75e5f890bee2c3afb18"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00862e413317706b753b8463e531ebc6c6d0622986d748433d484b9b351b9a38737ee869ef2a50b75e5f890bee2c3afb18",
+     "value": "0xe43ad90100000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0xd0622986d748433d484b9b351b9a38737ee869ef2a50b75e5f890bee2c3afb18",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6862e413317706b753b8463e531ebc6c6d0622986d748433d484b9b351b9a38737ee869ef2a50b75e5f890bee2c3afb185c00",
+     "value": "0xb921578223000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0xd0622986d748433d484b9b351b9a38737ee869ef2a50b75e5f890bee2c3afb18",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5862e413317706b753b8463e531ebc6c6d0622986d748433d484b9b351b9a38737ee869ef2a50b75e5f890bee2c3afb185c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0xd0622986d748433d484b9b351b9a38737ee869ef2a50b75e5f890bee2c3afb18",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5862e413317706b753b8463e531ebc6c6d0622986d748433d484b9b351b9a38737ee869ef2a50b75e5f890bee2c3afb185c00",
+     "value": "0xb159bf35a2756c012600000000000000f6ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0xd0622986d748433d484b9b351b9a38737ee869ef2a50b75e5f890bee2c3afb18",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443862e413317706b753b8463e531ebc6c6d0622986d748433d484b9b351b9a38737ee869ef2a50b75e5f890bee2c3afb185c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0xd0622986d748433d484b9b351b9a38737ee869ef2a50b75e5f890bee2c3afb18"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038862e413317706b753b8463e531ebc6c6d0622986d748433d484b9b351b9a38737ee869ef2a50b75e5f890bee2c3afb18",
+     "value": "0x0a17"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0xd418706cf73cddb19d6da19cf8764f9b3fed7ff4fe3f6c5b801f080af001b013"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c006c236aafddf8ccd3c30876955356b452d418706cf73cddb19d6da19cf8764f9b3fed7ff4fe3f6c5b801f080af001b013",
+     "value": "0x12d59c0000000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0xd418706cf73cddb19d6da19cf8764f9b3fed7ff4fe3f6c5b801f080af001b013",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e66c236aafddf8ccd3c30876955356b452d418706cf73cddb19d6da19cf8764f9b3fed7ff4fe3f6c5b801f080af001b0135c00",
+     "value": "0x13298bad0a000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0xd418706cf73cddb19d6da19cf8764f9b3fed7ff4fe3f6c5b801f080af001b013",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e56c236aafddf8ccd3c30876955356b452d418706cf73cddb19d6da19cf8764f9b3fed7ff4fe3f6c5b801f080af001b0135c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0xd418706cf73cddb19d6da19cf8764f9b3fed7ff4fe3f6c5b801f080af001b013",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c56c236aafddf8ccd3c30876955356b452d418706cf73cddb19d6da19cf8764f9b3fed7ff4fe3f6c5b801f080af001b0135c00",
+     "value": "0xf1ff2cb0da6cb7e21200000000000000f6ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0xd418706cf73cddb19d6da19cf8764f9b3fed7ff4fe3f6c5b801f080af001b013",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b7094436c236aafddf8ccd3c30876955356b452d418706cf73cddb19d6da19cf8764f9b3fed7ff4fe3f6c5b801f080af001b0135c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0xd418706cf73cddb19d6da19cf8764f9b3fed7ff4fe3f6c5b801f080af001b013"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d40386c236aafddf8ccd3c30876955356b452d418706cf73cddb19d6da19cf8764f9b3fed7ff4fe3f6c5b801f080af001b013",
+     "value": "0x0000"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0xe092c2be2b560dfeb00c877e35631a1a339144b5ddd360cc8dced9495db1d52b"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c0019bcd97c086f55ebeb6bbe2245578048e092c2be2b560dfeb00c877e35631a1a339144b5ddd360cc8dced9495db1d52b",
+     "value": "0x2667940000000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0xe092c2be2b560dfeb00c877e35631a1a339144b5ddd360cc8dced9495db1d52b",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e619bcd97c086f55ebeb6bbe2245578048e092c2be2b560dfeb00c877e35631a1a339144b5ddd360cc8dced9495db1d52b5c00",
+     "value": "0x090539770b000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0xe092c2be2b560dfeb00c877e35631a1a339144b5ddd360cc8dced9495db1d52b",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e519bcd97c086f55ebeb6bbe2245578048e092c2be2b560dfeb00c877e35631a1a339144b5ddd360cc8dced9495db1d52b5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0xe092c2be2b560dfeb00c877e35631a1a339144b5ddd360cc8dced9495db1d52b",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c519bcd97c086f55ebeb6bbe2245578048e092c2be2b560dfeb00c877e35631a1a339144b5ddd360cc8dced9495db1d52b5c00",
+     "value": "0x3895570b1a7689bb1100000000000000f6ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0xe092c2be2b560dfeb00c877e35631a1a339144b5ddd360cc8dced9495db1d52b",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b70944319bcd97c086f55ebeb6bbe2245578048e092c2be2b560dfeb00c877e35631a1a339144b5ddd360cc8dced9495db1d52b5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0xe092c2be2b560dfeb00c877e35631a1a339144b5ddd360cc8dced9495db1d52b"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d403819bcd97c086f55ebeb6bbe2245578048e092c2be2b560dfeb00c877e35631a1a339144b5ddd360cc8dced9495db1d52b",
+     "value": "0x0a17"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0xe22a71b444f8d46de558f57f7c98ee23bb7a3a687da6afd7be8f961e6bc8986a"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c004f31cb0ce714ca1e28c43375f050f875e22a71b444f8d46de558f57f7c98ee23bb7a3a687da6afd7be8f961e6bc8986a",
+     "value": "0xe008c5f401000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0xe22a71b444f8d46de558f57f7c98ee23bb7a3a687da6afd7be8f961e6bc8986a",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e64f31cb0ce714ca1e28c43375f050f875e22a71b444f8d46de558f57f7c98ee23bb7a3a687da6afd7be8f961e6bc8986a5c00",
+     "value": "0x5ae2643fa3290000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0xe22a71b444f8d46de558f57f7c98ee23bb7a3a687da6afd7be8f961e6bc8986a",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e54f31cb0ce714ca1e28c43375f050f875e22a71b444f8d46de558f57f7c98ee23bb7a3a687da6afd7be8f961e6bc8986a5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0xe22a71b444f8d46de558f57f7c98ee23bb7a3a687da6afd7be8f961e6bc8986a",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c54f31cb0ce714ca1e28c43375f050f875e22a71b444f8d46de558f57f7c98ee23bb7a3a687da6afd7be8f961e6bc8986a5c00",
+     "value": "0xbb80e6a32325d3ee1600000000000000f9ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0xe22a71b444f8d46de558f57f7c98ee23bb7a3a687da6afd7be8f961e6bc8986a",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b7094434f31cb0ce714ca1e28c43375f050f875e22a71b444f8d46de558f57f7c98ee23bb7a3a687da6afd7be8f961e6bc8986a5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0xe22a71b444f8d46de558f57f7c98ee23bb7a3a687da6afd7be8f961e6bc8986a"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d40384f31cb0ce714ca1e28c43375f050f875e22a71b444f8d46de558f57f7c98ee23bb7a3a687da6afd7be8f961e6bc8986a",
+     "value": "0x142e"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0xe815ea52dced66d657944e8f624096e7bb800dc70e7b351c07072f2159ec683f"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00bf463b0dc4db8383b50edba2947edb14e815ea52dced66d657944e8f624096e7bb800dc70e7b351c07072f2159ec683f",
+     "value": "0x2c11620800000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0xe815ea52dced66d657944e8f624096e7bb800dc70e7b351c07072f2159ec683f",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6bf463b0dc4db8383b50edba2947edb14e815ea52dced66d657944e8f624096e7bb800dc70e7b351c07072f2159ec683f5c00",
+     "value": "0x44dabbaba0000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0xe815ea52dced66d657944e8f624096e7bb800dc70e7b351c07072f2159ec683f",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5bf463b0dc4db8383b50edba2947edb14e815ea52dced66d657944e8f624096e7bb800dc70e7b351c07072f2159ec683f5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0xe815ea52dced66d657944e8f624096e7bb800dc70e7b351c07072f2159ec683f",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5bf463b0dc4db8383b50edba2947edb14e815ea52dced66d657944e8f624096e7bb800dc70e7b351c07072f2159ec683f5c00",
+     "value": "0xebda18a3cf6168c91b00000000000000f7ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0xe815ea52dced66d657944e8f624096e7bb800dc70e7b351c07072f2159ec683f",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443bf463b0dc4db8383b50edba2947edb14e815ea52dced66d657944e8f624096e7bb800dc70e7b351c07072f2159ec683f5c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0xe815ea52dced66d657944e8f624096e7bb800dc70e7b351c07072f2159ec683f"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038bf463b0dc4db8383b50edba2947edb14e815ea52dced66d657944e8f624096e7bb800dc70e7b351c07072f2159ec683f",
+     "value": "0x0a17"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0xe818d0abd237faf1e3060b549c992cffa4c8ecf3d3a07e43e85fdc9ad1182c69"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c002ba131b7790335b89f39884e8f9475d4e818d0abd237faf1e3060b549c992cffa4c8ecf3d3a07e43e85fdc9ad1182c69",
+     "value": "0xcac1c00000000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0xe818d0abd237faf1e3060b549c992cffa4c8ecf3d3a07e43e85fdc9ad1182c69",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e62ba131b7790335b89f39884e8f9475d4e818d0abd237faf1e3060b549c992cffa4c8ecf3d3a07e43e85fdc9ad1182c695c00",
+     "value": "0x1484216d0e000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0xe818d0abd237faf1e3060b549c992cffa4c8ecf3d3a07e43e85fdc9ad1182c69",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e52ba131b7790335b89f39884e8f9475d4e818d0abd237faf1e3060b549c992cffa4c8ecf3d3a07e43e85fdc9ad1182c695c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0xe818d0abd237faf1e3060b549c992cffa4c8ecf3d3a07e43e85fdc9ad1182c69",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c52ba131b7790335b89f39884e8f9475d4e818d0abd237faf1e3060b549c992cffa4c8ecf3d3a07e43e85fdc9ad1182c695c00",
+     "value": "0x59259d6be1142b1c1900000000000000f6ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0xe818d0abd237faf1e3060b549c992cffa4c8ecf3d3a07e43e85fdc9ad1182c69",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b7094432ba131b7790335b89f39884e8f9475d4e818d0abd237faf1e3060b549c992cffa4c8ecf3d3a07e43e85fdc9ad1182c695c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0xe818d0abd237faf1e3060b549c992cffa4c8ecf3d3a07e43e85fdc9ad1182c69"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d40382ba131b7790335b89f39884e8f9475d4e818d0abd237faf1e3060b549c992cffa4c8ecf3d3a07e43e85fdc9ad1182c69",
+     "value": "0x0a17"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0xe824c935940357af73c961bdd7387e1ab821ec2939ecd19daafe6081ae9ae674"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00134cdc472c6820e6fe2e418f091f3b55e824c935940357af73c961bdd7387e1ab821ec2939ecd19daafe6081ae9ae674",
+     "value": "0x6b95d77e00000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0xe824c935940357af73c961bdd7387e1ab821ec2939ecd19daafe6081ae9ae674",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6134cdc472c6820e6fe2e418f091f3b55e824c935940357af73c961bdd7387e1ab821ec2939ecd19daafe6081ae9ae6745c00",
+     "value": "0xeaddf7207e090000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0xe824c935940357af73c961bdd7387e1ab821ec2939ecd19daafe6081ae9ae674",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5134cdc472c6820e6fe2e418f091f3b55e824c935940357af73c961bdd7387e1ab821ec2939ecd19daafe6081ae9ae6745c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0xe824c935940357af73c961bdd7387e1ab821ec2939ecd19daafe6081ae9ae674",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5134cdc472c6820e6fe2e418f091f3b55e824c935940357af73c961bdd7387e1ab821ec2939ecd19daafe6081ae9ae6745c00",
+     "value": "0x6a8e66cdb6d51a921a00000000000000f8ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0xe824c935940357af73c961bdd7387e1ab821ec2939ecd19daafe6081ae9ae674",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443134cdc472c6820e6fe2e418f091f3b55e824c935940357af73c961bdd7387e1ab821ec2939ecd19daafe6081ae9ae6745c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0xe824c935940357af73c961bdd7387e1ab821ec2939ecd19daafe6081ae9ae674"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038134cdc472c6820e6fe2e418f091f3b55e824c935940357af73c961bdd7387e1ab821ec2939ecd19daafe6081ae9ae674",
+     "value": "0x0a17"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0xee4ac64d6f40d3b6bbefb03db8e17e774a8a491bddb96805377754f14acf0519"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00d66d229ec9f4c64d50152973a0bdc23eee4ac64d6f40d3b6bbefb03db8e17e774a8a491bddb96805377754f14acf0519",
+     "value": "0x45c0160000000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0xee4ac64d6f40d3b6bbefb03db8e17e774a8a491bddb96805377754f14acf0519",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e6d66d229ec9f4c64d50152973a0bdc23eee4ac64d6f40d3b6bbefb03db8e17e774a8a491bddb96805377754f14acf05195c00",
+     "value": "0xca4719c801000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0xee4ac64d6f40d3b6bbefb03db8e17e774a8a491bddb96805377754f14acf0519",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e5d66d229ec9f4c64d50152973a0bdc23eee4ac64d6f40d3b6bbefb03db8e17e774a8a491bddb96805377754f14acf05195c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0xee4ac64d6f40d3b6bbefb03db8e17e774a8a491bddb96805377754f14acf0519",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c5d66d229ec9f4c64d50152973a0bdc23eee4ac64d6f40d3b6bbefb03db8e17e774a8a491bddb96805377754f14acf05195c00",
+     "value": "0x7a30eaa6ab185f2b1d00000000000000f5ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0xee4ac64d6f40d3b6bbefb03db8e17e774a8a491bddb96805377754f14acf0519",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b709443d66d229ec9f4c64d50152973a0bdc23eee4ac64d6f40d3b6bbefb03db8e17e774a8a491bddb96805377754f14acf05195c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0xee4ac64d6f40d3b6bbefb03db8e17e774a8a491bddb96805377754f14acf0519"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d4038d66d229ec9f4c64d50152973a0bdc23eee4ac64d6f40d3b6bbefb03db8e17e774a8a491bddb96805377754f14acf0519",
+     "value": "0xc215"
+    },
+    {
+     "item": "SubtensorModule.AlphaDividendsPerSubnet",
+     "args": [
+      92,
+      "0xf49e736c28d28ffd1a72809332be7e46b9b02c50b4c55ffd06b0a62c2902c643"
+     ],
+     "hashers": [
+      "Identity",
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c009968781c8d0e9bd71ee553153d61fc73f49e736c28d28ffd1a72809332be7e46b9b02c50b4c55ffd06b0a62c2902c643",
+     "value": "0x4cc5c71100000000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyAlpha",
+     "args": [
+      "0xf49e736c28d28ffd1a72809332be7e46b9b02c50b4c55ffd06b0a62c2902c643",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555ee25c3b5b1886863480497907f1829e69968781c8d0e9bd71ee553153d61fc73f49e736c28d28ffd1a72809332be7e46b9b02c50b4c55ffd06b0a62c2902c6435c00",
+     "value": "0x6d301ab854010000"
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeyShares",
+     "args": [
+      "0xf49e736c28d28ffd1a72809332be7e46b9b02c50b4c55ffd06b0a62c2902c643",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05553dbb78074d07a16f4942c7df159ed5e59968781c8d0e9bd71ee553153d61fc73f49e736c28d28ffd1a72809332be7e46b9b02c50b4c55ffd06b0a62c2902c6435c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.TotalHotkeySharesV2",
+     "args": [
+      "0xf49e736c28d28ffd1a72809332be7e46b9b02c50b4c55ffd06b0a62c2902c643",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555e47c637aa82c21537eb9caa511e543c59968781c8d0e9bd71ee553153d61fc73f49e736c28d28ffd1a72809332be7e46b9b02c50b4c55ffd06b0a62c2902c6435c00",
+     "value": "0x5f9d9ec0fd5685772400000000000000f7ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.ChildkeyTake",
+     "args": [
+      "0xf49e736c28d28ffd1a72809332be7e46b9b02c50b4c55ffd06b0a62c2902c643",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555d04ec7974ea9dd69df4920a91b7094439968781c8d0e9bd71ee553153d61fc73f49e736c28d28ffd1a72809332be7e46b9b02c50b4c55ffd06b0a62c2902c6435c00",
+     "value": null
+    },
+    {
+     "item": "SubtensorModule.Delegates",
+     "args": [
+      "0xf49e736c28d28ffd1a72809332be7e46b9b02c50b4c55ffd06b0a62c2902c643"
+     ],
+     "hashers": [
+      "Blake2_128Concat"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf055560d1f0ff648e4c86ea413fc0173d40389968781c8d0e9bd71ee553153d61fc73f49e736c28d28ffd1a72809332be7e46b9b02c50b4c55ffd06b0a62c2902c643",
+     "value": "0x0a17"
+    },
+    {
+     "item": "SubtensorModule.AlphaV2",
+     "args": [
+      "0xe22a71b444f8d46de558f57f7c98ee23bb7a3a687da6afd7be8f961e6bc8986a",
+      "0x5c006881ac1a232097cd7ed2edea82f2ce3c058066adf12133c6a6af742c377a",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf0555421d8174603a6a6036511a7619b402f04f31cb0ce714ca1e28c43375f050f875e22a71b444f8d46de558f57f7c98ee23bb7a3a687da6afd7be8f961e6bc8986a91c71ab73afba27c2f2101392d3250075c006881ac1a232097cd7ed2edea82f2ce3c058066adf12133c6a6af742c377a5c00",
+     "value": "0xbbbbdb7529958d621600000000000000f9ffffffffffffff"
+    },
+    {
+     "item": "SubtensorModule.Alpha",
+     "args": [
+      "0xe22a71b444f8d46de558f57f7c98ee23bb7a3a687da6afd7be8f961e6bc8986a",
+      "0x5c006881ac1a232097cd7ed2edea82f2ce3c058066adf12133c6a6af742c377a",
+      92
+     ],
+     "hashers": [
+      "Blake2_128Concat",
+      "Blake2_128Concat",
+      "Identity"
+     ],
+     "key": "0x658faa385070e074c85bf6b568cf05557261f9a8fde18018cccf70368697902f4f31cb0ce714ca1e28c43375f050f875e22a71b444f8d46de558f57f7c98ee23bb7a3a687da6afd7be8f961e6bc8986a91c71ab73afba27c2f2101392d3250075c006881ac1a232097cd7ed2edea82f2ce3c058066adf12133c6a6af742c377a5c00",
+     "value": null
+    }
+   ],
+   "runtime_api": [
+    {
+     "method": "SwapRuntimeApi_sim_swap_tao_for_alpha",
+     "args": {
+      "netuid": 92,
+      "tao_rao": 10000000000
+     },
+     "args_hex": "0x5c0000e40b5402000000",
+     "result": "0x2b0ebf5302000000da0fa033a1060000d5d54c0000000000000000000000000000000000000000007c3326c21d000000"
+    },
+    {
+     "method": "SwapRuntimeApi_sim_swap_tao_for_alpha",
+     "args": {
+      "netuid": 92,
+      "tao_rao": 100000000000
+     },
+     "args_hex": "0x5c0000e8764817000000",
+     "result": "0xac8d76451700000064157d359e390000545a00030000000000000000000000000000000000000000fc8b4164d7090000"
+    },
+    {
+     "method": "SwapRuntimeApi_sim_swap_alpha_for_tao",
+     "args": {
+      "netuid": 92,
+      "alpha_rao": 1000000000000
+     },
+     "args_hex": "0x5c000010a5d4e8000000",
+     "result": "0x1da1225000000000b688a1b6e800000000000000000000004a87031e00000000dc6f3900000000000000000000000000"
+    },
+    {
+     "method": "SwapRuntimeApi_current_alpha_price",
+     "args": {
+      "netuid": 92
+     },
+     "args_hex": "0x5c00",
+     "result": "0x7292140000000000"
+    },
+    {
+     "method": "SubnetInfoRuntimeApi_get_subnet_to_prune",
+     "args": {},
+     "args_hex": "0x",
+     "result": "0x015c00"
+    },
+    {
+     "method": "SwapRuntimeApi_current_alpha_price_all",
+     "args": {},
+     "args_hex": "0x",
+     "result": "0x0502000000ca9a3b000000000100f023640000000000020097392d0000000000030045318701000000000400420414030000000005009a7ac200000000000600813423000000000007009f6d25000000000008001caac30100000000090071da7401000000000a00af356100000000000b006a3b7400000000000c00d2804900000000000d0071df4300000000000e0073258800000000000f00d6a0650100000000100091c60d0000000000110084537e000000000012006c273b00000000001300043f8900000000001400c4e622000000000015006c3b48000000000016002d262f000000000017002fed4f00000000001800a0944d00000000001900aab76300000000001a00886f2700000000001b00bc982200000000001c0026fa6201000000001d0032a72600000000001e00fc0e3300000000001f0091ec3800000000002000a7b22800000000002100c4c038000000000022005cfeb80000000000230096051f0000000000240028961d0000000000250062c7290000000000260088c5260100000000270052777b0000000000280006a222000000000029009b777300000000002a0094e11f00000000002b009b3f3c00000000002c0007322602000000002d00a9de2400000000002e00b6cb3300000000002f0057e91900000000003000c0773c00000000003100264c7f00000000003200d30745000000000033009dfafe0500000000340011e95b00000000003500f7241b02000000003600ed195800000000003700e7c01e00000000003800f484e3000000000039003c852300000000003a005bc2ac00000000003b00bb2a4e00000000003c007b4a3c00000000003d00930cbc00000000003e00edee9300000000003f0078463c00000000004000d64a2704000000004100694c21000000000042002e902d000000000043001707340000000000440009d92f010000000045009a1b5600000000004600aee010000000000047001a1f430000000000480083f91e00000000004900c62e2f00000000004a00c5a72f00000000004b00aa31f400000000004c00fb904e00000000004d001b9c4c00000000004e00f9d33900000000004f00fd582f000000000050009d4a750100000000510077535900000000005200b0fe4300000000005300d1c07800000000005400d0c823000000000055009e8b58000000000056005a665b000000000057001a6f3c00000000005800d4082b00000000005900288b2d00000000005a0042944301000000005b00fbda4d00000000005c0072921400000000005d00c8382501000000005e00474f4400000000005f0065040002000000006000935e4000000000006100e73de700000000006200d5d120000000000063009b0c0f000000000064003bcc3600000000006500f2453800000000006600faee5600000000006700842b0e000000000068000adb3e0000000000690045f85300000000006a00fe762000000000006b006cc24102000000006c002f54ba00000000006d00cf3d2b00000000006e00c3a30701000000006f0055963f00000000007000e5c3590000000000710035d51f00000000007200503d47010000000073007d4a230000000000740036ad1102000000007500fb762800000000007600d60a5d000000000077001a7a22000000000078007e1fb402000000007900c7d83900000000007a0062983f00000000007b0015be2200000000007c0008c29100000000007d0020022900000000007e00ae924100000000007f001d47210000000000800072562a0000000000"
+    },
+    {
+     "method": "SubnetInfoRuntimeApi_get_block_emission",
+     "args": {},
+     "args_hex": "0x",
+     "result": "0x0065cd1d00000000"
+    },
+    {
+     "method": "SubnetRegistrationRuntimeApi_get_network_registration_cost",
+     "args": {},
+     "args_hex": "0x",
+     "result": "0xcc92a77be1000000"
+    },
+    {
+     "method": "SubnetInfoRuntimeApi_get_next_epoch_start_block",
+     "args": {
+      "netuid": 92
+     },
+     "args_hex": "0x5c00",
+     "result": "0x01afff8c0000000000"
+    }
+   ],
+   "storage_by_netuid": {
+    "SubtensorModule.NetworksAdded": {
+     "hashers": [
+      "Identity"
+     ],
+     "values": [
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      "0x01",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ]
+    },
+    "SubtensorModule.NetworkRegisteredAt": {
+     "hashers": [
+      "Identity"
+     ],
+     "values": [
+      null,
+      "0xe0da160000000000",
+      "0xecb7290000000000",
+      "0xbd8f3f0000000000",
+      "0x7b89150000000000",
+      "0xd404260000000000",
+      "0xed21310000000000",
+      "0x6b18280000000000",
+      "0x908a160000000000",
+      "0x85bb160000000000",
+      "0x8fc92b0000000000",
+      "0xa8882c0000000000",
+      "0x316e220000000000",
+      "0xb51b1d0000000000",
+      "0x3cfb490000000000",
+      "0xf168700000000000",
+      "0x6619810000000000",
+      "0xec572b0000000000",
+      "0x477c180000000000",
+      "0xe8d81d0000000000",
+      "0xf1121e0000000000",
+      "0x622a300000000000",
+      "0x66aa1e0000000000",
+      "0xa87c1f0000000000",
+      "0xb8bb260000000000",
+      "0x11c22d0000000000",
+      "0x85f57b0000000000",
+      "0x9c5a1a0000000000",
+      "0x1b704a0000000000",
+      "0x4692330000000000",
+      "0x2898310000000000",
+      "0xd7756d0000000000",
+      "0x5e61260000000000",
+      "0xceeb2c0000000000",
+      "0x3c50350000000000",
+      "0xa30a8a0000000000",
+      "0x8790870000000000",
+      "0x8f03310000000000",
+      "0x06266f0000000000",
+      "0xe80c320000000000",
+      "0x0453800000000000",
+      "0x86ca330000000000",
+      "0x9723370000000000",
+      "0xc602340000000000",
+      "0x6f2c360000000000",
+      "0x0270370000000000",
+      "0x03cd3b0000000000",
+      "0x4301700000000000",
+      "0x25d93a0000000000",
+      "0xb680670000000000",
+      "0x44ae480000000000",
+      "0xfe843c0000000000",
+      "0x41e13c0000000000",
+      "0x5d25400000000000",
+      "0x955d480000000000",
+      "0x9ac4470000000000",
+      "0x5fcf410000000000",
+      "0xe8f17a0000000000",
+      "0x29de810000000000",
+      "0x1365880000000000",
+      "0x4032490000000000",
+      "0xf805440000000000",
+      "0x7145440000000000",
+      "0x4a8c4a0000000000",
+      "0x5f24450000000000",
+      "0x1d8b4b0000000000",
+      "0x3da74b0000000000",
+      "0x486d6e0000000000",
+      "0x7ddf4b0000000000",
+      "0xc62d7c0000000000",
+      "0xe3aa860000000000",
+      "0x76084d0000000000",
+      "0x87464d0000000000",
+      "0x6fbc4e0000000000",
+      "0xfd9b4d0000000000",
+      "0xcbdc4d0000000000",
+      "0x4463890000000000",
+      "0x0c414e0000000000",
+      "0xc18d790000000000",
+      "0xcff24e0000000000",
+      "0xb8206d0000000000",
+      "0x71644f0000000000",
+      "0xbcb28b0000000000",
+      "0x56d24f0000000000",
+      "0x315f7b0000000000",
+      "0x1d3e500000000000",
+      "0x24a6840000000000",
+      "0x15ff6d0000000000",
+      "0x5dde500000000000",
+      "0x5413510000000000",
+      "0xae82830000000000",
+      "0xed7a740000000000",
+      "0x06717f0000000000",
+      "0x39f3510000000000",
+      "0x313e6a0000000000",
+      "0x1a74520000000000",
+      "0x4862750000000000",
+      "0x9a08760000000000",
+      "0x6819530000000000",
+      "0x98cc820000000000",
+      "0x4822660000000000",
+      "0x86a3530000000000",
+      "0xc5a4770000000000",
+      "0x0cb4850000000000",
+      "0xc85b540000000000",
+      "0x3764680000000000",
+      "0xd0d0540000000000",
+      "0x2ccb710000000000",
+      "0xd5068b0000000000",
+      "0x88bd6e0000000000",
+      "0xae8a550000000000",
+      "0xcaaf550000000000",
+      "0xfef3550000000000",
+      "0x30a36c0000000000",
+      "0x71936f0000000000",
+      "0xb3b9560000000000",
+      "0x088b8c0000000000",
+      "0x0b24570000000000",
+      "0x7a5a570000000000",
+      "0x7498570000000000",
+      "0x60ba570000000000",
+      "0x80fd570000000000",
+      "0x02b47d0000000000",
+      "0x1a6a580000000000",
+      "0xceb4580000000000",
+      "0xa806590000000000",
+      "0x8dd5720000000000",
+      "0x053f590000000000",
+      "0x265b590000000000",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ]
+    },
+    "SubtensorModule.SubnetMovingPrice": {
+     "hashers": [
+      "Identity"
+     ],
+     "values": [
+      null,
+      "0xd6aeae01000000000000000000000000",
+      "0x456cc200000000000000000000000000",
+      "0x5b649506000000000000000000000000",
+      "0x1d363a0d000000000000000000000000",
+      "0x16ef4303000000000000000000000000",
+      "0x61e29600000000000000000000000000",
+      "0x03f2a000000000000000000000000000",
+      "0x0a6a9907000000000000000000000000",
+      "0xaf804506000000000000000000000000",
+      "0x2069a501000000000000000000000000",
+      "0x548df201000000000000000000000000",
+      "0xe5c93b01000000000000000000000000",
+      "0x7f122401000000000000000000000000",
+      "0xd8da4602000000000000000000000000",
+      "0xacec0c06000000000000000000000000",
+      "0x8da43e00000000000000000000000000",
+      "0x2a7d1f02000000000000000000000000",
+      "0x6981fc00000000000000000000000000",
+      "0xd78a5002000000000000000000000000",
+      "0xeecc9500000000000000000000000000",
+      "0x7c522d01000000000000000000000000",
+      "0x857fc900000000000000000000000000",
+      "0x00df5a01000000000000000000000000",
+      "0xac844e01000000000000000000000000",
+      "0xd3c3ba01000000000000000000000000",
+      "0x16e89f00000000000000000000000000",
+      "0x34b09600000000000000000000000000",
+      "0x84e61406000000000000000000000000",
+      "0x0b05a600000000000000000000000000",
+      "0xc214dd00000000000000000000000000",
+      "0x0b8ffc00000000000000000000000000",
+      "0x7bd5ae00000000000000000000000000",
+      "0x54a1f500000000000000000000000000",
+      "0x51191903000000000000000000000000",
+      "0x62a38d00000000000000000000000000",
+      "0x404b8600000000000000000000000000",
+      "0xd375b300000000000000000000000000",
+      "0xc1fa0605000000000000000000000000",
+      "0x43281202000000000000000000000000",
+      "0x9c4f9600000000000000000000000000",
+      "0xa69ef201000000000000000000000000",
+      "0x08988700000000000000000000000000",
+      "0xe5c30201000000000000000000000000",
+      "0x70873809000000000000000000000000",
+      "0x24da9f00000000000000000000000000",
+      "0x0b0fe000000000000000000000000000",
+      "0x0e966f00000000000000000000000000",
+      "0x2ac20301000000000000000000000000",
+      "0x5ee84202000000000000000000000000",
+      "0x7e4d2601000000000000000000000000",
+      "0x7ae49119000000000000000000000000",
+      "0x9acb8a01000000000000000000000000",
+      "0x89035209000000000000000000000000",
+      "0x22948101000000000000000000000000",
+      "0x5e3e8a00000000000000000000000000",
+      "0xe496d103000000000000000000000000",
+      "0x0adb9800000000000000000000000000",
+      "0x91efb602000000000000000000000000",
+      null,
+      "0xd46d0301000000000000000000000000",
+      "0x33b33803000000000000000000000000",
+      "0x6a317a02000000000000000000000000",
+      "0xd1320301000000000000000000000000",
+      "0xb9cae211000000000000000000000000",
+      "0xe4088c00000000000000000000000000",
+      "0xb546c500000000000000000000000000",
+      "0x2cd4e000000000000000000000000000",
+      "0x55581d05000000000000000000000000",
+      "0x8cf47201000000000000000000000000",
+      "0xb9c54a00000000000000000000000000",
+      "0x13ac1301000000000000000000000000",
+      "0x5c4c8600000000000000000000000000",
+      "0x70c9c900000000000000000000000000",
+      "0x607ecc00000000000000000000000000",
+      "0x27931004000000000000000000000000",
+      "0xd0225b01000000000000000000000000",
+      "0xde294901000000000000000000000000",
+      "0x9a84f900000000000000000000000000",
+      "0xb4d4ca00000000000000000000000000",
+      "0xccf41206000000000000000000000000",
+      "0x1b397f01000000000000000000000000",
+      null,
+      "0xeb1b0702000000000000000000000000",
+      "0xf9bd9900000000000000000000000000",
+      "0x2fa28701000000000000000000000000",
+      null,
+      "0x56db0801000000000000000000000000",
+      "0xc9e0b800000000000000000000000000",
+      "0xea84c300000000000000000000000000",
+      "0x04817b05000000000000000000000000",
+      "0x05dd4201000000000000000000000000",
+      "0xb0065900000000000000000000000000",
+      "0xce93e804000000000000000000000000",
+      "0xe3d82901000000000000000000000000",
+      "0xdd0aa208000000000000000000000000",
+      "0x3a361701000000000000000000000000",
+      "0x3af0e403000000000000000000000000",
+      "0x1cf68c00000000000000000000000000",
+      "0x264a4100000000000000000000000000",
+      "0x9ea1ea00000000000000000000000000",
+      "0x3bd9f100000000000000000000000000",
+      "0x5b5c7001000000000000000000000000",
+      "0xda433d00000000000000000000000000",
+      "0xcf0a0e01000000000000000000000000",
+      "0xbeda7301000000000000000000000000",
+      "0x93e58e00000000000000000000000000",
+      "0xe0bcd409000000000000000000000000",
+      "0xdcf30201000000000000000000000000",
+      "0x9a05bf00000000000000000000000000",
+      "0xa3448c04000000000000000000000000",
+      "0x33701101000000000000000000000000",
+      "0x69297a01000000000000000000000000",
+      "0x87c59d00000000000000000000000000",
+      "0xd0a46a05000000000000000000000000",
+      "0x90b19600000000000000000000000000",
+      "0xec8c7b04000000000000000000000000",
+      "0x0ff2ab00000000000000000000000000",
+      "0xf9289701000000000000000000000000",
+      "0x51209400000000000000000000000000",
+      "0x3715a70b000000000000000000000000",
+      "0xba47f900000000000000000000000000",
+      "0x1b8a2301000000000000000000000000",
+      "0x37fb9400000000000000000000000000",
+      "0x84f57602000000000000000000000000",
+      "0x149eb000000000000000000000000000",
+      "0xc2241a01000000000000000000000000",
+      "0x1b8b8e00000000000000000000000000",
+      "0x63e6b500000000000000000000000000",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ]
+    },
+    "SubtensorModule.FirstEmissionBlockNumber": {
+     "hashers": [
+      "Identity"
+     ],
+     "values": [
+      null,
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x019c710000000000",
+      "0xae19810000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0xa8f57b0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x043c6e0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0xaa128a0000000000",
+      "0x17d0890000000000",
+      "0x8bc84f0000000000",
+      "0x06eb6f0000000000",
+      "0x8bc84f0000000000",
+      "0x0c53800000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0xbcc6700000000000",
+      "0x8bc84f0000000000",
+      "0x74bc680000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x9ef27a0000000000",
+      "0x4c6c820000000000",
+      null,
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0xff86770000000000",
+      "0x8bc84f0000000000",
+      "0xe82d7c0000000000",
+      "0x1dab860000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0x8bc84f0000000000",
+      "0xfee88a0000000000",
+      "0x8bc84f0000000000",
+      "0xcc8d790000000000",
+      "0x8bc84f0000000000",
+      "0xace66d0000000000",
+      "0x8bc84f0000000000",
+      null,
+      "0x7417600000000000",
+      "0x5f5f7b0000000000",
+      "0xf3fd510000000000",
+      null,
+      "0xc9c56e0000000000",
+      "0x8da4510000000000",
+      "0xff35570000000000",
+      "0xfd4c850000000000",
+      "0x6aa6750000000000",
+      "0xab717f0000000000",
+      "0x14ba530000000000",
+      "0x8dd66c0000000000",
+      "0x8da5620000000000",
+      "0xd3be7a0000000000",
+      "0xe908760000000000",
+      "0x5b8a560000000000",
+      "0xf5e2820000000000",
+      "0xc953690000000000",
+      "0xba4e640000000000",
+      "0x1e60780000000000",
+      "0x5bb8850000000000",
+      "0xfe28550000000000",
+      "0x5c75690000000000",
+      "0x4fc6550000000000",
+      "0x7f8f720000000000",
+      "0x4cab8c0000000000",
+      "0xbf826f0000000000",
+      "0x5948630000000000",
+      "0xe7fb570000000000",
+      "0x78e5620000000000",
+      "0x4d686d0000000000",
+      "0xa1aa700000000000",
+      "0x091f650000000000",
+      "0x6a8d8c0000000000",
+      "0xef2e640000000000",
+      "0x7c56660000000000",
+      "0x3c56660000000000",
+      "0x4b5c5d0000000000",
+      "0x4d2e590000000000",
+      "0x30b47d0000000000",
+      "0x072f590000000000",
+      "0x8583590000000000",
+      "0xadbe5a0000000000",
+      "0xa6a2730000000000",
+      "0xfd9c5a0000000000",
+      "0x05b45c0000000000",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ]
+    }
+   },
+   "keys_paged": [
+    {
+     "label": "AlphaDividendsPerSubnet(92, .)",
+     "prefix": "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00",
+     "keys": [
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c000b709b545d93488964183c00324097e97aab789abbbd053eddd86cb12c58225d2b01127e37ee5020fc72caa4c9712f0a",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00134cdc472c6820e6fe2e418f091f3b55e824c935940357af73c961bdd7387e1ab821ec2939ecd19daafe6081ae9ae674",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c0013c28f9368615d99a8b38f3d2c856a9d2c36c8b88903c8507aa3a9a6dcfc016caf5cfd3d8bf755b97e63f8f8b7c56836",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c0014e3418dc2c5123da9f626c1a3d85fd3cc4e45cdde2c1f2c4762333b3754faf7407e973e731884584fdbb7b16e25354c",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c0017a4772f2beb208910373fecff807cbeae66d26fed539fc501b4340faaef65e20feb0dbf388658997c034babad06bf43",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c0019bcd97c086f55ebeb6bbe2245578048e092c2be2b560dfeb00c877e35631a1a339144b5ddd360cc8dced9495db1d52b",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c001a629e28bf50f87b00a88e2f12d97a865e046a820e2a75597064a4089caafff0f8cb4660ba8abee41850f6a9af29c041",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c001afda7b1657fd38df0a4c87e51a094078cd280d43e4cf6501ae3b425583975ff63ce4d7470cf518074b5903ff375600e",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c001d6773460c85791c6a00445c8b402651221a8357a8280453bd142870c5a55780759bcdefb5f4f9e026fa3f0e32123f33",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c002ba131b7790335b89f39884e8f9475d4e818d0abd237faf1e3060b549c992cffa4c8ecf3d3a07e43e85fdc9ad1182c69",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c002cf240fa974ea1f497f435ebc7daebe5c256da3199a6bad8b3e7ddecbfaca7215cdc28c99ac70c2bc13fea751ed0924e",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c003d519c0737c34e5b6f4f35346892b1234a646bd87d6e84ff6d57f4d2d94fa137fa69733208392ac3e816ad59a7f45f5f",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c003da214aa162b6f6e66001e3a94b5789a3eb07d26d2eb18f2fe4dbfbc4892b6ed0b189be11a308557295c973512544a30",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00484d07a5292828ffdd101d566998aeecb4ccc02bfc47047e3129e976ad201aa4f53a55f54d9337fffad02d4765e82e05",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c004e3b994f7a21564e5640b772d168a694522f432f51287df57711a3a00f6c7a334b0c813ff178c22649f01566ef4a5d48",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c004f31cb0ce714ca1e28c43375f050f875e22a71b444f8d46de558f57f7c98ee23bb7a3a687da6afd7be8f961e6bc8986a",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c005410ca7d17d5c641ea125657e96aa6c9b4c087119097fbe3985298eef52f35ef6271c48322a8c2d430902a9cc38d9473",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00631a20fb088312f53fdad0c52489c1c22410116f3b1163d8b934f70648d20ea7722cdb2bc70abcd2a1be80fa441e865b",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c006be6c484fa8c7e270399e4cb0910d6552402d2dd859f24ff5305ce12d54e02f3c2cafe6788af4b405bbe0d407695af37",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c006c1664b37fae67165907bd92805ee93856a9aee6291bd03ab6d36d4d13e2bebae7cd403518066c72fba1b417d6ddd748",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c006c236aafddf8ccd3c30876955356b452d418706cf73cddb19d6da19cf8764f9b3fed7ff4fe3f6c5b801f080af001b013",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c006e6e04bbb6b585d7524e31eb27dfae6a58aef7b1efb44806fe14c6c58d0c1eb634a59fd2513f0ced6f2d10e0569af40d",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c007715485dec653442ca23d9dd141b9aee44f7a87e1b1de487eaf9e10413f485855444a46148bfe32cf6b225fdc610a03b",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c0078194818dd313e79ed7b54c51130b65a8ce3a57a4092955b903289e59515c3fe795319676c434e53375c35207fc8c151",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00845f8caaf2b357f806c916705ef08e18a46744bcb265665d326da016bee88d65f678d4bcdb5cbd9c9d3314646dc91c6e",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00862e413317706b753b8463e531ebc6c6d0622986d748433d484b9b351b9a38737ee869ef2a50b75e5f890bee2c3afb18",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c0086ea96859e1ba3ddab743c35adf13b3fbefb4b2b719c0dc08273b9293fa8166180fe3c0e6e0fc9f4cb224f429dc8163c",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c008739773ed125181549bfccc654a3faad0457ecae2e05bb3fba174ca6ccc6c5b3f63cf057d2035bc88a55f0268b06c24c",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c009968781c8d0e9bd71ee553153d61fc73f49e736c28d28ffd1a72809332be7e46b9b02c50b4c55ffd06b0a62c2902c643",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00a5d5f93c9249cb644c0901b6b2af5ff05cfce9536637d5e1d4d987c701c1ad039e48441c695876f8c33c1692110fb327",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00a80b19f2037981f2be4f776360c693d8ac9f1bbd2e45cdb5788d6c094284c22e96cbecf1643216f9c51e4cd81e0e9938",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00ad49cbc5ce8dd66311628bdf33b084fc38bebacdaaf2648eb65bc692d7ed483a54208c6d4c5ff32ecf713d133baa8011",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00bf463b0dc4db8383b50edba2947edb14e815ea52dced66d657944e8f624096e7bb800dc70e7b351c07072f2159ec683f",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00c42f99c1b06f3b7f83b648a204ff413786f12d1bbcd4450ea8f135ca367280f9ced006f896663a865ccd2943902bbc41",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00c516b63b91a68d85558d6a309e2d23fb988b534323ca088a6e8b82867b8064d0a858b747304cdbafa041e655bbff684b",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00c6c57d83c0e0014f3c4862bda89bc584c8ef68d174659bc68bf2af5986f1df36a601b5a52dd1a57fe7820e33625ae057",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00c736e5c94d6040e2ceddd5cf0fc85071b05b1de3868a6b49f218680ef3978d2ade38e04700a4006bd22ec529a7517045",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00c82c0debcfb9aaba51cd5094a8d3f7629e59078f38458a82998a7a1487c14e600a3a4008942af71f4c5feb6739bc5265",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00cc822126219e7a8d4401938bfb00f72540c47b6a294686fe9612b5d78dd369f4c77fa3bbf96a4286ede97410ba2e3209",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00cd705a2bd98c0c14138343243eaf073e7ce76d0477c45a6d22ba6b82d72882700d6af2206bbda5de672efe97ae907179",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00d175ec91ffbd7619e2acee9c4cfd01a24a1f885debc56a3a42eb6399683e74e672bdfc58ca9d31da29e46ad429af2126",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00d66d229ec9f4c64d50152973a0bdc23eee4ac64d6f40d3b6bbefb03db8e17e774a8a491bddb96805377754f14acf0519",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00d75099f6eb1e6ebb451c36325f62df54647471cfcbece5b4bc955b4ef88052d2556a0ac830df321ac4fab68250cb4719",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00d76423399121ca4a59c6d6b99db6baed20b0f8ac1d5416d32f5a552f98b570f06e8392ccb803029e04f63fbe0553c954",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00e1e09af65d6b02002daa44089470a1dc5200a98464dcefa3304153aef5195ee6be96ae336dc547f9d1bbaa8799d28d40",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00edc2bda6593310d17d1cc09edfdbd1751e6a13fdfb36d77467c3f7fe1d7eeedee18b9f2a82d8d9bc7e595721efd9c97f",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00f3763d70aa137d50b9cf15d7430edfabac4ba7704623c5beb4950ef97ddea57c9c12b91938c86f28475f8050741ac956",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00f45a4ebe3c627b9ecc18af4978916660bc0e6b701243978c1fe73d721c7b157943a713fca9f3c88cad7a9f7799bc6b26",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00f9434f97325d90e08365c9607a60a348a8eb4153119d95c0fc6c143573d82fa07d68748261d64a42a70f896a286e9810",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00fdd935b0d4b2d2c8472d2ede598b069f463c6131db33685e022246b775f8d338dad3d8ac8c672d87ed3cf4b9eeb8c51c",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00fef0f677f5a88a3e4ea3e414845c6f80a68dc1932f29b5e5eb4285713dd9a6ce4c9f3c575b66184b1583515114f67b1e",
+      "0x658faa385070e074c85bf6b568cf0555362d401ea7c93984e89763daca2cbf3b5c00ffdc6dd90622dbf848a5f0333cb0d77ca66491ad06b2f93fa69cd46a5ac8dae2aaaf4e92cd0b8067ccf8fb342eeb5365"
+     ]
+    }
+   ]
+  }
+ ],
+ "expected": {
+  "sim_swap_buy_10tao": {
+   "tao_amount": 9994964523,
+   "alpha_amount_approx": 7289425629000,
+   "tao_fee": 5035477
+  },
+  "sim_swap_buy_100tao": {
+   "alpha_amount_approx": 63351670000000,
+   "alpha_slippage_approx": 10820700000000
+  },
+  "prune_target_netuid": 92,
+  "recovery_ratio_approx": 0.368,
+  "closed_form_yield_gross_pct_day": 0.448,
+  "root_prop_approx": 0.479,
+  "a_earn_alpha_approx": 343198
+ },
+ "checks": {
+  "sim_buy_10tao": {
+   "tao_amount": 9994964523,
+   "alpha_amount": 7289425629146,
+   "tao_fee": 5035477,
+   "alpha_fee": 0,
+   "tao_slippage": 0,
+   "alpha_slippage": 127811335036
+  },
+  "sim_buy_100tao": {
+   "tao_amount": 99949645228,
+   "alpha_amount": 63351665005924,
+   "tao_fee": 50354772,
+   "alpha_fee": 0,
+   "tao_slippage": 0,
+   "alpha_slippage": 10820704635900
+  },
+  "current_alpha_price_rao": 1348210,
+  "subnet_to_prune_raw": "0x015c00",
+  "n_dividend_recipients": 52
+ },
+ "notes": []
+}

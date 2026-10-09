@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+dist/
+build/
+
+# Secrets — never commit keys, wallets, or env files
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+wallets/
+.bittensor/
+secrets/
+# the user's private live config (copied from config/live.example.toml; WP11/WP12 request, integration)
+/config/live.toml
+
+# Data and runtime state (large / regenerable) — anchored to repo root so
+# src/taotrader/data/ and committed test fixtures are NOT ignored
+/data/
+/logs/
+/state/
+/reports/output/
+*.duckdb
+*.duckdb.wal
+/*.parquet
+.import_linter_cache/
+.hypothesis/

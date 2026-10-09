@@ -1,0 +1,145 @@
+# taotrader default run configuration (WP0). DESIGN.md sections 2-3, 5.9 and 6.1.
+#
+# Precedence (lowest first): core.config dataclass defaults < this file < later config files given to the CLI
+# (books.backtest.toml, books.paper.toml, live config) < TAOTRADER_CFG_* environment < CLI --set overrides.
+# Every value below equals the core.config default (tests/ops/test_config_load.py asserts it); the frozen
+# research thresholds live in config/preregistration.toml, whose hash is journaled by ConfigApplied.
+#
+# NEVER put secrets here. API keys and keyed RPC URLs (OnFinality ?apikey=...) live in the OS keyring
+# (taotrader.ops.secrets); the loader rejects endpoint URLs that carry credentials.
+# TOML has no null: write "none" for an optional value (exec.impact_half_life_blocks = "none" = permanent impact).
+
+run_id = "default"
+mode = "backtest"          # backtest | paper | live_dry | live
+data_dir = "data"
+cadence_blocks = 60        # backtest stride / paper FULL-plan cadence
+seed = 0                   # stochastic pieces are seeded from (seed, block_hash)
+books = []                 # books come from config/books.backtest.toml (WP10) or config/books.paper.toml (WP12)
+
+
+# Endpoints in priority order (section 6.1). Keyed providers are added through the keyring, not here.
+[rpc]
+head_endpoints = ["wss://entrypoint-finney.opentensor.ai:443", "wss://lite.chain.opentensor.ai:443", "wss://lite.sub.latent.to:443"]
+archive_endpoints = ["https://bittensor-finney.api.onfinality.io/public", "https://archive.chain.opentensor.ai:443"]
+rate_per_s = 3.0
+burst = 3
+max_concurrency = 3
+keys_per_call = 2000
+timeout_s = 30.0
+
+# Live adapter (section 9). Lock 1 of 4 is `enabled`; WP11's config/live.example.toml documents the rest.
+[live]
+enabled = false  # lock 1 of 4
+mode = "plan_only"  # "plan_only" | "submit"  (lock 2: config confirmation)
+network = "test"  # "test" | "finney"
+real_coldkey_ss58 = ""
+delegate_wallets = []  # Staking-proxy delegates (2-3)
+sleeves = []  # only LIVE_ELIGIBLE sleeves the user lists here
+allowed_netuids = []  # empty = overlay universe; buys only (sell/move policies add held netuids)
+max_order_tao = 1.0  # per buy; also the buy Policy's max_spend_tao
+max_daily_turnover_tao = 5.0  # buy TAO per 7,200 blocks (sells and moves not counted)
+max_position_tao = 5.0  # a buy may not take a position's executable value above this
+max_fee_tao = 0.005
+min_fee_float_tao = 0.15  # preflight floor (== RiskCfg.fee_float_caution_rao)
+max_ops_balance_tao = 0.5  # preflight: each delegate's free balance <= this (a fee buffer only)
+accepted_specs = []  # submit refuses on any other spec_version (UNARMED, section 9.3)
+risk_exits_when_unarmed = false  # EMERGENCY/URGENT full sells while UNARMED (section 9.3); the user decides
+
+# Applied to every book before the book's own [books.risk] / [books.exec] tables.
+[book_defaults]
+dereg_model = "formula"  # "formula" | "fixed:350000" | "fixed:650000" (ppm of spot)
+
+# RiskCfg (section 3). Cross-field rule: unwind_exec_blocks == exec.finality_lag_blocks + exec.latency_blocks.
+[book_defaults.risk]
+# --- prune engine
+unwind_exec_blocks = 5  # L_exec = finality lag 3 + N+2 latency 2; U = L_exec * (1 + retries) = 15
+unwind_retries = 2
+margin_a_blocks = 300  # M_A (FT1-calibrated; range 60-1,200)
+d_stress_ppm = 500_000  # Tier A stressed spot = (1 - 0.5) * spot
+k_bottom = 3  # backstop rank
+r_backstop_ppm = 1_200_000  # backstop when cost/L <= 1.2
+tier_b_enabled = false  # phase 2: after FT1 + FT2 pass
+h_b_blocks = 7200
+pi_b_ppm = 7500  # Tier B: P_prune_24h * (1 - R) >= 0.75% of position
+mc_paths = 2000
+entry_min_rank = 6  # non-immune entry floor (prune_rank >= 6)
+entry_min_rho_ppm = 1_500_000  # EMA >= 1.5 x target EMA
+pi_entry_7d_ppm = 10_000  # once MC is enabled
+r_default_ppm = 350_000
+# --- emission, burn, launch age (single source for all sleeves)
+emission_ban_blocks = 100_800  # 14 d after a disable
+reenable_wait_blocks = 360
+burn_entry_max_ppm = 500_000
+burn_exit_ppm = 900_000  # NORMAL exit when MinerBurned >= 0.9 for 2 epochs
+min_since_start_blocks = 100_800  # 14 d (EMA 99.7% warm)
+min_age_reg_blocks = 216_000  # 30 d (launch phase belongs to LCW only)
+launch_stop_before_immunity_end = 144_000  # LCW hard stop at NetworkImmunityPeriod - this (read live)
+# --- liquidity and size
+s_exit_entry_ppm = 15_000  # V_cap = T_st * s / (1 - s)
+s_exit_hold_max_ppm = 25_000
+d_t_ppm = 200_000  # pool stress haircut
+s_urgent_ppm = 30_000
+nu_max_ppm = 150_000  # per-subnet share of NAV_liq
+g_max_ppm = 800_000  # gross alpha <= 80% of NAV_liq
+n_max = 12
+v_min_rao = 500_000_000  # 0.5 TAO min order
+remainder_min_rao = 500_000_000  # max(0.05 TAO, V_MIN)
+band_ppm = 200_000  # no-trade band
+ladder_bucket_ppm = 150_000  # sum over prune_rank <= 15
+owner_cluster_ppm = 200_000
+young_bucket_ppm = 100_000  # since_start < 30 d
+exit_budget_ppm = 20_000  # sum ES*V <= 2% NAV_liq
+escrow_max_ppm = 500_000  # E/x
+t_min_pool_rao = 200_000_000_000
+fee_rate_max = 330
+gate_haircuts_active = false  # m_gate / m_trd monitoring-only until FT4 passes
+min_free_real_rao = 50_000_000  # MIN_FREE_REAL: 0.05 TAO never spent on buys; must be >= existential deposit
+# --- owner
+owner_cooldown_blocks = 7200
+owner_unstake_frac_ppm = 20_000  # owner coldkey unstake > 2% of SubnetTAO
+owner_liquid_max_ppm = 100_000  # m_owner = 0.5 on V_cap when owner_liquid_frac >= 10%
+owner_haircut_active = false  # m_owner monitoring-only until an FT5-style ablation passes
+# --- validator router
+take_max_ppm = 50_000
+q_max_ppm = 50_000  # our stake <= 5% of TotalHotkeyAlpha(h, n)
+permit_rank_frac_ppm = 800_000
+k_epochs = 20
+switch_min_gain_ppm_day = 200  # 0.02 %/day
+# --- planner
+beta_entry_floor_ppm = 1000
+beta_entry_cap_ppm = 20_000
+beta_exit_floor_ppm = 2500
+beta_exit_cap_ppm = 50_000
+k_chase = 2
+chi_max_ppm = 15_000
+finality_shield_pause_blocks = 5
+# --- modes and kill switches (DD/daily thresholds are re-derived by bootstrap: <= 5% false CAUTION days)
+stall_warn_s = 36
+stall_halt_s = 120
+finality_caution_blocks = 30
+stale_prune_blocks = 25
+dd_soft_ppm = 150_000
+dd_hard_ppm = 250_000
+daily_loss_ppm = 80_000
+fail_burst_netuid = 3  # per 600 blocks -> 7,200-block subnet cooldown (per-block outcomes only)
+fail_burst_global = 5  # per 600 blocks -> 300-block CAUTION (per-block outcomes only)
+fee_float_alert_rao = 250_000_000  # live fee float < 0.25 TAO -> alert
+fee_float_caution_rao = 150_000_000  # < 0.15 TAO -> CAUTION
+fee_float_exits_rao = 50_000_000  # < 0.05 TAO -> EXITS_ONLY (alpha-fee trap)
+spec_burn_in_blocks = 100_800  # halve budgets 14 d after a touches_econ spec or a post-spec parity breach
+allow_emergency_exits_when_frozen = true  # Tier A exits with tight fill-or-kill limits even on key alarm
+regime_throttle_active = false  # the ONE market-regime throttle: monitoring-only until FT-R1 passes
+
+# ExecCfg: the one shared cost and fill model (section 2.0).
+[book_defaults.exec]
+latency_blocks = 2  # shielded inclusion N+2
+finality_lag_blocks = 3  # engine acts on finalized heads; added to fill timing in sim
+shield_miss_ppm = 11_000  # 1.1% non-decrypt (swept 0.5%-3%)
+buy_tx_fee_rao = 1_028_000  # Proxy(add_stake_limit) 933,081 + carrier ~94,560
+sell_tx_fee_rao = 837_000  # Proxy(remove_stake_limit) 742,666 + carrier
+move_tx_fee_rao = 1_000_000  # same-subnet move_stake (UNMEASURED; verify on test.finney)
+rotate_tx_fee_rao = 1_250_000  # Proxy(swap_stake_limit) measured; move_stake_limit UNMEASURED
+carrier_fee_rao = 98_000  # charged on a miss only if the carrier was included; sim books it on every injected miss
+impact_half_life_blocks = 0  # 0 = healed/temporary impact (HEADLINE, gating); "none" = permanent (optimistic)
+fail_inject_ppm = 0  # extra random inner-call failures (stress)
+n_delegates = 3  # delegates modelled in sim/paper; must equal the live delegate count
