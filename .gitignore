@@ -32,3 +32,4 @@ secrets/
 /*.parquet
 .import_linter_cache/
 .hypothesis/
+/data_*/
