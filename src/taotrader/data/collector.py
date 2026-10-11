@@ -80,6 +80,8 @@ ERA_C_FIRST_BLOCK: Final[int] = it.BALANCER_FIRST_BLOCK         # 8,486,594
 PANEL_FROM_BLOCK: Final[int] = int(regime("price_ema_rp").first_block)   # 8,466,531 (post-June panel, section 8.11)
 DEREG_ERA_FIRST_BLOCK: Final[int] = 6_573_966                   # NetworkRegistrationStartBlock (brief 4.4): prunes exist
 ESCROW_GRID_BLOCKS: Final[int] = 360                            # one escrow read per 360 blocks (section 6.7 ESCROW)
+#                                                                 the era-C backfill uses --escrow-grid 7200 (ADR-0003)
+ESCROW_CONCURRENCY: Final[int] = 4                              # escrow StakeInfo calls in flight per fill
 LEVELS_C60: Final[tuple[int, ...]] = (600, 300, 60)
 LEVELS_H300: Final[tuple[int, ...]] = (600, 300)
 COLLECTOR_DECODER_VERSION: Final[int] = 1
@@ -451,12 +453,17 @@ class EscrowCache:
         if not need:
             return
         hashes = await self.source.block_hashes(need)
-        for src in need:
-            try:
-                self._cache[src] = await self.source.escrow_by_subnet(hashes[src])
-            except (RpcFatal, DecodeError) as e:
-                log.warning("escrow at %d unavailable (%s); escrow_alpha stays unknown there", src, e)
-                self._cache[src] = None
+        sem = asyncio.Semaphore(ESCROW_CONCURRENCY)   # each StakeInfo call is ~1-4 min server-side; overlap them
+
+        async def one(src: int) -> None:
+            async with sem:
+                try:
+                    self._cache[src] = await self.source.escrow_by_subnet(hashes[src])
+                except (RpcFatal, DecodeError) as e:
+                    log.warning("escrow at %d unavailable (%s); escrow_alpha stays unknown there", src, e)
+                    self._cache[src] = None
+
+        await asyncio.gather(*(one(src) for src in need))
 
     def at(self, block: int) -> tuple[int | None, dict[int, AlphaRao] | None]:
         src = self.source_block(block)
