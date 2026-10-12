@@ -284,6 +284,8 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--keys-per-call", type=_positive_int)
     p.add_argument("--panel-from", type=_nonneg_int)
     p.add_argument("--escrow-grid", type=_positive_int, help="escrow StakeInfo grid in blocks (collector default if unset)")
+    p.add_argument("--calib-abort-rel-err", type=Decimal, default=None,
+                   help="AMM/price calibration abort threshold (default 1e-4); probes are still recorded in calib")
     p.add_argument("--retry-invalid", action="store_true")
     p.add_argument("--status", action="store_true", help="print the fetch-ledger status and exit")
     p.add_argument("--enrich", action="store_true", help="Taostats trades into ext_trades (needs the Taostats key)")
@@ -555,6 +557,8 @@ async def _collect(a: argparse.Namespace, cfg: RunCfg) -> int:
             kw["panel_from"] = a.panel_from
         if a.escrow_grid is not None:
             kw["escrow_grid"] = a.escrow_grid
+        if a.calib_abort_rel_err is not None:
+            kw["abort_rel_err"] = a.calib_abort_rel_err
         ccfg = col.CollectorCfg(**kw)
 
         def progress(p: Any, msg: str) -> None:
