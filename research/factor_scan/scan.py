@@ -13,6 +13,11 @@ PRE-REGISTERED RULES (fixed 2026-10-12 before any result was seen):
 - PROMOTE (train): mean net/day > 0, beats the equal-weight universe (also net of cost) on mean, and NW t >= 2.0.
 - SURVIVE (test, evaluated once): mean net/day > 0, beats EW, and NW t >= 1.5.
 - Report deflated Sharpe over the full window against the total trial count.
+
+FULL-HISTORY ADDENDUM (fixed 2026-10-13 before the h300 panel existed):
+- Panel data/research/panel_h300.pkl (600-block lake, Mar 2025 - Oct 2026). TRAIN = before 2026-01-01, TEST = from it.
+- Era check for the pre-identified lead `+carry_proxy`: per calendar quarter, mean daily IC and top-quintile net vs EW
+  (h = 3). ROBUST if IC > 0 in >= 4 of the quarters with data AND the pooled top-quintile net beats pooled EW net.
 """
 from __future__ import annotations
 
@@ -32,6 +37,7 @@ RECOVERY = 0.5
 MIN_POOL = 500.0
 SPLIT_DAY = datetime(2026, 9, 1, tzinfo=timezone.utc).date()
 HORIZONS = (1, 3, 7)
+QUARTERS = False
 
 
 def day_of(ts_ms: int):  # type: ignore[no-untyped-def]
@@ -120,8 +126,8 @@ def universe(rows: dict) -> list:  # type: ignore[type-arg]
     return [k for k, r in rows.items() if r.started and r.enabled and r.pool_tao >= MIN_POOL]
 
 
-def run() -> None:
-    days, by_day, dereg = load()
+def run(panel: str = "data/research/panel.pkl") -> None:
+    days, by_day, dereg = load(panel)
     print(f"panel: {len(days)} days {days[0]} .. {days[-1]}; split at {SPLIT_DAY}")
     # precompute signals, forward returns and costs per (day, key)
     sig_vals: dict = defaultdict(dict)      # (name) -> {(i, key): value}
@@ -146,6 +152,7 @@ def run() -> None:
 
     n_trials = len(SIGNALS) * 2 * len(HORIZONS)
     results = []
+    qstat: dict = {}
     for name in SIGNALS:
         for sign in (+1, -1):
             for h in HORIZONS:
@@ -166,6 +173,13 @@ def run() -> None:
                     ic = spearman(sv, [fwd[(h, i, k)] for k in ks])
                     if ic is not None:
                         ics[part].append(ic)
+                    if QUARTERS and name == "carry_proxy" and sign > 0 and h == 3:
+                        q = quarter(dd)
+                        qstat.setdefault(q, {"ic": [], "top": [], "ew": []})
+                        if ic is not None:
+                            qstat[q]["ic"].append(ic)
+                        qstat[q]["top"].append(series[part][-1])
+                        qstat[q]["ew"].append(ew[part][-1])
                 row = {"signal": f"{'+' if sign > 0 else '-'}{name}", "h": h}
                 for part in ("train", "test"):
                     s = series[part]
@@ -204,9 +218,37 @@ def run() -> None:
     for r in surv:
         print(f"  SURVIVOR {r['signal']} h={r['h']}: train {fmt(r['train_mean'])}%/d (t {fmt(r['train_t'], False)}), "
               f"test {fmt(r['test_mean'])}%/d (t {fmt(r['test_t'], False)}), DSR {r['dsr']}")
-    with open("data/research/scan_results.pkl", "wb") as fh:
+    if QUARTERS and qstat:
+        print("\nERA CHECK +carry_proxy (h=3), per quarter:")
+        pos = 0
+        for q in sorted(qstat):
+            v = qstat[q]
+            ic_m = float(np.mean(v["ic"])) if v["ic"] else float("nan")
+            pos += int(ic_m > 0)
+            print(f"  {q}: days {len(v['top']):3d}  IC {ic_m:+.3f}  top {100 * np.mean(v['top']):+.3f}%/d  "
+                  f"EW {100 * np.mean(v['ew']):+.3f}%/d  excess {100 * (np.mean(v['top']) - np.mean(v['ew'])):+.3f}%/d")
+        all_top = [x for v in qstat.values() for x in v["top"]]
+        all_ew = [x for v in qstat.values() for x in v["ew"]]
+        robust = pos >= 4 and np.mean(all_top) > np.mean(all_ew)
+        print(f"  IC>0 in {pos}/{len(qstat)} quarters; pooled top {100 * np.mean(all_top):+.3f} vs EW "
+              f"{100 * np.mean(all_ew):+.3f} %/d -> {'ROBUST' if robust else 'NOT ROBUST'} (pre-registered rule)")
+    out = panel.replace(".pkl", "_scan.pkl")
+    with open(out, "wb") as fh:
         pickle.dump(results, fh)
 
 
+def quarter(d) -> str:  # type: ignore[no-untyped-def]
+    return f"{d.year}Q{(d.month - 1) // 3 + 1}"
+
+
 if __name__ == "__main__":
-    run()
+    import argparse
+
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--panel", default="data/research/panel.pkl")
+    ap.add_argument("--split", default="2026-09-01", help="first TEST day (YYYY-MM-DD)")
+    ap.add_argument("--quarters", action="store_true", help="per-quarter era check for +carry_proxy (h=3)")
+    a = ap.parse_args()
+    SPLIT_DAY = datetime.strptime(a.split, "%Y-%m-%d").replace(tzinfo=timezone.utc).date()
+    QUARTERS = a.quarters
+    run(a.panel)
