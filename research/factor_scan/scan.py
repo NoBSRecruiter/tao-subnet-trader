@@ -82,8 +82,8 @@ def past(by_day, days, i: int, key, h: int, attr: str = "spot") -> float | None:
     if i - h < 0:
         return None
     r0 = by_day[days[i - h]].get(key)
-    r1 = by_day[days[i]][key]
-    if r0 is None:
+    r1 = by_day[days[i]].get(key)
+    if r0 is None or r1 is None:
         return None
     if attr == "tr":
         if r0.hotkey == r1.hotkey and value(r0) and value(r1):
