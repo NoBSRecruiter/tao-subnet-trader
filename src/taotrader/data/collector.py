@@ -82,6 +82,7 @@ DEREG_ERA_FIRST_BLOCK: Final[int] = 6_573_966                   # NetworkRegistr
 ESCROW_GRID_BLOCKS: Final[int] = 360                            # one escrow read per 360 blocks (section 6.7 ESCROW)
 #                                                                 the era-C backfill uses --escrow-grid 7200 (ADR-0003)
 ESCROW_CONCURRENCY: Final[int] = 4                              # escrow StakeInfo calls in flight per fill
+REBUILD_CACHE: Final[int] = 2                                   # snapshot cache while rebuilding the tracker
 LEVELS_C60: Final[tuple[int, ...]] = (600, 300, 60)
 LEVELS_H300: Final[tuple[int, ...]] = (600, 300)
 COLLECTOR_DECODER_VERSION: Final[int] = 1
@@ -728,8 +729,9 @@ class Collector:
         pts = self.tracker.points(end)
         if not pts:
             return
-        store = LakeSnapshotStore(self.lake, clock=max(pts))
-        listings = load_listings(self.lake, pts)
+        # Each membership snapshot is read once and carries thousands of hotkey rows: a tiny cache and per-point
+        # listings keep resume memory flat (a 1,024-entry cache held ~6 GB on the 20-month h300 lake; ADR-0003).
+        store = LakeSnapshotStore(self.lake, clock=max(pts), cache_size=REBUILD_CACHE)
         for m in pts:
             st = self._state.get(m)
             if st is None or st.status == STATUS_FAILED:
@@ -737,7 +739,7 @@ class Collector:
             if st.status != STATUS_OK:
                 continue                                 # INVALID: T carries over unchanged
             snap = store.at(Block(m))
-            self.tracker.record(m, snap, listings.get(m, {}))
+            self.tracker.record(m, snap, load_listings(self.lake, [m]).get(m, {}))
 
     def _needs(self, b: int, retry_invalid: bool) -> bool:
         st = self._state.get(b)
@@ -944,10 +946,9 @@ def rebuild_tracker(lake: Lake, cfg: CollectorCfg, end: int) -> PanelTracker:
     pts = [m for m in pts if m in stored]
     if not pts:
         return tr
-    store = LakeSnapshotStore(lake, clock=max(pts))
-    listings = load_listings(lake, pts)
+    store = LakeSnapshotStore(lake, clock=max(pts), cache_size=REBUILD_CACHE)
     for m in pts:
-        tr.record(m, store.at(Block(m)), listings.get(m, {}))
+        tr.record(m, store.at(Block(m)), load_listings(lake, [m]).get(m, {}))
     return tr
 
 
